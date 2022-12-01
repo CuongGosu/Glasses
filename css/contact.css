@@ -1,0 +1,48 @@
+.menu-nav_item:nth-child(5) a {
+  color: #428bca;
+}
+.section-form-contact {
+  margin-top: 5rem;
+}
+.title-form {
+  font-size: 1.8rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 3rem;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 2rem;
+}
+.form-group label {
+  font-size: 1.6rem;
+}
+.form-group input,
+#comment {
+  padding: 1rem 2rem;
+  border: 1px solid #e1e1e1;
+}
+.form-group input:focus,
+#comment:focus {
+  outline: none;
+}
+.form-submit {
+  border-radius: 3px;
+  border: 1px #428bca solid;
+  background-color: #428bca;
+  color: #fff;
+  display: block;
+  padding: 1rem 3rem;
+  font-size: 15px;
+  transition: color 300ms ease-in-out 0s, background-color 300ms ease-in-out 0s,
+    background-position 300ms ease-in-out 0s;
+  font-weight: 400;
+  width: 50%;
+  position: relative;
+}
+.form-submit:hover {
+  background-color: #fff;
+  color: #428bca;
+}

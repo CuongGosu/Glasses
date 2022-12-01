@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ViewProduct</title>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link href="css/general.css" rel="stylesheet" />
+    <link href="css/product.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="top-header">
+        <div class="container">
+          <nav class="header-nav">
+            <ul class="header-nav-list nav_right">
+              <li>
+                <a class="header-nav-link" href="index.html">Trang chủ</a>
+              </li>
+              <li>
+                <a class="header-nav-link" href="#">Giới thiệu</a>
+              </li>
+              <li>
+                <a class="header-nav-link" href="product.html">Sản phẩm</a>
+              </li>
+            </ul>
+            <ul class="header-nav-list nav_left">
+              <li>
+                <a class="header-nav-link" href="#">Kiểm tra đơn hàng</a>
+              </li>
+              <li>
+                <a class="header-nav-link" href="#">đăng nhập</a>
+              </li>
+              <li>
+                <a class="header-nav-link" href="#">đăng ký</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="mid-header">
+        <div class="container">
+          <div class="content-header">
+            <a class="content-header_left" href="#">
+              <img
+                src="https://bizweb.dktcdn.net/100/332/764/themes/880395/assets/logo.png?1665388816899"
+                alt="Logo glasses"
+              />
+            </a>
+            <div class="content-header_right">
+              <div class="header_search">
+                <input
+                  class="search_bar"
+                  type="text"
+                  placeholder="Tìm kiếm sản phẩm..."
+                />
+                <span class="search_icon"
+                  ><ion-icon name="search"></ion-icon
+                ></span>
+              </div>
+              <div class="header_contacts-cart">
+                <div class="header-contacts">
+                  <img
+                    src="https://bizweb.dktcdn.net/100/332/764/themes/880395/assets/phone_header.png?1665388816899"
+                    alt="logo-contacts"
+                  />
+                  <div class="info_contacts">
+                    <div class="phone-contacts">
+                      hotline:
+                      <a class="phone-number" href="#">1900 6750</a>
+                    </div>
+                    <div class="address-contacts">Thứ 2 - CN: 9:00 -18:00</div>
+                  </div>
+                </div>
+                <div class="header-cart">
+                  <div class="header-cart_text">
+                    <img
+                      src="https://bizweb.dktcdn.net/100/332/764/themes/880395/assets/icon_cart.png?1665388816899"
+                      alt="logo-cart"
+                    />
+                    <p>Giỏ hàng:</p>
+                    <span class="count-item">0</span>
+                    Sản phẩm
+                    <ion-icon
+                      class="icon-down_cart"
+                      name="chevron-down-outline"
+                    ></ion-icon>
+                  </div>
+                  <div class="dropdown-cart">Không có sản phẩm nào.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="border container">
+        <div class="border-line"></div>
+      </div>
+      <div class="header-menu container">
+        <nav class="menu-nav">
+          <ul class="menu-nav_list">
+            <li class="menu-nav_item">
+              <a href="index.html" class="menu-link">Trang chủ</a>
+            </li>
+            <li class="menu-nav_item" more-link>
+              <div class="more-item">
+                <a href="#" class="menu-link">Giới thiệu</a>
+                <ion-icon
+                  class="icon-down_cart"
+                  name="chevron-down-outline"
+                ></ion-icon>
+              </div>
+              <ul class="item-small">
+                <li>
+                  <a class="link-small" href="#"
+                    >Hướng dẫn sử dụng theme Glasses</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="menu-nav_item" more-link>
+              <div class="more-item">
+                <a href="product.html" class="menu-link">Sản phẩm</a>
+                <ion-icon
+                  class="icon-down_cart"
+                  name="chevron-down-outline"
+                ></ion-icon>
+              </div>
+              <ul class="item-small">
+                <li>
+                  <a href="product.html" class="link-small">Sản phẩm mới</a>
+                </li>
+                <li>
+                  <a href="product.html" class="link-small"
+                    >Sản phẩm khuyến mãi</a
+                  >
+                </li>
+                <li>
+                  <a href="product.html" class="link-small">Sản phẩm nổi bật</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-nav_item">
+              <a href="product.html" class="menu-link">Tin tức</a>
+            </li>
+            <li class="menu-nav_item">
+              <a href="contact.html" class="menu-link">Liên hệ</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="section-background">
+        <div class="title-menu">
+          <div class="container">
+            <div class="title-page">
+              <h1>Tất cả các sản phẩm</h1>
+            </div>
+            <ul class="bread-crumb">
+              <li class="home-page">
+                <a>Trang chủ </a>
+                <span>/</span>
+              </li>
+              <li class="children-page">
+                <a>Tất cả các sản phẩm</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="section-wrap_background">
+        <div class="container">
+          <div class="row">
+            <aside class="left-content">
+              <div class="aside-title">
+                <ion-icon class="icon-list_aside" name="menu"></ion-icon>
+                <h2>
+                  <span>danh mục</span>
+                </h2>
+              </div>
+              <ul class="list-nav-bars">
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <ion-icon name="play-circle"></ion-icon>
+                    <p>Sản phẩm mới</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <ion-icon name="play-circle"></ion-icon>
+                    <p>Sản phẩm khuyến mãi</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <ion-icon name="play-circle"></ion-icon>
+                    <p>Sản phẩm nổi bật</p>
+                  </a>
+                </li>
+              </ul>
+            </aside>
+            <div class="category-product">
+              <div class="view-choice">
+                <div class="view-sort">
+                  <p>Sắp xếp :</p>
+                  <ul class="sort-choice">
+                    <li class="sort-default">Mặc định</li>
+
+                    <ul class="list-sort">
+                      <li class="item-sort">Mặc định</li>
+                      <li class="item-sort">A → Z</li>
+                      <li class="item-sort">Z → A</li>
+                      <li class="item-sort">Giá tăng dần</li>
+                      <li class="item-sort">Giá giảm dần</li>
+                    </ul>
+                    <ion-icon name="chevron-down"></ion-icon>
+                  </ul>
+                </div>
+                <div class="view-mode">
+                  <button class="view-grid">
+                    <ion-icon name="apps"></ion-icon>
+                  </button>
+                  <button class="view-detail">
+                    <ion-icon name="list"></ion-icon>
+                  </button>
+                </div>
+              </div>
+              <div class="view-products">
+                <div class="item-product swiper-slide">
+                  <div class="product-thumbnail">
+                    <img
+                      src="https://bizweb.dktcdn.net/thumb/large/100/332/764/products/a2.png?v=1540546659087"
+                      alt="slide 1"
+                      class="img-thumb"
+                    />
+                    <div class="product-action">
+                      <div class="btn-card">
+                        <ion-icon name="cart"></ion-icon>
+                      </div>
+                      <div class="btn-view">
+                        <ion-icon name="eye"></ion-icon>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-info">
+                    <a class="product-name" href="#"
+                      >Kính nữ Q&J gọng mắt mèo</a
+                    >
+                    <div class="price-box">300.000₫</div>
+                    <div class="text-details">
+                      Kiểu dáng thời trang, tròng lớn có khả năng chống chói tối
+                      ưu, kính mát Lacoste màu nâu đậm sẽ là gợi ý hoàn hảo cho
+                      những quý cô yêu thích phong ...
+                      <a>Xem chi tiết</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="item-product swiper-slide">
+                  <div class="product-thumbnail">
+                    <img
+                      src="https://bizweb.dktcdn.net/thumb/large/100/332/764/products/a2.png?v=1540546659087"
+                      alt="slide 1"
+                      class="img-thumb"
+                    />
+                    <div class="product-action">
+                      <div class="btn-card">
+                        <ion-icon name="cart"></ion-icon>
+                      </div>
+                      <div class="btn-view">
+                        <ion-icon name="eye"></ion-icon>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-info">
+                    <a class="product-name" href="#"
+                      >Kính nữ Q&J gọng mắt mèo</a
+                    >
+                    <div class="price-box">300.000₫</div>
+                    <div class="text-details">
+                      Kiểu dáng thời trang, tròng lớn có khả năng chống chói tối
+                      ưu, kính mát Lacoste màu nâu đậm sẽ là gợi ý hoàn hảo cho
+                      những quý cô yêu thích phong ...
+                      <a>Xem chi tiết</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="item-product swiper-slide">
+                  <div class="product-thumbnail">
+                    <img
+                      src="https://bizweb.dktcdn.net/thumb/large/100/332/764/products/a2.png?v=1540546659087"
+                      alt="slide 1"
+                      class="img-thumb"
+                    />
+                    <div class="product-action">
+                      <div class="btn-card">
+                        <ion-icon name="cart"></ion-icon>
+                      </div>
+                      <div class="btn-view">
+                        <ion-icon name="eye"></ion-icon>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-info">
+                    <a class="product-name" href="#"
+                      >Kính nữ Q&J gọng mắt mèo</a
+                    >
+                    <div class="price-box">300.000₫</div>
+                    <div class="text-details">
+                      Kiểu dáng thời trang, tròng lớn có khả năng chống chói tối
+                      ưu, kính mát Lacoste màu nâu đậm sẽ là gợi ý hoàn hảo cho
+                      những quý cô yêu thích phong ...
+                      <a>Xem chi tiết</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="item-product swiper-slide">
+                  <div class="product-thumbnail">
+                    <img
+                      src="https://bizweb.dktcdn.net/thumb/large/100/332/764/products/a2.png?v=1540546659087"
+                      alt="slide 1"
+                      class="img-thumb"
+                    />
+                    <div class="product-action">
+                      <div class="btn-card">
+                        <ion-icon name="cart"></ion-icon>
+                      </div>
+                      <div class="btn-view">
+                        <ion-icon name="eye"></ion-icon>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-info">
+                    <a class="product-name" href="#"
+                      >Kính nữ Q&J gọng mắt mèo</a
+                    >
+                    <div class="price-box">300.000₫</div>
+                    <div class="text-details">
+                      Kiểu dáng thời trang, tròng lớn có khả năng chống chói tối
+                      ưu, kính mát Lacoste màu nâu đậm sẽ là gợi ý hoàn hảo cho
+                      những quý cô yêu thích phong ...
+                      <a>Xem chi tiết</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="item-product swiper-slide">
+                  <div class="product-thumbnail">
+                    <img
+                      src="https://bizweb.dktcdn.net/thumb/large/100/332/764/products/a2.png?v=1540546659087"
+                      alt="slide 1"
+                      class="img-thumb"
+                    />
+                    <div class="product-action">
+                      <div class="btn-card">
+                        <ion-icon name="cart"></ion-icon>
+                      </div>
+                      <div class="btn-view">
+                        <ion-icon name="eye"></ion-icon>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-info">
+                    <a class="product-name" href="#"
+                      >Kính nữ Q&J gọng mắt mèo</a
+                    >
+                    <div class="price-box">300.000₫</div>
+                    <div class="text-details">
+                      Kiểu dáng thời trang, tròng lớn có khả năng chống chói tối
+                      ưu, kính mát Lacoste màu nâu đậm sẽ là gợi ý hoàn hảo cho
+                      những quý cô yêu thích phong ...
+                      <a>Xem chi tiết</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="item-product swiper-slide">
+                  <div class="product-thumbnail">
+                    <img
+                      src="https://bizweb.dktcdn.net/thumb/large/100/332/764/products/a2.png?v=1540546659087"
+                      alt="slide 1"
+                      class="img-thumb"
+                    />
+                    <div class="product-action">
+                      <div class="btn-card">
+                        <ion-icon name="cart"></ion-icon>
+                      </div>
+                      <div class="btn-view">
+                        <ion-icon name="eye"></ion-icon>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-info">
+                    <a class="product-name" href="#"
+                      >Kính nữ Q&J gọng mắt mèo</a
+                    >
+                    <div class="price-box">300.000₫</div>
+                    <div class="text-details">
+                      Kiểu dáng thời trang, tròng lớn có khả năng chống chói tối
+                      ưu, kính mát Lacoste màu nâu đậm sẽ là gợi ý hoàn hảo cho
+                      những quý cô yêu thích phong ...
+                      <a>Xem chi tiết</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="item-product swiper-slide">
+                  <div class="product-thumbnail">
+                    <img
+                      src="https://bizweb.dktcdn.net/thumb/large/100/332/764/products/a2.png?v=1540546659087"
+                      alt="slide 1"
+                      class="img-thumb"
+                    />
+                    <div class="product-action">
+                      <div class="btn-card">
+                        <ion-icon name="cart"></ion-icon>
+                      </div>
+                      <div class="btn-view">
+                        <ion-icon name="eye"></ion-icon>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-info">
+                    <a class="product-name" href="#"
+                      >Kính nữ Q&J gọng mắt mèo</a
+                    >
+                    <div class="price-box">300.000₫</div>
+                    <div class="text-details">
+                      Kiểu dáng thời trang, tròng lớn có khả năng chống chói tối
+                      ưu, kính mát Lacoste màu nâu đậm sẽ là gợi ý hoàn hảo cho
+                      những quý cô yêu thích phong ...
+                      <a>Xem chi tiết</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="item-product swiper-slide">
+                  <div class="product-thumbnail">
+                    <img
+                      src="https://bizweb.dktcdn.net/thumb/large/100/332/764/products/a2.png?v=1540546659087"
+                      alt="slide 1"
+                      class="img-thumb"
+                    />
+                    <div class="product-action">
+                      <div class="btn-card">
+                        <ion-icon name="cart"></ion-icon>
+                      </div>
+                      <div class="btn-view">
+                        <ion-icon name="eye"></ion-icon>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-info">
+                    <a class="product-name" href="#"
+                      >Kính nữ Q&J gọng mắt mèo</a
+                    >
+                    <div class="price-box">300.000₫</div>
+                    <div class="text-details">
+                      Kiểu dáng thời trang, tròng lớn có khả năng chống chói tối
+                      ưu, kính mát Lacoste màu nâu đậm sẽ là gợi ý hoàn hảo cho
+                      những quý cô yêu thích phong ...
+                      <a>Xem chi tiết</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="item-product swiper-slide">
+                  <div class="product-thumbnail">
+                    <img
+                      src="https://bizweb.dktcdn.net/thumb/large/100/332/764/products/a2.png?v=1540546659087"
+                      alt="slide 1"
+                      class="img-thumb"
+                    />
+                    <div class="product-action">
+                      <div class="btn-card">
+                        <ion-icon name="cart"></ion-icon>
+                      </div>
+                      <div class="btn-view">
+                        <ion-icon name="eye"></ion-icon>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-info">
+                    <a class="product-name" href="#"
+                      >Kính nữ Q&J gọng mắt mèo</a
+                    >
+                    <div class="price-box">300.000₫</div>
+                    <div class="text-details">
+                      Kiểu dáng thời trang, tròng lớn có khả năng chống chói tối
+                      ưu, kính mát Lacoste màu nâu đậm sẽ là gợi ý hoàn hảo cho
+                      những quý cô yêu thích phong ...
+                      <a>Xem chi tiết</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="item-product swiper-slide">
+                  <div class="product-thumbnail">
+                    <img
+                      src="https://bizweb.dktcdn.net/thumb/large/100/332/764/products/a2.png?v=1540546659087"
+                      alt="slide 1"
+                      class="img-thumb"
+                    />
+                    <div class="product-action">
+                      <div class="btn-card">
+                        <ion-icon name="cart"></ion-icon>
+                      </div>
+                      <div class="btn-view">
+                        <ion-icon name="eye"></ion-icon>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-info">
+                    <a class="product-name" href="#"
+                      >Kính nữ Q&J gọng mắt mèo</a
+                    >
+                    <div class="price-box">300.000₫</div>
+                    <div class="text-details">
+                      Kiểu dáng thời trang, tròng lớn có khả năng chống chói tối
+                      ưu, kính mát Lacoste màu nâu đậm sẽ là gợi ý hoàn hảo cho
+                      những quý cô yêu thích phong ...
+                      <a>Xem chi tiết</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="item-product swiper-slide">
+                  <div class="product-thumbnail">
+                    <img
+                      src="https://bizweb.dktcdn.net/thumb/large/100/332/764/products/a2.png?v=1540546659087"
+                      alt="slide 1"
+                      class="img-thumb"
+                    />
+                    <div class="product-action">
+                      <div class="btn-card">
+                        <ion-icon name="cart"></ion-icon>
+                      </div>
+                      <div class="btn-view">
+                        <ion-icon name="eye"></ion-icon>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-info">
+                    <a class="product-name" href="#"
+                      >Kính nữ Q&J gọng mắt mèo</a
+                    >
+                    <div class="price-box">300.000₫</div>
+                    <div class="text-details">
+                      Kiểu dáng thời trang, tròng lớn có khả năng chống chói tối
+                      ưu, kính mát Lacoste màu nâu đậm sẽ là gợi ý hoàn hảo cho
+                      những quý cô yêu thích phong ...
+                      <a>Xem chi tiết</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="item-product swiper-slide">
+                  <div class="product-thumbnail">
+                    <img
+                      src="https://bizweb.dktcdn.net/thumb/large/100/332/764/products/a2.png?v=1540546659087"
+                      alt="slide 1"
+                      class="img-thumb"
+                    />
+                    <div class="product-action">
+                      <div class="btn-card">
+                        <ion-icon name="cart"></ion-icon>
+                      </div>
+                      <div class="btn-view">
+                        <ion-icon name="eye"></ion-icon>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-info">
+                    <a class="product-name" href="#"
+                      >Kính nữ Q&J gọng mắt mèo</a
+                    >
+                    <div class="price-box">300.000₫</div>
+                    <div class="text-details">
+                      Kiểu dáng thời trang, tròng lớn có khả năng chống chói tối
+                      ưu, kính mát Lacoste màu nâu đậm sẽ là gợi ý hoàn hảo cho
+                      những quý cô yêu thích phong ...
+                      <a>Xem chi tiết</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="item-product swiper-slide">
+                  <div class="product-thumbnail">
+                    <img
+                      src="https://bizweb.dktcdn.net/thumb/large/100/332/764/products/a2.png?v=1540546659087"
+                      alt="slide 1"
+                      class="img-thumb"
+                    />
+                    <div class="product-action">
+                      <div class="btn-card">
+                        <ion-icon name="cart"></ion-icon>
+                      </div>
+                      <div class="btn-view">
+                        <ion-icon name="eye"></ion-icon>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-info">
+                    <a class="product-name" href="#"
+                      >Kính nữ Q&J gọng mắt mèo</a
+                    >
+                    <div class="price-box">300.000₫</div>
+                    <div class="text-details">
+                      Kiểu dáng thời trang, tròng lớn có khả năng chống chói tối
+                      ưu, kính mát Lacoste màu nâu đậm sẽ là gợi ý hoàn hảo cho
+                      những quý cô yêu thích phong ...
+                      <a>Xem chi tiết</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="item-product swiper-slide">
+                  <div class="product-thumbnail">
+                    <img
+                      src="https://bizweb.dktcdn.net/thumb/large/100/332/764/products/a2.png?v=1540546659087"
+                      alt="slide 1"
+                      class="img-thumb"
+                    />
+                    <div class="product-action">
+                      <div class="btn-card">
+                        <ion-icon name="cart"></ion-icon>
+                      </div>
+                      <div class="btn-view">
+                        <ion-icon name="eye"></ion-icon>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-info">
+                    <a class="product-name" href="#"
+                      >Kính nữ Q&J gọng mắt mèo</a
+                    >
+                    <div class="price-box">300.000₫</div>
+                    <div class="text-details">
+                      Kiểu dáng thời trang, tròng lớn có khả năng chống chói tối
+                      ưu, kính mát Lacoste màu nâu đậm sẽ là gợi ý hoàn hảo cho
+                      những quý cô yêu thích phong ...
+                      <a>Xem chi tiết</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="item-product swiper-slide">
+                  <div class="product-thumbnail">
+                    <img
+                      src="https://bizweb.dktcdn.net/thumb/large/100/332/764/products/a2.png?v=1540546659087"
+                      alt="slide 1"
+                      class="img-thumb"
+                    />
+                    <div class="product-action">
+                      <div class="btn-card">
+                        <ion-icon name="cart"></ion-icon>
+                      </div>
+                      <div class="btn-view">
+                        <ion-icon name="eye"></ion-icon>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-info">
+                    <a class="product-name" href="#"
+                      >Kính nữ Q&J gọng mắt mèo</a
+                    >
+                    <div class="price-box">300.000₫</div>
+                    <div class="text-details">
+                      Kiểu dáng thời trang, tròng lớn có khả năng chống chói tối
+                      ưu, kính mát Lacoste màu nâu đậm sẽ là gợi ý hoàn hảo cho
+                      những quý cô yêu thích phong ...
+                      <a>Xem chi tiết</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="mid-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-footer">
+              <h3>Hỗ trợ khách hàng</h3>
+              <ul class="list-footer-first">
+                <li class="item-footer">
+                  <p>Tư vấn mua hàng (Miễn phí)</p>
+                  <a href="#">1900 6750</a>
+                </li>
+                <li class="item-footer">
+                  <p>Hỗ trợ kỹ thuật</p>
+                  <a href="#">1900 6650</a>
+                </li>
+                <li class="item-footer">
+                  <p>Góp ý, khiếu nại dịch vụ (8h00-22h00)</p>
+                  <a href="#">1900 6550</a>
+                </li>
+                <li class="item-footer">
+                  <p>Địa chỉ liên hệ</p>
+                  <span class="address" href="#">
+                    <ion-icon name="location-sharp"></ion-icon>
+                    266 Đội Cấn, P Cống Vị, Q Ba Đình, Hà Nội, Vietnam
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <div class="col-footer">
+              <h3>Hình thức thanh toán</h3>
+              <ul class="list-footer-second">
+                <li class="item-footer">
+                  <img
+                    src="https://bizweb.dktcdn.net/100/332/764/themes/880395/assets/img_pay_1.png?1665388816899"
+                    alt="payment"
+                  />
+                </li>
+                <li class="item-footer">
+                  <img
+                    src="https://bizweb.dktcdn.net/100/332/764/themes/880395/assets/img_pay_2.png?1665388816899"
+                    alt="payment"
+                  />
+                </li>
+                <li class="item-footer">
+                  <img
+                    src="https://bizweb.dktcdn.net/100/332/764/themes/880395/assets/img_pay_3.png?1665388816899"
+                    alt="payment"
+                  />
+                </li>
+                <li class="item-footer">
+                  <img
+                    src="https://bizweb.dktcdn.net/100/332/764/themes/880395/assets/img_pay_4.png?1665388816899"
+                    alt="payment"
+                  />
+                </li>
+                <li class="item-footer">
+                  <img
+                    src="https://bizweb.dktcdn.net/100/332/764/themes/880395/assets/img_pay_5.png?1665388816899"
+                    alt="payment"
+                  />
+                </li>
+              </ul>
+            </div>
+            <div class="col-footer">
+              <h3>Kết nối với chúng tôi</h3>
+              <ul class="list-footer-third">
+                <li class="item-footer">
+                  <a class="logo-contact">
+                    <ion-icon class="icon-tw" name="logo-twitter"></ion-icon>
+                  </a>
+                </li>
+                <li class="item-footer">
+                  <a class="logo-contact">
+                    <ion-icon class="icon-fb" name="logo-facebook"></ion-icon>
+                  </a>
+                </li>
+                <li class="item-footer">
+                  <a class="logo-contact">
+                    <ion-icon class="icon-ins" name="logo-instagram"></ion-icon>
+                  </a>
+                </li>
+                <li class="item-footer">
+                  <a class="logo-contact">
+                    <ion-icon class="icon-ytb" name="logo-youtube"></ion-icon>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#" class="back-to-up">
+        <ion-icon name="chevron-up-circle-sharp"></ion-icon>
+      </a>
+    </footer>
+  </body>
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+  ></script>
+  <script src="js/swiper-bundle.min.js"></script>
+  <script src="js/product.js"></script>
+  <script src="js/index.js"></script>
+</html>
