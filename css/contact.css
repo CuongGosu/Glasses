@@ -3,6 +3,10 @@
 }
 .section-form-contact {
   margin-top: 5rem;
+  position: relative;
+}
+.form-contact {
+  width: 50%;
 }
 .title-form {
   font-size: 1.8rem;
@@ -13,7 +17,7 @@
 .form-group {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 100%;
   gap: 2rem;
 }
 .form-group label {
@@ -45,4 +49,28 @@
 .form-submit:hover {
   background-color: #fff;
   color: #428bca;
+}
+
+#info-contact {
+  padding-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.flex {
+  display: flex;
+  gap: 1rem;
+}
+.icon-contact {
+  color: #428bca;
+  font-size: 1.6rem;
+}
+.tel-contact a {
+  font-size: 1.4rem;
+  color: #333;
+  text-decoration: none;
+}
+#map-address {
+  height: 25rem;
+  width: 55rem;
 }

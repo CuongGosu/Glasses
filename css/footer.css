@@ -1,0 +1,130 @@
+/***************************************/
+/* FOOTER */
+/***************************************/
+
+.footer {
+  margin-top: 7rem;
+}
+.mid-footer {
+  background-color: #f3f3f3;
+  padding-top: 2rem;
+  width: 100%;
+}
+.col-footer:nth-child(1) {
+  display: flex;
+  justify-content: space-around;
+}
+.list-info-help {
+  list-style: none;
+}
+.list-info-help li {
+  margin-bottom: 2rem;
+}
+.link-info-help {
+  color: #3399d2;
+  text-decoration: none;
+  font-size: 1.4rem;
+}
+.link-info-help:hover {
+  text-decoration: underline;
+  color: #333;
+}
+.col-footer h3 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+.list-footer-second .item-footer p {
+  font-size: 1.6rem;
+  font-weight: 500;
+  display: block;
+}
+.list-footer-second .item-footer a {
+  text-decoration: none;
+  display: block;
+  color: red;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+}
+.list-footer-second .item-footer a:hover {
+  color: #333;
+}
+.address {
+  display: block;
+  margin-top: 0.5rem;
+  font-style: normal;
+  font-size: 1.3rem;
+}
+.list-footer-second,
+.list-footer-third {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+}
+.list-footer-second {
+  flex-direction: column;
+}
+.list-footer-second li {
+  width: fit-content;
+}
+.div-contact {
+  display: block;
+  margin-top: 2rem;
+}
+.item-footer > .logo-contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  padding: 1rem;
+}
+.item-footer:nth-child(1) > .logo-contact {
+  background-color: #55acee;
+  border: 1px solid #55acee;
+}
+.item-footer:nth-child(2) > .logo-contact {
+  background-color: #3b5998;
+  border: 1px solid #3b5998;
+}
+.item-footer:nth-child(3) > .logo-contact {
+  background-color: #dd4b39;
+  border: 1px solid #dd4b39;
+}
+.item-footer:nth-child(4) > .logo-contact {
+  background-color: #bb0000;
+  border: 1px solid #bb0000;
+}
+.item-footer > .logo-contact:hover {
+  background-color: #fff;
+  cursor: pointer;
+}
+.item-footer:nth-child(1) > .logo-contact:hover ion-icon {
+  fill: #55acee;
+}
+.item-footer:nth-child(2) > .logo-contact:hover ion-icon {
+  fill: #3b5998;
+}
+.item-footer:nth-child(3) > .logo-contact:hover ion-icon {
+  fill: #dd4b39;
+}
+.item-footer:nth-child(4) > .logo-contact:hover ion-icon {
+  fill: #bb0000;
+}
+.logo-contact ion-icon {
+  width: 2rem;
+  height: 2rem;
+  fill: #fff;
+}
+.list-footer-second {
+  position: relative;
+}
+#mini_map {
+  position: absolute;
+  pointer-events: none;
+  visibility: hidden;
+  bottom: 0;
+  right: 0;
+  height: 15rem;
+  width: 20rem;
+}

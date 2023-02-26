@@ -1,0 +1,11 @@
+h1 {
+  font-size: 3.5rem;
+  margin-top: 3rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+.content-intro p {
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}

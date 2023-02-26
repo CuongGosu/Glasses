@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>footer</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+      integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+      crossorigin=""
+    />
+
+    <link href="/Glasses/css/general.css" rel="stylesheet" />
+    <link href="/Glasses/css/footer.css" rel="stylesheet" />
+  </head>
+  <body>
+    <footer class="footer">
+      <div class="mid-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-footer">
+              <ul class="list-info-help">
+                <li>
+                  <a class="link-info-help" href="#">Giới thiệu về công ty</a>
+                </li>
+                <li>
+                  <a class="link-info-help" href="#">Câu hỏi thường gặp</a>
+                </li>
+                <li>
+                  <a class="link-info-help" href="#">Chính sách bảo mật</a>
+                </li>
+                <li>
+                  <a class="link-info-help" href="#">Chính sách đổi trả</a>
+                </li>
+                <li>
+                  <a class="link-info-help" href="#">Chính sách bồi hoàn</a>
+                </li>
+              </ul>
+              <ul class="list-info-help">
+                <li>
+                  <a class="link-info-help" href="#">Đăng ký nhận bản tin</a>
+                </li>
+                <li>
+                  <a class="link-info-help" href="#">Tin khuyến mãi</a>
+                </li>
+                <li>
+                  <a class="link-info-help" href="#">Hướng dẫn mua hàng</a>
+                </li>
+                <li>
+                  <a class="link-info-help" href="#">Phương thức vận chuyển</a>
+                </li>
+                <li>
+                  <a class="link-info-help" href="#">Thông tin bảo hành</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-footer">
+              <h3>Hỗ trợ khách hàng</h3>
+              <ul class="list-footer-second">
+                <li class="item-footer">
+                  <p>Tư vấn mua hàng (Miễn phí)</p>
+                  <a href="#" class="tel">1900 6750</a>
+                </li>
+                <li class="item-footer">
+                  <p>Hỗ trợ kỹ thuật</p>
+                  <a href="#" class="tel">1900 6650</a>
+                </li>
+                <li class="item-footer">
+                  <p>Góp ý, khiếu nại dịch vụ (8h00-22h00)</p>
+                  <a href="#" class="tel">1900 6550</a>
+                </li>
+                <li class="item-footer">
+                  <p>Địa chỉ liên hệ</p>
+                  <span class="address address-map" href="#">
+                    <ion-icon name="location-sharp"></ion-icon>
+                    03 Lý Văn Phức, Đà Nẵng, Việt Nam
+                  </span>
+                </li>
+                <div id="mini_map"></div>
+              </ul>
+            </div>
+            <div class="col-footer">
+              <h3>Hình thức thanh toán</h3>
+              <ul class="list-footer-third">
+                <li class="item-footer">
+                  <img
+                    src="https://bizweb.dktcdn.net/100/332/764/themes/880395/assets/img_pay_1.png?1665388816899"
+                    alt="payment"
+                  />
+                </li>
+                <li class="item-footer">
+                  <img
+                    src="https://bizweb.dktcdn.net/100/332/764/themes/880395/assets/img_pay_2.png?1665388816899"
+                    alt="payment"
+                  />
+                </li>
+                <li class="item-footer">
+                  <img
+                    src="https://bizweb.dktcdn.net/100/332/764/themes/880395/assets/img_pay_3.png?1665388816899"
+                    alt="payment"
+                  />
+                </li>
+                <li class="item-footer">
+                  <img
+                    src="https://bizweb.dktcdn.net/100/332/764/themes/880395/assets/img_pay_4.png?1665388816899"
+                    alt="payment"
+                  />
+                </li>
+                <li class="item-footer">
+                  <img
+                    src="https://bizweb.dktcdn.net/100/332/764/themes/880395/assets/img_pay_5.png?1665388816899"
+                    alt="payment"
+                  />
+                </li>
+              </ul>
+              <h3 class="div-contact">Kết nối với BookBuy</h3>
+              <ul class="list-footer-third">
+                <li class="item-footer">
+                  <a class="logo-contact">
+                    <ion-icon class="icon-tw" name="logo-twitter"></ion-icon>
+                  </a>
+                </li>
+                <li class="item-footer">
+                  <a class="logo-contact">
+                    <ion-icon class="icon-fb" name="logo-facebook"></ion-icon>
+                  </a>
+                </li>
+                <li class="item-footer">
+                  <a class="logo-contact">
+                    <ion-icon class="icon-ins" name="logo-instagram"></ion-icon>
+                  </a>
+                </li>
+                <li class="item-footer">
+                  <a class="logo-contact">
+                    <ion-icon class="icon-ytb" name="logo-youtube"></ion-icon>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#" class="back-to-up">
+        <ion-icon name="chevron-up-circle-sharp"></ion-icon>
+      </a>
+    </footer>
+  </body>
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- leaflet -->
+  <script
+    src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+    integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+    crossorigin=""
+  ></script>
+  <script>
+    // MINI MAP
+    const addressMap = document.querySelector('.address-map');
+    const miniMap = document.querySelector('#mini_map');
+    addressMap.addEventListener('mouseenter', () => {
+      miniMap.style.visibility = 'visible';
+      miniMap.style.pointerEvents = 'auto';
+    });
+    miniMap.addEventListener('mouseenter', () => {
+      miniMap.style.visibility = 'visible';
+      miniMap.style.pointerEvents = 'auto';
+    });
+    addressMap.addEventListener('mouseleave', () => {
+      miniMap.style.visibility = 'hidden';
+      miniMap.style.pointerEvents = 'none';
+    });
+    miniMap.addEventListener('mouseleave', () => {
+      miniMap.style.visibility = 'hidden';
+      miniMap.style.pointerEvents = 'none';
+    });
+
+    $(document).ready(function () {
+      var mapObj = null;
+      var defaultCoord = [15.986664203108441, 108.27116211305282]; // coord mặc định, Hà Nội
+      var zoomLevel = 14.5; // Mức phóng to bản đồ
+      var mapConfig = {
+        attributionControl: false, // để ko hiện watermark nữa, nếu bị liên hệ đòi thì nhớ open nha
+        center: defaultCoord, // vị trí map mặc định hiện tại
+        zoom: zoomLevel,
+      };
+
+      mapObj = L.map('mini_map', mapConfig);
+
+      // thêm tile để map có thể hoạt động, xài free từ OSM
+      L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        attribution:
+          '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+      }).addTo(mapObj);
+
+      // Add marker
+      var marker_coord = [15.986664203108441, 108.27116211305282]; // Toạ độ marker
+      L.marker(marker_coord).addTo(mapObj);
+    });
+  </script>
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+  ></script>
+</html>
