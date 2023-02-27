@@ -72,5 +72,21 @@
         "Sản phẩm mới nhất của dòng kính kiểu dáng aviator kinh điển , kính có Kiểu dáng, thân gọng  bằng thép chắc chắn, nước mạ vàng nhạt bề bỉ, kiểu dáng kính thời trang mới nhất, chữ phun sắc nét bền bỉ, áp dụng nhiều công nghệ cao cấp trên mắt như."
       ]
     }
+  ],
+  "account": [
+    {
+      "id": "001",
+      "firstName": "Trương Bá",
+      "lastName": "Nhật Hoàng",
+      "userName": "banhathoang01@gmail.com",
+      "password": "1234qwer"
+    },
+    {
+      "id": "002",
+      "firstName": "Hoàng Ngọc",
+      "lastName": "Quốc Cường",
+      "userName": "hoangngocquoccuong@gmail.com",
+      "password": "1234qwer"
+    }
   ]
 }

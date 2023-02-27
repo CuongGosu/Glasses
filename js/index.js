@@ -187,3 +187,5 @@ $(document).ready(function () {
   var marker_coord = [15.986664203108441, 108.27116211305282]; // Toạ độ marker
   L.marker(marker_coord).addTo(mapObj);
 });
+
+// check user
