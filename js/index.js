@@ -54,10 +54,6 @@ var swiperTab = new Swiper('.tab-product', {
     clickable: true,
     dynamicBullets: true,
   },
-  // navigation: {
-  //   nextEl: '.swiper-button-next',
-  //   prevEl: '.swiper-button-prev',
-  // },
 });
 var swiperProduct = new Swiper('.index-product', {
   slidesPerView: 3,
@@ -125,24 +121,6 @@ window.addEventListener('scroll', () => {
   } else {
     toTop.classList.remove('top-active');
   }
-});
-// TAB SELECTION
-const tabLinks = document.querySelectorAll('.title-link-tap');
-const tabItems = document.querySelectorAll('.tab-product');
-tabLinks.forEach((link) => {
-  link.addEventListener('click', () => {
-    tabLinks.forEach((link) => link.classList.remove('active'));
-    link.classList.add('active');
-    const selectedTab = link.dataset.tab;
-    tabItems.forEach((item) => {
-      item.classList.remove('current');
-      item.style.display = 'none';
-      console.log(item.id + ' va ' + selectedTab);
-      if (item.id == selectedTab) {
-        item.classList.add('current');
-      }
-    });
-  });
 });
 // MINI MAP
 const addressMap = document.querySelector('.address-map');
