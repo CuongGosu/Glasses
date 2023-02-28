@@ -24,7 +24,6 @@ var swiperCategory = new Swiper('.category-data-slicks', {
   loop: true,
   loopFillGroupWithBlank: true,
   grabCursor: 'true',
-
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
@@ -55,10 +54,10 @@ var swiperTab = new Swiper('.tab-product', {
     clickable: true,
     dynamicBullets: true,
   },
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
+  // navigation: {
+  //   nextEl: '.swiper-button-next',
+  //   prevEl: '.swiper-button-prev',
+  // },
 });
 var swiperProduct = new Swiper('.index-product', {
   slidesPerView: 3,
