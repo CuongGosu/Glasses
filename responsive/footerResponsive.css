@@ -1,0 +1,22 @@
+@media (min-width: 741px) and (max-width: 800px){
+    .list-info-help {
+        margin-left: 1.5rem;
+    }
+    .list-info-help li {
+        margin-bottom: 1.5rem;
+    }
+    .row {
+        gap: 2rem;
+    }
+}
+@media (max-width: 740px){
+    .list-info-help {
+        margin-left: 1rem;
+    }
+    .list-info-help li {
+        margin-bottom: 1rem;
+    }
+    .row {
+        gap: 1.5rem;
+    }
+}

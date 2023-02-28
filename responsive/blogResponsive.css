@@ -1,0 +1,30 @@
+@media  (max-width: 999px) and (min-width: 740px){
+    .content-blog {
+        padding: 3rem 2rem 0.5rem 2rem;
+        min-height: 20rem;
+    }
+    .content-blog p {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+}
+    .post-day {
+        font-size: 1.2rem;
+        width: 85px;
+        height: 32px;
+    }
+}
+@media (max-width: 740px){
+    .content-blog {
+        padding: 3rem 2rem 0.5rem 2rem;
+        min-height: 20rem;
+    }
+    .content-blog p {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+}
+    .post-day {
+        font-size: 1.2rem;
+        width: 85px;
+        height: 32px;
+    }
+}
