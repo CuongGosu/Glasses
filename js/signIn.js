@@ -22,6 +22,7 @@ function Validator(formSelector) {
           });
   
           if (equal) {
+            localStorage.setItem("user",formInputElement.username);
             alert("Đăng nhập thành công!");
             window.location.replace("index.html");
         }
