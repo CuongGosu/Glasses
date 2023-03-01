@@ -176,6 +176,7 @@
   width: 75%;
   height: auto;
   object-fit: cover;
+  max-width: 109px;
 }
 .info-detail .item-product .price-box {
   margin-bottom: 2rem;

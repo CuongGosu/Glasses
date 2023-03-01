@@ -36,13 +36,11 @@ function checkType(productsType) {
 }
 function renderProductTab(products) {
   products.forEach((product) => {
-    console.log(product.type);
     product.type.forEach((productType) => {
       let idTabSelection = checkType(productType);
       let html_ItemProduct = document.querySelector(
         `#tab-selection_${idTabSelection} .swiper-wrapper`
       );
-      console.log(product.img);
       html_ItemProduct.insertAdjacentHTML(
         'beforeend',
         `
