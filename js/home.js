@@ -80,6 +80,7 @@ function renderProductTab(product) {
     );
   });
 }
+
 function renderProductGender(product) {
   var genderWrappers = [];
   genderWrappers['man'] = document.querySelector(
