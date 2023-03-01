@@ -76,8 +76,8 @@ var swiperMoreChoice = new Swiper('.product-choice-swiper', {
   },
   spaceBetween: 30,
   pagination: {
-    // el: ".swiper-pagination",
-    // clickable: true,
+    el: '.swiper-pagination',
+    clickable: true,
   },
 });
 var swiperBlog = new Swiper('.swiper-blog-container', {
@@ -164,5 +164,3 @@ $(document).ready(function () {
   var marker_coord = [15.986664203108441, 108.27116211305282]; // Toạ độ marker
   L.marker(marker_coord).addTo(mapObj);
 });
-
-// check user

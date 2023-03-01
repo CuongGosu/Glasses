@@ -17,38 +17,51 @@ tabLinks.forEach((link) => {
 });
 // ProductAPI
 var productAPI = 'http://localhost:3000/product';
+var products = [];
 function start() {
-  getProductApi(renderProductTab);
+  getProductApi(renderProduct);
 }
 async function getProductApi(callback) {
   fetch(productAPI)
     .then((response) => {
       return response.json();
     })
-    .then(callback);
+    .then((data) => {
+      products = data;
+      callback(products);
+    });
 }
-function checkType(productsType) {
-  if (productsType == 'new') return 1;
-  else if (productsType == 'sunglasses') return 2;
-  else if (productsType == 'meta2022') return 3;
-  else if (productsType == 'hot') return 4;
-  return 5;
-}
-function renderProductTab(products) {
+const productTypes = {
+  new: 1,
+  sunglasses: 2,
+  meta2022: 3,
+  hot: 4,
+  sale: 5,
+};
+function renderProduct(products) {
   products.forEach((product) => {
-    console.log(product.type);
-    product.type.forEach((productType) => {
-      let idTabSelection = checkType(productType);
-      let html_ItemProduct = document.querySelector(
-        `#tab-selection_${idTabSelection} .swiper-wrapper`
-      );
-      console.log(product.img);
-      html_ItemProduct.insertAdjacentHTML(
-        'beforeend',
-        `
+    renderProductTab(product);
+    renderProductGender(product);
+    renderProductChoice(product);
+  });
+}
+function renderProductTab(product) {
+  var tabSelectionWrappers = [];
+  for (var i = 1; i <= 5; i++) {
+    tabSelectionWrappers[i] = document.querySelector(
+      `#tab-selection_${i} .swiper-wrapper`
+    );
+  }
+  product.type.forEach((productType) => {
+    let idTabSelection = productTypes[productType];
+    let html_ItemProduct = tabSelectionWrappers[idTabSelection];
+    html_ItemProduct.insertAdjacentHTML(
+      'beforeend',
+      `
       <div class="item-product swiper-slide">
         <div class="product-thumbnail">
-          <img src="${product.img}" alt="${product.name}" class="img-thumb" />
+          <img src="${product.img}"
+           data-src="${product.img}" alt="${product.name}" class="img-thumb" />
           <div class="product-action">
             <div class="btn-card">
               <ion-icon name="cart"></ion-icon>
@@ -60,12 +73,70 @@ function renderProductTab(products) {
         </div>
         <div class="product-info">
           <a class="product-name" href="#">${product.name}</a>
-          <div class="price-box">${product.price}</div>
+          <div class="price-box">${product.price} ₫</div>
         </div>
       </div>
     `
-      );
-    });
+    );
   });
+}
+function renderProductGender(product) {
+  var genderWrappers = [];
+  genderWrappers['man'] = document.querySelector(
+    `#products-man .swiper-wrapper`
+  );
+  genderWrappers['women'] = document.querySelector(
+    `#products-women .swiper-wrapper`
+  );
+  product.gender.forEach((productGender) => {
+    let html_ItemProduct = genderWrappers[productGender];
+    html_ItemProduct.insertAdjacentHTML(
+      'beforeend',
+      `
+      <div class="item-product swiper-slide">
+        <div class="product-thumbnail">
+          <img src="${product.img}"
+           data-src="${product.img}" alt="${product.name}" class="img-thumb" />
+          <div class="product-action">
+            <div class="btn-card">
+              <ion-icon name="cart"></ion-icon>
+            </div>
+            <div class="btn-view">
+              <ion-icon name="eye"></ion-icon>
+            </div>
+          </div>
+        </div>
+        <div class="product-info">
+          <a class="product-name" href="#">${product.name}</a>
+          <div class="price-box">${product.price} ₫</div>
+        </div>
+      </div>
+    `
+    );
+  });
+}
+function renderProductChoice(product) {
+  const productsWrapper = document.querySelector('.list-product_choice');
+  const productHTML = `
+    <div class="item-product_choice swiper-slide">
+      <div class="product-thumbnail">
+        <img src="${product.img}"
+         data-src="${product.img}" alt="${product.name}" class="img-thumb" />
+        <div class="product-action">
+          <div class="btn-card">
+            <ion-icon name="cart"></ion-icon>
+          </div>
+          <div class="btn-view">
+            <ion-icon name="eye"></ion-icon>
+          </div>
+        </div>
+      </div>
+      <div class="product-info">
+        <a class="product-name" href="#">${product.name}</a>
+        <div class="price-box">${product.price} ₫</div>
+      </div>
+    </div>
+  `;
+  productsWrapper.insertAdjacentHTML('beforeend', productHTML);
 }
 start();
