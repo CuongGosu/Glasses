@@ -1,38 +1,26 @@
-const express = require('express');
-const app = express();
-const path = require('path');
-const AccountModel = require
 
-function getCookie(cname) {
-    let name = cname + "=";
-    let decodedCookie = decodeURIComponent(document.cookie);
-    let ca = decodedCookie.split(';');
-    for(let i = 0; i <ca.length; i++) {
-      let c = ca[i];
-      while (c.charAt(0) == ' ') {
-        c = c.substring(1);
-      }
-      if (c.indexOf(name) == 0) {
-        return c.substring(name.length, c.length);
-      }
-    }
-    return "";
-  }
-  function setCookie(cname, cvalue, exdays) {
-    const d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    let expires = "expires="+ d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-  }
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCm2QJLmBu5Vy6Qs8uSGiPJhTYadIf6Vpc",
+  authDomain: "glasses-store-fd757.firebaseapp.com",
+  projectId: "glasses-store-fd757",
+  storageBucket: "glasses-store-fd757.appspot.com",
+  messagingSenderId: "882652660321",
+  appId: "1:882652660321:web:e17abc2cde7135fba72020",
+  measurementId: "G-5XNB6Q8Q3L"
+};
 
-app.get('/html/FormSign*',(req,res,next)=>{
-    res.sendFile(path.join(__dirname, 'html/FormSignIn.html'))
-})
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);  
 
-app.post('/',(req,res,next=>{
-  var username =  req.body.username;
-  var password = req.body.password;
-}))
-
-app.listen(3000);
+var port = 1000
+app.listen(port);
+console.log("server is running at port: ",port);
