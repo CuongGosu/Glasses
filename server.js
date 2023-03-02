@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const AccountModel = require
 
 function getCookie(cname) {
     let name = cname + "=";
@@ -25,6 +26,13 @@ function getCookie(cname) {
   }
 
 
-app.get('/',(req,res,next)=>{
-    res.sendFile(path.join(__dirname, 'html/index.html'))
+app.get('/html/FormSign*',(req,res,next)=>{
+    res.sendFile(path.join(__dirname, 'html/FormSignIn.html'))
 })
+
+app.post('/',(req,res,next=>{
+  var username =  req.body.username;
+  var password = req.body.password;
+}))
+
+app.listen(3000);
