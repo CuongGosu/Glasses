@@ -31,11 +31,10 @@ function POST(data){
       var pass = document.querySelector("#password").value;
       var confirmPass = document.querySelector("#Confirm-password").value;
       var firstName = document.querySelector("#firstName").value;
-      var lastName = document.querySelector("#lastName").value;
-      
+      var lastName = document.querySelector("#lastName").value;      
      if(pass =="" || userName=="" || firstName=="" || lastName=="") alert("Thiếu thông tin đăng ký");
      else if(confirmPass != pass) alert("password phải trùng với Confirm password");
-      else if(!checkUserName(".Sign-Up-Form")) alert("username đã có người sử dụng");
+      else if(checkUserName(userName)) alert("tên đăng nhập đã bị trùng");
         else {
             var id = Math.floor(Math.random() * 100);
           var regisData ={
@@ -50,28 +49,34 @@ function POST(data){
     }
   }
 //check username trùng
-function checkUserName(form){
-  var formElement = document.querySelector(form);
-  var formInputElement = {};
-  var inputElements = formElement.querySelector("#username");
-  var btn = document.querySelector(".register-btn");
-  btn.onclick = () =>{
-    for(var input of inputElements){
-      formInputElement[input.username] = input.value;
-    }
-    fetch(API)
-      .then(res => res.json())
-      .then(database => {
-        const equal = database.find(data =>{
-          if(data.id == formInputElement.id) return true;
-          return false;
-        })
-        if(equal)
-        return true;
+function checkUserName(username){
+  fetch(API)
+    .then(res => res.json())
+    .then((database) => {
+      const equal = database.find(data =>{
+        if(data.userName == username) 
+          return true;
         return false;
-      })    
-  }  
+      })
+      if(equal)
+      return true;
+    else return false; 
+      })     
 }
-
-
   addDataRegister();
+
+
+
+
+
+
+
+
+
+
+
+  //////////////////////////////////////////////////////
+  import axios from 'axios';
+  export default axios.create({
+    baseURL: "https://glasses-store-fd757-default-rtdb.asia-southeast1.firebasedatabase.app/"
+  })
