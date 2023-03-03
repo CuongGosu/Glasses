@@ -31,7 +31,7 @@
         <label for="password">Confirm password</label>
         <input type="password" placeholder="Confirm password" id="Confirm-password">
 
-        <button class="register-btn" type="submit">Sign up</button>
+        <button class="register-btn" type="submit" id="register-btn">Sign up</button>
         <div class="social">
           <div class="go"><i class="fab fa-google"></i>  Google</div>
           <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
@@ -42,6 +42,25 @@
         </div>
     </form>
 </body>
-<script src="/js/signUp.js"></script>
+<!-- <script type="module" src="../js/signUp.js"></script> -->
+<script type="module" src="/server.js"></script>
 
+<!--//////////////////////////////////////////////////////////////////-->
+<script>
+ let form = document.querySelector('.Sign-Up-Form');
+ form.addEventListener('submit',(e)=>{
+    e.preventDefault();
+    let payload = {};
+    let inputs = document.querySelectorAll('input');
+    for(let i=0; i<inputs.length-1; i++){      
+        payload[inputs[i].id] = inputs[i].value;
+    }
+    let xhr = new XMLHttpRequest();
+    xhr.open('POST','/');
+    xhr.setRequestHeader('Content-Type','application/json');
+    // console.log(payload);
+    let payloadString = JSON.stringify(payload);
+    xhr.send(payloadString);
+ })
+</script> 
 </html>
