@@ -1,15 +1,59 @@
+const axios = require('axios');
+const http = require('http');
+const fs = require('fs');
+const StringDecoder = require('string_decoder').StringDecoder;
+const Postfirebase = require('./js/firebase');
 
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+const hostname = '127.0.0.1';
+const port = '3000';
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// sign up
+
+function POST(data){
+  Postfirebase.post('/account.json',data)
+    .then(()=>{
+      console.log("Đăng ký thành công");
+    })
+    .catch((err)=>{
+      console.log(err);
+    })
+  }
+
+fs.readFile(__dirname+'/html/FormSignUp.html','utf-8',(err,data)=>{
+  const server = http.createServer((req,res)=>{
+    let buffer = "";
+    let decocder = new StringDecoder('utf-8');
+
+    req.on('data',(data)=>{
+      // console.log(data);
+      buffer = buffer + decocder.write(data);
+      console.log(buffer);
+      let dataPost =  JSON.parse(buffer);
+      console.log(dataPost);
+      POST(dataPost);
+    })
+
+    req.on('end',()=>{
+      buffer = buffer + decocder.end();
+    })
+    res.statusCode = 200 //success
+    res.setHeader('Content-Type','html');
+    res.end(data);
+  })
+
+  server.listen(port, hostname, ()=>{
+    console.log(`server is running at: http://${hostname}:${port}/`);
+  })
+})
+
+const { initializeApp } = require('firebase/app');
+const { getAnalytics } = require("firebase/analytics");
+const {getDatabase, ref, get, set, child, update, remove} = require("firebase/database")
+
 const firebaseConfig = {
   apiKey: "AIzaSyCm2QJLmBu5Vy6Qs8uSGiPJhTYadIf6Vpc",
   authDomain: "glasses-store-fd757.firebaseapp.com",
+  databaseURL: "https://glasses-store-fd757-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "glasses-store-fd757",
   storageBucket: "glasses-store-fd757.appspot.com",
   messagingSenderId: "882652660321",
@@ -17,10 +61,18 @@ const firebaseConfig = {
   measurementId: "G-5XNB6Q8Q3L"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);  
-
-var port = 1000
-app.listen(port);
-console.log("server is running at port: ",port);
+const db = getDatabase();
+const dbRef = ref(getDatabase());
+get(child(dbRef,`account`))
+  .then((snapshot)=>{
+    if(snapshot.exists()){
+      console.log(snapshot.val());
+    }
+    else{
+      console.log("không có data")
+    }
+  })
+  .catch((err)=>{
+    console.error(err);
+  })

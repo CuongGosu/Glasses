@@ -1,5 +1,21 @@
 var API = "http://localhost:3000/account";
-//sign up
+
+
+
+
+
+
+// const { getDatabase, ref, set } = require("firebase/database");
+// const { response } = require("express");
+// const jsdom = require("jsdom");
+// const { JSDOM } = jsdom;
+// global.document = new JSDOM(``).window.document;
+// var btn = global.document.getElementById('register-btn');
+// console.log(btn);
+
+
+
+// sign up = fetch()
 function POST(data){
     var response  = {
       method: 'POST', 
@@ -23,18 +39,19 @@ function POST(data){
       })
   }
 
+// post data to database
   function addDataRegister(){
-    var regisForm = document.querySelector(".Sign-Up-Form");
+    var regisForm = global.document.querySelector(".Sign-Up-Form");
     regisForm.onsubmit = (e) => {
       e.preventDefault();
-      var userName = document.querySelector("#username").value;
-      var pass = document.querySelector("#password").value;
-      var confirmPass = document.querySelector("#Confirm-password").value;
-      var firstName = document.querySelector("#firstName").value;
-      var lastName = document.querySelector("#lastName").value;      
+      var userName = global.document.querySelector("#username").value;
+      var pass = global.document.querySelector("#password").value;
+      var confirmPass = global.document.querySelector("#Confirm-password").value;
+      var firstName = global.document.querySelector("#firstName").value;
+      var lastName = global.document.querySelector("#lastName").value;      
      if(pass =="" || userName=="" || firstName=="" || lastName=="") alert("Thiếu thông tin đăng ký");
      else if(confirmPass != pass) alert("password phải trùng với Confirm password");
-      else if(checkUserName(userName)) alert("tên đăng nhập đã bị trùng");
+      // else if(checkUserName(userName)) alert("tên đăng nhập đã bị trùng");
         else {
             var id = Math.floor(Math.random() * 100);
           var regisData ={
@@ -48,7 +65,9 @@ function POST(data){
           }    
     }
   }
-//check username trùng
+
+
+  //check username trùng
 function checkUserName(username){
   fetch(API)
     .then(res => res.json())
@@ -63,7 +82,8 @@ function checkUserName(username){
     else return false; 
       })     
 }
-  addDataRegister();
+
+addDataRegister();
 
 
 
@@ -73,10 +93,3 @@ function checkUserName(username){
 
 
 
-
-
-  //////////////////////////////////////////////////////
-  import axios from 'axios';
-  export default axios.create({
-    baseURL: "https://glasses-store-fd757-default-rtdb.asia-southeast1.firebasedatabase.app/"
-  })
