@@ -260,12 +260,12 @@ body {
 .menu-nav_item {
   height: 100%;
 }
-[more-link] {
+[data-more-link] {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.menu-nav_item[more-link]:hover .item-small,
+.menu-nav_item[data-more-link]:hover .item-small,
 .item-small:hover {
   display: block;
   z-index: 2;
@@ -374,11 +374,8 @@ body {
   transition: 0.3s;
   position: relative;
 }
-
 .item-product:hover {
-  border: 0.1px solid rgba(0, 0, 0, 0.05);
-  border-color: rgba(0, 0, 0, 0.12);
-  box-shadow: 0 0 0.8125rem 0 rgb(0, 0, 5%);
+  cursor: pointer;
 }
 .item-product:hover .img-thumb {
   opacity: 0.5;
