@@ -374,6 +374,12 @@ body {
   transition: 0.3s;
   position: relative;
 }
+
+.item-product:hover {
+  border: 0.1px solid rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.12);
+  box-shadow: 0 0 0.8125rem 0 rgb(0, 0, 5%);
+}
 .item-product:hover .img-thumb {
   opacity: 0.5;
 }
@@ -417,10 +423,13 @@ body {
   padding: 1.5rem 2rem;
 }
 .product-name {
+  display: block;
+  height: 4.2rem;
   font-size: 1.4rem;
-  font-weight: 400;
+  font-weight: 500;
   color: #333;
   text-decoration: none;
+  line-height: 1.5;
 }
 .product-name:hover {
   color: #428bca;
@@ -428,7 +437,7 @@ body {
 .price-box {
   font-size: 1.6rem;
   font-weight: 500;
-  margin-top: 2rem;
+  padding-top: 1rem;
   color: red;
 }
 

@@ -1,21 +1,4 @@
 var productAPI = 'http://localhost:3000/product';
-const itemList = document.querySelector('.view-products');
-const gridViewBtn = document.querySelector('.view-grid');
-const detailsViewBtn = document.querySelector('.view-detail');
-
-gridViewBtn.classList.add('active-btn');
-gridViewBtn.addEventListener('click', () => {
-  gridViewBtn.classList.add('active-btn');
-  detailsViewBtn.classList.remove('active-btn');
-  itemList.classList.remove('info-detail');
-});
-
-detailsViewBtn.addEventListener('click', () => {
-  detailsViewBtn.classList.add('active-btn');
-  gridViewBtn.classList.remove('active-btn');
-  itemList.classList.add('info-detail');
-});
-
 async function getProducts(cb) {
   fetch(productAPI)
     .then((res) => {
@@ -37,7 +20,7 @@ function renderProduct(product) {
   viewProduct.insertAdjacentHTML(
     'beforeend',
     `
-  <div class="item-product swiper-slide">
+  <div class="item-product">
   <div class="product-thumbnail">
     <img
       src="${product.img}"
@@ -68,6 +51,43 @@ function renderProduct(product) {
   `
   );
 }
+// *************************
+// **********SELECTION VIEW PRODUCTS******
+// *************************
+// ASIDE: list nav selection
+const tabLinks = document.querySelectorAll('.nav-item');
+const tabItems = document.querySelectorAll('.tab-product');
+tabLinks.forEach((link) => {
+  link.addEventListener('click', () => {
+    tabLinks.forEach((link) => link.classList.remove('active'));
+    link.classList.add('active');
+    const selectedTab = link.dataset.tab;
+    tabItems.forEach((item) => {
+      item.classList.remove('current');
+      item.style.display = 'none';
+      if (item.id == selectedTab) {
+        item.classList.add('current');
+      }
+    });
+  });
+});
+// VIEW MODE: grid-list
+const itemList = document.querySelector('.view-products');
+const gridViewBtn = document.querySelector('.view-grid');
+const detailsViewBtn = document.querySelector('.view-detail');
+
+gridViewBtn.classList.add('active-btn');
+gridViewBtn.addEventListener('click', () => {
+  gridViewBtn.classList.add('active-btn');
+  detailsViewBtn.classList.remove('active-btn');
+  itemList.classList.remove('info-detail');
+});
+
+detailsViewBtn.addEventListener('click', () => {
+  detailsViewBtn.classList.add('active-btn');
+  gridViewBtn.classList.remove('active-btn');
+  itemList.classList.add('info-detail');
+});
 
 ///sort
 function sortAZ() {

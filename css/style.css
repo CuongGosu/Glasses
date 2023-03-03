@@ -179,7 +179,6 @@
   display: none;
   height: 100%;
 }
-
 .tab-product .swiper-pagination {
   transform: translate(-50%, 120%) !important;
 }
@@ -278,9 +277,6 @@
 }
 .swiper-blog-container {
   margin-top: 5rem;
-}
-.swiper-slide {
-  position: relative;
 }
 .blog-thumbnail {
   min-height: 25.5rem;
