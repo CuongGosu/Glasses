@@ -602,6 +602,7 @@ body {
   font-size: 1.4rem;
   color: #fff;
   margin-right: 1rem;
+  text-decoration: none;
 }
 .home-page span {
   font-size: 1.4rem;
@@ -610,4 +611,7 @@ body {
 .children-page {
   color: #428bca;
   font-size: 1.4rem;
+}
+.home-page a:hover {
+  color: #3399d2;
 }

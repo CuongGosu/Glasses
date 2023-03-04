@@ -54,3 +54,10 @@
 .content-hot-news p {
   color: #919191;
 }
+.blog-thumbnail {
+  position: relative;
+}
+.post-day {
+  top: 100%;
+  bottom: 100%;
+}

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Glasses</title>
+    <title>ViewProduct</title>
     <link rel="stylesheet" href="../css/swiper-bundle.min.css" />
     <link
       rel="stylesheet"
@@ -13,8 +13,8 @@
       crossorigin=""
     />
     <link href="../css/general.css" rel="stylesheet" />
-    <link href="../css/contact.css" rel="stylesheet" />
     <link href="../css/footer.css" rel="stylesheet" />
+    <link href="../css/product.css" rel="stylesheet" />
     <link rel="stylesheet" href="../responsive/midHeaderResponsive.css" />
     <link rel="stylesheet" href="../responsive/footerResponsive.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -166,12 +166,12 @@
         </nav>
       </div>
     </header>
-    <main class="main">
+    <main>
       <section class="section-background">
         <div class="title-menu">
           <div class="container">
             <div class="title-page">
-              <h1>Liên hệ</h1>
+              <h1>Tất cả các sản phẩm</h1>
             </div>
             <ul class="bread-crumb">
               <li class="home-page">
@@ -179,73 +179,14 @@
                 <span>/</span>
               </li>
               <li class="children-page">
-                <a>Liên hệ</a>
+                <a>Tất cả các sản phẩm</a>
               </li>
             </ul>
           </div>
         </div>
       </section>
-      <section class="section-form-contact">
-        <div class="container row">
-          <form action="" method="POST" class="form-contact" id="form-1">
-            <h1 class="title-form">
-              Điền thông tin và nội dung tin nhắn dưới đây
-            </h1>
-            <div class="form-group">
-              <label for="fullname" class="form-label">Họ và tên</label>
-              <input
-                id="fullname"
-                name="fullname"
-                type="text"
-                placeholder="Họ và Tên*"
-                class="form-control"
-              />
-              <span class="form-message"></span>
-            </div>
-            <div class="form-group">
-              <label for="email" class="form-label">Email</label>
-              <input
-                id="email"
-                name="email"
-                type="text"
-                placeholder="Email*"
-                class="form-control"
-              />
-              <span class="form-message"></span>
-            </div>
-            <div class="form-group">
-              <label for="comment" title="Comment" class="form-label"
-                >Nội dung</label
-              >
-              <textarea
-                id="comment"
-                name="comment"
-                type="text"
-                placeholder="Nội dung*"
-                class="form-control"
-                rows="5"
-              ></textarea>
-
-              <span class="form-message"></span>
-            </div>
-            <button class="form-submit">Gửi tin nhắn cho chúng tôi</button>
-          </form>
-          <div id="info-contact">
-            <div class="tel-contact flex">
-              <ion-icon name="call" class="icon-contact"></ion-icon>
-              <a href="0843445456">0843445456</a>
-            </div>
-            <div class="tel-contact flex">
-              <ion-icon name="mail" class="icon-contact"></ion-icon>
-              <a href="0843445456">hoangngocquoccuong@gmail.com</a>
-            </div>
-            <div class="tel-contact flex">
-              <ion-icon name="location" class="icon-contact"></ion-icon>
-              <a href="0843445456">266 Đội Cấn, P Cống Vị, Q Ba Đình, Hà Nội</a>
-            </div>
-            <div id="map-address"></div>
-          </div>
-        </div>
+      <section class="section-wrap_background">
+        <div class="container"></div>
       </section>
     </main>
     <footer class="footer">
@@ -389,6 +330,7 @@
   ></script>
   <!-- AXIOS -->
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
   <script
     type="module"
     src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
@@ -398,16 +340,6 @@
     src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
   ></script>
   <script src="../js/swiper-bundle.min.js"></script>
-  <script src="../js/contact.js"></script>
   <script src="../js/index.js"></script>
-  <style>
-    html {
-      min-width: 740px;
-    }
-    @media (max-width: 1200px) {
-      .form-submit {
-        width: 100%;
-      }
-    }
-  </style>
+  <script src="../js/lazyload.js"></script>
 </html>
