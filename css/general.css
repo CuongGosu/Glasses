@@ -17,8 +17,7 @@ body {
 /* GENERAL REUSABLE COMPONENTS */
 /**************************/
 .container {
-  /* 1140px */
-  max-width: 121rem;
+  max-width: 120rem;
   padding: 0 3.5rem;
   margin: 0 auto;
 }
@@ -144,14 +143,13 @@ body {
   background-color: #f3f3f3;
   flex: 1;
   display: flex;
-  /* justify-content: center; */
+
   border-radius: 5px;
   position: relative;
 }
 .header-cart_text {
   display: flex;
-  gap: 5px;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   width: 100%;
   align-items: center;
   justify-content: center;
@@ -163,7 +161,8 @@ body {
   max-width: 100%;
   height: auto;
 }
-.header-cart p {
+.header-cart_text p {
+  font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -189,7 +188,6 @@ body {
 }
 .header-menu {
   margin-top: -1rem;
-  width: 100%;
   width: 100%;
   height: auto;
 }
@@ -259,6 +257,9 @@ body {
 }
 .menu-nav_item {
   height: 100%;
+}
+.menu-nav_item:hover {
+  color: #428bca;
 }
 [data-more-link] {
   display: flex;
