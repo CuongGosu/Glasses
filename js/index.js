@@ -1,28 +1,7 @@
 // CHUYỂN TRANG
 // Thêm event listener cho nút chuyển đổi trang
 // HEADER-MENU
-const menuNavItem = document.querySelectorAll('.menu-nav_item a');
-menuNavItem.forEach((linkItem) => {
-  linkItem.addEventListener('click', (event) => {
-    event.preventDefault();
-    const url = linkItem.getAttribute('href');
-    window.history.pushState({}, '', url);
-    loadPageContent(url);
-  });
-});
-function loadPageContent(url) {
-  axios
-    .get(url)
-    .then((response) => {
-      const container = document.querySelector('body');
-      // console.log(container);
-      container.innerHTML = response.data;
-    })
-    .catch((error) => {
-      console.log('???');
-      console.log(error);
-    });
-}
+
 var heroCarousel = new Swiper('.hero-data-carousel', {
   slidesPerView: 1,
   slidesPerGroup: 1,

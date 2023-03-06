@@ -6,13 +6,13 @@ function shortText(text, maxLength) {
   }
   return shortText;
 }
-
-async function getProducts(cb) {
-  fetch(productAPI)
-    .then((res) => {
-      return res.json();
-    })
-    .then(cb);
+async function getProducts(callback) {
+  try {
+    const response = await axios.get(productAPI);
+    callback(response.data);
+  } catch (error) {
+    console.log(error);
+  }
 }
 function renderListProduct() {
   getProducts((products) => {
@@ -109,9 +109,7 @@ function sortAZ() {
 }
 function renderSortAZ() {
   let defaultBtn = document.querySelector('.item-sort_default');
-  defaultBtn.addEventListener('click', () => {
-    console.log(1);
-  });
+  defaultBtn.addEventListener('click', () => {});
 }
 
 //start
@@ -120,6 +118,3 @@ function start() {
   renderSortAZ();
 }
 start();
-var array = ['b', 'c', 'a'];
-var a = array.sort();
-console.log(a);

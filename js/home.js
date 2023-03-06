@@ -22,14 +22,14 @@ function start() {
   getProductApi(renderProduct);
 }
 async function getProductApi(callback) {
-  fetch(productAPI)
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      products = data;
-      callback(products);
-    });
+  try {
+    const response = await axios.get(productAPI);
+    console.log(response);
+    products = response.data;
+    callback(products);
+  } catch (error) {
+    console.log(error);
+  }
 }
 const productTypes = {
   new: 1,

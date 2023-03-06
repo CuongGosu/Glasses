@@ -1,4 +1,4 @@
-const miniMap = document.querySelector('#map-address');
+const mapGoogle = document.querySelector('#map-address');
 $(document).ready(function () {
   var mapObj = null;
   var defaultCoord = [15.986664203108441, 108.27116211305282]; // coord mặc định, Hà Nội
