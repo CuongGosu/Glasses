@@ -24,7 +24,7 @@ function start() {
 async function getProductApi(callback) {
   try {
     const response = await axios.get(productAPI);
-    console.log(response);
+
     products = response.data;
     callback(products);
   } catch (error) {

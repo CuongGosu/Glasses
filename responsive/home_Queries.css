@@ -1,0 +1,325 @@
+/**************************/
+/* BELOW  1200px */
+/**************************/
+@media (max-width: 75em) {
+  html {
+    /* 9px / 16px  */
+    font-size: 56.25%;
+  }
+  .container {
+    max-width: 110rem;
+  }
+  .content-header {
+    gap: 2rem;
+  }
+  .header_search {
+    width: 45%;
+  }
+  .hero-slide img {
+    width: 108rem;
+    height: 30rem;
+  }
+  .category-box {
+    padding: 1rem 5rem 2rem;
+  }
+  .title-link-tab {
+    padding: 1.5rem 1.5rem;
+  }
+  .swiper-tab-container {
+    max-width: 74%;
+  }
+  .img-thumb {
+    max-height: 14.6rem;
+  }
+  .section-product,
+  .section-product-choice,
+  .section-blog,
+  .section-service,
+  .section-brand {
+    margin-top: 5rem;
+  }
+  .title-section-product {
+    margin-bottom: 3rem;
+  }
+  .product-choice-swiper,
+  .swiper-blog-container {
+    margin-top: 3rem;
+  }
+}
+/**************************/
+/* BELOW  1072px */
+/**************************/
+@media (max-width: 67em) {
+  .container {
+    max-width: 100rem;
+  }
+  .header_search {
+    width: 40%;
+  }
+  .hero-slide img {
+    width: 100rem;
+    height: 27rem;
+  }
+  .title-link-tab {
+    padding: 1.5rem 1rem;
+    gap: 1.5rem;
+  }
+  .img-thumb {
+    max-height: 13.1rem;
+  }
+  /* THÊM NHIỀU SỰ LỰA CHỌN */
+  .section-product-choice {
+    margin-top: 4rem;
+  }
+  .product-choice-swiper {
+    margin-top: 2rem;
+  }
+  .list-product_choice {
+    align-items: center;
+  }
+  .item-product_choice {
+    height: 100%;
+  }
+  .product-info {
+    padding: 0;
+  }
+  /* KIẾN THỨC VỀ KÍNH */
+  .section-blog {
+    margin-top: 4rem;
+  }
+  .swiper-blog-container {
+    margin-top: 3rem;
+  }
+  .col-service {
+    padding-right: 2rem;
+  }
+  .content-blog {
+    padding: 3rem 2rem 1rem 2rem;
+  }
+  /* BRAND */
+  .section-brand {
+    margin-top: 4rem;
+  }
+}
+/**************************/
+/* BELOW  1008px  MOBILE*/
+/**************************/
+@media (max-width: 63em) {
+  html {
+    /* 8px / 16px = 0.5 = 50% */
+    font-size: 50%;
+  }
+  .container {
+    max-width: 80rem;
+  }
+  .header_search {
+    width: 100%;
+  }
+  /* IMG BACKGROUND */
+  .hero-slide img {
+    width: 90rem;
+    height: 25rem;
+  }
+
+  /* TAB - PRODUCT */
+  .section-tab {
+    margin-top: 4rem;
+  }
+  .wrap-tab {
+    flex-direction: column;
+  }
+  .title-section-product {
+    margin-bottom: 2rem;
+  }
+  .selection-tab {
+    width: 100%;
+  }
+  .list-link-tab {
+    flex-direction: row;
+    border-bottom: 1px solid #ddd;
+    justify-content: start;
+    gap: 0;
+  }
+  .tab-link {
+    display: none;
+  }
+  .title-link-tab {
+    background-color: #fff;
+    color: #333;
+    padding-bottom: 3rem;
+    border-radius: 0;
+    flex: 1;
+    justify-content: center;
+  }
+  .active {
+    background-color: #fff;
+    color: #333;
+    border-bottom: 5px solid #428bca;
+    color: #428bca;
+  }
+  .active::before {
+    display: none;
+  }
+  .title-link-tab:hover {
+    background-color: #fff;
+    color: #428bca;
+  }
+  .title-link-tab:hover::before {
+    display: none;
+  }
+  .swiper-tab-container {
+    max-width: 100%;
+    margin-top: 2rem;
+  }
+  /* KÍNH NAM/Nữ */
+  .section-product {
+    margin-top: 4rem;
+  }
+  .hot-img-product {
+    display: none;
+  }
+  .col-product {
+    max-width: 100%;
+  }
+  /* BRAND */
+
+  .img-brand img {
+    object-fit: contain;
+    max-height: 4rem;
+    width: 100%;
+  }
+}
+/* BELOW 730px - PHONES */
+@media (max-width: 46em) {
+  .container {
+    max-width: 63rem;
+  }
+  /* IMG BACKGROUND */
+  .hero-slide img {
+    width: 70rem;
+    height: 20rem;
+  }
+  .category-title h2 {
+    font-size: 1.2rem;
+  }
+  .title-section-product,
+  .title-section {
+    font-size: 1.4rem;
+  }
+  .title-link-tab {
+    font-size: 1.2rem;
+    padding: 1rem 0 2rem 0;
+  }
+  .img-thumb {
+    max-height: 10.8rem;
+  }
+  /* BLOG */
+  .blog-thumbnail,
+  .content-blog .blog-thumbnail a img {
+    min-height: 21rem;
+  }
+  .post-day {
+    font-size: 1.2rem;
+    height: 25px;
+    line-height: 25px;
+  }
+  /* Kiến thức về kính */
+  .content-blog {
+    padding: 2rem 1rem 1rem 1rem;
+  }
+  /* SERVICE */
+  .section-service {
+    margin-top: 4rem;
+  }
+  .section-service .row {
+    gap: 0;
+  }
+  .service-title {
+    padding-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+  .price-box {
+    font-size: 1.4rem;
+  }
+  .product-name {
+    line-height: 1;
+  }
+}
+/* BELOW 672px - SMALL PHONES */
+@media (max-width: 42em) {
+  .container {
+    max-width: 55rem;
+    padding: 0 2rem;
+  }
+  .category-title {
+    font-size: 1.2rem;
+  }
+  .list-link-tab {
+    height: 5rem;
+  }
+  .price-box {
+    padding-top: 0;
+  }
+  .wrap-tab {
+    margin-top: 1rem;
+  }
+  .title-link-tab {
+    padding-bottom: 2rem;
+  }
+  .product-thumbnail {
+    max-height: 8.85rem;
+  }
+  .product-name {
+    font-size: 1.2rem;
+  }
+  .content-blog h3 a {
+    font-size: 1.3rem;
+  }
+  .content-blog a,
+  .content-blog p {
+    font-size: 1.2rem;
+  }
+  .service-title img {
+    height: 2rem;
+    width: auto;
+  }
+  .col-service {
+    padding-right: 1rem;
+  }
+  .service-des {
+    font-size: 1.2rem;
+  }
+  .item-product_choice {
+    margin-top: 0;
+  }
+  .product-name {
+    line-height: 1;
+  }
+}
+/* BELOW 400px - SMALL PHONES */
+@media (max-width: 25em) {
+  html {
+    font-size: 43.75%;
+  }
+  .title-section-product,
+  .title-section {
+    font-size: 1.3rem;
+  }
+  .section-blog .blog-thumbnail {
+    position: relative;
+  }
+  .post-day {
+    top: 100%;
+    font-size: 1.3rem;
+  }
+  .content-blog {
+    padding: 4rem 3rem;
+  }
+  .content-blog h3 a {
+    font-size: 1.4rem;
+  }
+  .content-blog a,
+  .content-blog p {
+    font-size: 1.3rem;
+  }
+}

@@ -1,7 +1,4 @@
-// CHUYỂN TRANG
-// Thêm event listener cho nút chuyển đổi trang
-// HEADER-MENU
-
+// SWIPER PRODUCTS
 var heroCarousel = new Swiper('.hero-data-carousel', {
   slidesPerView: 1,
   slidesPerGroup: 1,
@@ -33,20 +30,17 @@ var swiperCategory = new Swiper('.category-data-slicks', {
     prevEl: '.swiper-button-prev',
   },
   breakpoints: {
-    300: {
-      slidesPerView: 1,
+    1008: {
+      slidesPerView: 5,
     },
-    650: {
-      slidesPerView: 2,
-    },
-    750: {
-      slidesPerView: 3,
-    },
-    800: {
+    672: {
       slidesPerView: 4,
     },
-    950: {
-      slidesPerView: 5,
+    500: {
+      slidesPerView: 3,
+    },
+    300: {
+      slidesPerView: 3,
     },
   },
 });
@@ -74,14 +68,48 @@ var swiperProduct = new Swiper('.index-product', {
 });
 var swiperMoreChoice = new Swiper('.product-choice-swiper', {
   slidesPerView: 3,
+  spaceBetween: 20,
   grid: {
     rows: 2,
     fill: 'row',
   },
-  spaceBetween: 30,
   pagination: {
     el: '.swiper-pagination',
     clickable: true,
+  },
+  breakpoints: {
+    1008: {
+      slidesPerView: 3,
+      grid: {
+        rows: 2,
+        fill: 'row',
+      },
+      spaceBetween: 20,
+    },
+    672: {
+      slidesPerView: 2,
+      grid: {
+        rows: 2,
+        fill: 'row',
+      },
+      spaceBetween: 10,
+    },
+    500: {
+      slidesPerView: 2,
+      grid: {
+        rows: 2,
+        fill: 'row',
+        spaceBetween: 5,
+      },
+    },
+    100: {
+      slidesPerView: 2,
+      grid: {
+        rows: 2,
+        fill: 'row',
+        spaceBetween: 5,
+      },
+    },
   },
 });
 var swiperBlog = new Swiper('.swiper-blog-container', {
@@ -90,29 +118,43 @@ var swiperBlog = new Swiper('.swiper-blog-container', {
     el: '.swiper-pagination',
     clickable: true,
   },
+  breakpoints: {
+    1008: {
+      slidesPerView: 3,
+    },
+
+    400: {
+      slidesPerView: 2,
+    },
+
+    100: {
+      slidesPerView: 1,
+    },
+  },
 });
 var swiperBrand = new Swiper('.brand-container', {
-  slidesPerView: 1,
+  slidesPerView: 6,
+  spaceBetween: 20,
   breakpoints: {
-    '@0.00': {
-      slidesPerView: 2,
+    1200: {
+      slidesPerView: 6,
+      spaceBetween: 20,
+    },
+    1072: {
+      slidesPerView: 6,
       spaceBetween: 10,
     },
-    '@0.75': {
-      slidesPerView: 3,
-      spaceBetween: 10,
-    },
-    '@1.00': {
-      slidesPerView: 4,
-      spaceBetween: 10,
-    },
-    '@1.25': {
+    730: {
       slidesPerView: 5,
       spaceBetween: 10,
     },
-    '@1.50': {
-      slidesPerView: 6,
-      spaceBetween: 20,
+    672: {
+      slidesPerView: 5,
+      spaceBetween: 5,
+    },
+    300: {
+      slidesPerView: 4,
+      spaceBetween: 5,
     },
   },
 });
@@ -125,6 +167,12 @@ window.addEventListener('scroll', () => {
   } else {
     toTop.classList.remove('top-active');
   }
+});
+toTop.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
 });
 // MINI MAP
 const addressMap = document.querySelector('.address-map');
@@ -145,7 +193,6 @@ miniMap.addEventListener('mouseleave', () => {
   miniMap.style.visibility = 'hidden';
   miniMap.style.pointerEvents = 'none';
 });
-
 $(document).ready(function () {
   var mapObj = null;
   var defaultCoord = [15.986664203108441, 108.27116211305282]; // coord mặc định, Hà Nội
@@ -167,4 +214,46 @@ $(document).ready(function () {
   // Add marker
   var marker_coord = [15.986664203108441, 108.27116211305282]; // Toạ độ marker
   L.marker(marker_coord).addTo(mapObj);
+});
+
+// VIEW MOBILE
+// code cho kích thước mobile
+const btnOpenMenu = document.querySelector('.open-menu');
+const btnCloseMenu = document.querySelector('.close-menu');
+const bodyWeb = document.querySelector('body');
+const headerEl = document.querySelector('.header');
+btnOpenMenu.addEventListener('click', function () {
+  headerEl.classList.toggle('nav-open');
+  bodyWeb.style.overflow = 'hidden';
+});
+btnCloseMenu.addEventListener('click', function () {
+  headerEl.classList.toggle('nav-open');
+  bodyWeb.style.overflow = 'auto';
+});
+const menu1 = document.querySelector('.menu-nav-list_mobile');
+// menu child
+const moreLink = document.querySelectorAll('.icon-forward_cart');
+moreLink.forEach((listLink) => {
+  listLink.addEventListener('click', function () {
+    const itemSmall = listLink.closest('.menu-nav-item_mobile');
+    if (itemSmall != null) itemSmall.classList.toggle('active');
+    menu1.style.transform = 'translateX(-100%)';
+  });
+});
+const backMenuE = document.querySelectorAll('.link-sub_mobile .back-menu');
+backMenuE.forEach((backMenu) => {
+  backMenu.addEventListener('click', function () {
+    const itemSmall = backMenu.closest('.menu-nav-item_mobile');
+    if (itemSmall != null) itemSmall.classList.toggle('active');
+    menu1.style.transform = 'translateX(0)';
+  });
+});
+// footer child
+const footerMobile = document.querySelector('.footer-mobile');
+const moreInfo_Footer = document.querySelectorAll('.display-footer');
+moreInfo_Footer.forEach((listInfo) => {
+  listInfo.addEventListener('click', function () {
+    const subInfo = listInfo.closest('.row-footer');
+    if (subInfo != null) subInfo.classList.toggle('hidden-footer');
+  });
 });
