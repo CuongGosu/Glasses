@@ -9,10 +9,11 @@
   width: 50%;
 }
 .title-form {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 700;
   display: block;
   margin-bottom: 3rem;
+  line-height: 1.4;
 }
 .form-group {
   display: flex;
@@ -21,7 +22,8 @@
   gap: 2rem;
 }
 .form-group label {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
+  font-weight: 500;
 }
 .form-group input,
 #comment {
@@ -43,7 +45,7 @@
   transition: color 300ms ease-in-out 0s, background-color 300ms ease-in-out 0s,
     background-position 300ms ease-in-out 0s;
   font-weight: 400;
-  width: 50%;
+  width: 100%;
   position: relative;
 }
 .form-submit:hover {
@@ -63,10 +65,11 @@
 }
 .icon-contact {
   color: #428bca;
-  font-size: 1.6rem;
+  width: 2rem;
+  height: 2rem;
 }
 .tel-contact a {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   color: #333;
   text-decoration: none;
 }

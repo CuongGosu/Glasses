@@ -1,17 +1,20 @@
 /**************************/
-/* BELOW  1200px */
-/**************************/
-@media (max-width: 75em) {
-}
-/**************************/
-/* BELOW  1072px */
-/**************************/
-@media (max-width: 67em) {
-}
-/**************************/
 /* BELOW  1008px  MOBILE*/
 /**************************/
 @media (max-width: 63em) {
+  .row {
+    flex-direction: column;
+  }
+  .form-contact {
+    width: 100%;
+  }
+  #map-address {
+    width: 100%;
+    height: 30rem;
+  }
+  #info-contact {
+    padding-top: 2rem;
+  }
 }
 /**************************/
 /* BELOW 730px - PHONES */
@@ -22,6 +25,10 @@
 /* BELOW 672px - SMALL PHONES */
 /**************************/
 @media (max-width: 42em) {
+  #map-address {
+    width: 100%;
+    height: 25rem;
+  }
 }
 /**************************/
 /* BELOW 400px - SMALL PHONES */
