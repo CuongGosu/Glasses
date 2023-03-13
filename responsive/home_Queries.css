@@ -2,19 +2,6 @@
 /* BELOW  1200px */
 /**************************/
 @media (max-width: 75em) {
-  html {
-    /* 9px / 16px  */
-    font-size: 56.25%;
-  }
-  .container {
-    max-width: 110rem;
-  }
-  .content-header {
-    gap: 2rem;
-  }
-  .header_search {
-    width: 45%;
-  }
   .hero-slide img {
     width: 108rem;
     height: 30rem;
@@ -50,12 +37,6 @@
 /* BELOW  1072px */
 /**************************/
 @media (max-width: 67em) {
-  .container {
-    max-width: 100rem;
-  }
-  .header_search {
-    width: 40%;
-  }
   .hero-slide img {
     width: 100rem;
     height: 27rem;
@@ -105,16 +86,6 @@
 /* BELOW  1008px  MOBILE*/
 /**************************/
 @media (max-width: 63em) {
-  html {
-    /* 8px / 16px = 0.5 = 50% */
-    font-size: 50%;
-  }
-  .container {
-    max-width: 80rem;
-  }
-  .header_search {
-    width: 100%;
-  }
   /* IMG BACKGROUND */
   .hero-slide img {
     width: 90rem;
@@ -191,9 +162,6 @@
 }
 /* BELOW 730px - PHONES */
 @media (max-width: 46em) {
-  .container {
-    max-width: 63rem;
-  }
   /* IMG BACKGROUND */
   .hero-slide img {
     width: 70rem;
@@ -298,9 +266,6 @@
 }
 /* BELOW 400px - SMALL PHONES */
 @media (max-width: 25em) {
-  html {
-    font-size: 43.75%;
-  }
   .title-section-product,
   .title-section {
     font-size: 1.3rem;

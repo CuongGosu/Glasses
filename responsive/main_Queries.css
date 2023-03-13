@@ -1,8 +1,48 @@
 /**************************/
+/* BELOW  1200px */
+/**************************/
+@media (max-width: 75em) {
+  html {
+    /* 9px / 16px  */
+    font-size: 56.25%;
+  }
+  .container {
+    max-width: 110rem;
+  }
+  .content-header {
+    gap: 2rem;
+  }
+  .header_search {
+    width: 45%;
+  }
+}
+/**************************/
+/* BELOW  1072px */
+/**************************/
+@media (max-width: 67em) {
+  .container {
+    max-width: 100rem;
+  }
+  .header_search {
+    width: 40%;
+  }
+}
+
+/**************************/
 /* BELOW  1008px  MOBILE*/
 /**************************/
 /* MENU - NAV */
 @media (max-width: 63em) {
+  html {
+    /* 8px / 16px = 0.5 = 50% */
+    font-size: 50%;
+  }
+  .container {
+    max-width: 80rem;
+  }
+  .header_search {
+    width: 100%;
+  }
   .btn-mobile-nav {
     display: block;
     cursor: pointer;
@@ -208,8 +248,13 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
-/* BELOW 730px - PHONES */
+/**************************/
+/* BELOW 736px - PHONES */
+/**************************/
 @media (max-width: 46em) {
+  .container {
+    max-width: 63rem;
+  }
   .mid-footer .row {
     gap: 1rem;
   }
@@ -226,8 +271,17 @@
     font-size: 1.3rem;
   }
 }
-/* BELOW 400px - SMALL PHONES */
-@media (max-width: 25em) {
+/**************************/
+/* BELOW 672px - SMALL PHONES */
+/**************************/
+@media (max-width: 42em) {
+  .container {
+    max-width: 55rem;
+    padding: 0 2rem;
+  }
+  html {
+    font-size: 43.75%;
+  }
   .col-footer h3 {
     font-size: 1.3rem;
   }
@@ -305,4 +359,9 @@
     padding-right: 1rem;
     color: #428bca;
   }
+}
+/**************************/
+/* BELOW 400px - SMALL PHONES */
+/**************************/
+@media (max-width: 25em) {
 }

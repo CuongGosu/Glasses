@@ -595,6 +595,7 @@ body {
   background-position: center top;
   position: relative;
   padding: 7rem 0 4rem;
+  width: 100%;
 }
 .title-page {
   font-size: 1.6rem;

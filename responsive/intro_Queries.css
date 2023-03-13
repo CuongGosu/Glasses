@@ -1,0 +1,24 @@
+/**************************/
+/* BELOW  1200px */
+/**************************/
+@media (max-width: 75em) {
+  .content-intro p {
+    line-height: 1.6;
+  }
+}
+/**************************/
+/* BELOW 736px - PHONES */
+/**************************/
+@media (max-width: 46em) {
+  .content-intro p {
+    line-height: 1.5;
+  }
+}
+/**************************/
+/* BELOW 400px - SMALL PHONES */
+/**************************/
+@media (max-width: 25em) {
+  .content-intro p {
+    line-height: 1.4;
+  }
+}
