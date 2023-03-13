@@ -17,6 +17,7 @@
     <link href="../css/footer.css" rel="stylesheet" />
     <link href="../css/news.css" rel="stylesheet" />
     <link rel="stylesheet" href="../responsive/main_Queries.css" />
+    <link rel="stylesheet" href="../responsive/news_Queries.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -45,24 +46,50 @@
                 <a class="header-nav-link" href="#">Kiểm tra đơn hàng</a>
               </li>
               <li>
-                <a class="header-nav-link" href="#">đăng nhập</a>
+                <a class="header-nav-link no-user" href="FormSignIn.html"
+                  >đăng nhập</a
+                >
               </li>
               <li>
-                <a class="header-nav-link" href="#">đăng ký</a>
+                <a class="header-nav-link no-user" href="FormSignUp.html"
+                  >đăng ký</a
+                >
               </li>
             </ul>
+            <div class="info_contacts-mobile">
+              <div class="phone-contacts">
+                hotline:
+                <a class="phone-number" href="tel:0843445456">0843445456</a>
+              </div>
+              <div class="address-contacts">(Thứ 2 - CN: 9:00 -18:00)</div>
+            </div>
           </nav>
         </div>
       </div>
+
       <div class="mid-header">
         <div class="container">
           <div class="content-header">
-            <a class="content-header_left" href="#">
-              <img
-                src="https://bizweb.dktcdn.net/100/332/764/themes/880395/assets/logo.png?1665388816899"
-                alt="Logo glasses"
-              />
-            </a>
+            <div class="content-header_left">
+              <button class="btn-mobile-nav open-menu">
+                <ion-icon
+                  class="icon-mobile-nav"
+                  name="menu-outline"
+                ></ion-icon>
+              </button>
+              <a class="logo-header" href="#">
+                <img
+                  src="https://bizweb.dktcdn.net/100/332/764/themes/880395/assets/logo.png?1665388816899"
+                  alt="Logo glasses"
+                />
+              </a>
+              <a class="logo-cart">
+                <img
+                  src="https://bizweb.dktcdn.net/100/332/764/themes/880395/assets/icon_cart.png?1665388816899"
+                  alt="logo-cart"
+                />
+              </a>
+            </div>
             <div class="content-header_right">
               <div class="header_search">
                 <input
@@ -83,25 +110,27 @@
                   <div class="info_contacts">
                     <div class="phone-contacts">
                       hotline:
-                      <a class="phone-number" href="#">1900 6750</a>
+                      <a class="phone-number" href="tel:0843445456"
+                        >0843445456</a
+                      >
                     </div>
                     <div class="address-contacts">Thứ 2 - CN: 9:00 -18:00</div>
                   </div>
                 </div>
                 <div class="header-cart">
-                  <div class="header-cart_text">
+                  <a class="header-cart_text">
                     <img
                       src="https://bizweb.dktcdn.net/100/332/764/themes/880395/assets/icon_cart.png?1665388816899"
                       alt="logo-cart"
                     />
                     <p>Giỏ hàng:</p>
                     <span class="count-item">0</span>
-                    Sản phẩm
+                    <p class="cart_item-span">Sản phẩm</p>
                     <ion-icon
                       class="icon-down_cart"
                       name="chevron-down-outline"
                     ></ion-icon>
-                  </div>
+                  </a>
                   <div class="dropdown-cart">Không có sản phẩm nào.</div>
                 </div>
               </div>
@@ -127,7 +156,7 @@
                 ></ion-icon>
               </div>
               <ul class="item-small">
-                <li>
+                <li class="link-sub">
                   <a class="link-small" href="#"
                     >Hướng dẫn sử dụng theme Glasses</a
                   >
@@ -143,15 +172,15 @@
                 ></ion-icon>
               </div>
               <ul class="item-small">
-                <li>
+                <li class="link-sub">
                   <a href="product.html" class="link-small">Sản phẩm mới</a>
                 </li>
-                <li>
+                <li class="link-sub">
                   <a href="product.html" class="link-small"
                     >Sản phẩm khuyến mãi</a
                   >
                 </li>
-                <li>
+                <li class="link-sub">
                   <a href="product.html" class="link-small">Sản phẩm nổi bật</a>
                 </li>
               </ul>
@@ -164,7 +193,82 @@
             </li>
           </ul>
         </nav>
+        <nav class="menu-nav_mobile">
+          <ul class="menu-nav-list_mobile">
+            <li class="menu-nav-item_mobile">
+              <a href="home.html" class="menu-link">Trang chủ</a>
+            </li>
+            <li class="menu-nav-item_mobile" data-more-link>
+              <div class="more-item">
+                <a href="intro.html" class="menu-link">Giới thiệu</a>
+
+                <ion-icon
+                  class="icon-forward_cart"
+                  name="chevron-forward-outline"
+                ></ion-icon>
+              </div>
+              <ul class="item-small_mobile">
+                <li class="link-sub_mobile">
+                  <div class="back-menu">
+                    <ion-icon name="chevron-back-outline"></ion-icon>
+                    <p>Menu</p>
+                  </div>
+                </li>
+                <li class="link-sub_mobile">
+                  <a class="link-small" href="#"
+                    >Hướng dẫn sử dụng theme Glasses</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="menu-nav-item_mobile" data-more-link>
+              <div class="more-item">
+                <a href="product.html" class="menu-link">Sản phẩm</a>
+                <ion-icon
+                  class="icon-forward_cart"
+                  name="chevron-forward-outline"
+                ></ion-icon>
+              </div>
+              <ul class="item-small_mobile">
+                <li class="link-sub_mobile">
+                  <div class="back-menu">
+                    <ion-icon name="chevron-back-outline"></ion-icon>
+                    <p>Menu</p>
+                  </div>
+                </li>
+                <li class="link-sub_mobile">
+                  <a href="product.html" class="link-small">Sản phẩm mới</a>
+                </li>
+                <li class="link-sub_mobile">
+                  <a href="product.html" class="link-small"
+                    >Sản phẩm khuyến mãi</a
+                  >
+                </li>
+                <li class="link-sub_mobile">
+                  <a href="product.html" class="link-small">Sản phẩm nổi bật</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-nav-item_mobile">
+              <a href="news.html" class="menu-link">Tin tức</a>
+            </li>
+            <li class="menu-nav-item_mobile">
+              <a href="contact.html" class="menu-link">Liên hệ</a>
+            </li>
+            <li class="menu-nav-item_mobile">
+              <a href="FormSignIn.html" class="menu-link">Đăng nhập</a>
+            </li>
+            <li class="menu-nav-item_mobile">
+              <a href="FormSignUp.html" class="menu-link">Đăng ký</a>
+            </li>
+          </ul>
+        </nav>
+
+        <button class="btn-mobile-nav close-menu">
+          <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
+        </button>
       </div>
+      <div class="page-background"></div>
     </header>
     <main>
       <section class="section-background">

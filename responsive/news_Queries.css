@@ -1,30 +1,46 @@
 /**************************/
-/* BELOW  1200px */
-/**************************/
-@media (max-width: 75em) {
-}
-/**************************/
-/* BELOW  1072px */
-/**************************/
-@media (max-width: 67em) {
-}
-/**************************/
 /* BELOW  1008px  MOBILE*/
 /**************************/
 @media (max-width: 63em) {
+  .hot-news {
+    display: none;
+  }
+  .content-blog h3 a {
+    font-size: 1.8rem;
+  }
+  .content-blog p,
+  .content-blog a,
+  .post-day {
+    font-size: 1.6rem;
+  }
 }
 /**************************/
-/* BELOW 730px - PHONES */
+/* BELOW 736px - PHONES */
 /**************************/
 @media (max-width: 46em) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
 }
 /**************************/
 /* BELOW 672px - SMALL PHONES */
 /**************************/
 @media (max-width: 42em) {
+  .content-blog h3 a {
+    font-size: 2rem;
+  }
+  .content-blog p,
+  .content-blog a,
+  .post-day {
+    font-size: 1.8rem;
+  }
 }
 /**************************/
 /* BELOW 400px - SMALL PHONES */
 /**************************/
 @media (max-width: 25em) {
+  .content-blog p,
+  .content-blog a {
+    line-height: 1.4;
+  }
 }
