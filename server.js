@@ -1,11 +1,14 @@
-const axios = require('axios');
-const http = require('http');
-const fs = require('fs');
-const StringDecoder = require('string_decoder').StringDecoder;
-const Postfirebase = require('./js/firebase');
+import axios from 'axios'
+import http from'http';
+import fs from'fs';
+import Postfirebase from './js/firebase.js';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-const hostname = '127.0.0.1';
-const port = '3000';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const hostname = 'localhost';
+const port = '1212';
 
 // sign up
 
@@ -22,14 +25,13 @@ function POST(data){
 fs.readFile(__dirname+'/html/FormSignUp.html','utf-8',(err,data)=>{
   const server = http.createServer((req,res)=>{
     let buffer = "";
-    let decocder = new StringDecoder('utf-8');
 
     req.on('data',(data)=>{
       // console.log(data);
-      buffer = buffer + decocder.write(data);
-      console.log(buffer);
+      buffer = buffer + data.decode('utf-8')
+      // console.log(buffer);
       let dataPost =  JSON.parse(buffer);
-      console.log(dataPost);
+      // console.log(dataPost);
       POST(dataPost);
     })
 
@@ -46,9 +48,16 @@ fs.readFile(__dirname+'/html/FormSignUp.html','utf-8',(err,data)=>{
   })
 })
 
-const { initializeApp } = require('firebase/app');
-const { getAnalytics } = require("firebase/analytics");
-const {getDatabase, ref, get, set, child, update, remove} = require("firebase/database")
+fs.readFile(__dirname+'/html/FormSignIn.html','utf-8',(err,data)=>{
+  const server = http.createServer((req,res)=>{
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.end();
+    server.listen(port);
+  })
+})
+import { initializeApp } from 'firebase/app';
+import { getAnalytics } from "firebase/analytics";
+import {getDatabase, ref, get, set, child, update, remove} from "firebase/database";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCm2QJLmBu5Vy6Qs8uSGiPJhTYadIf6Vpc",
@@ -67,7 +76,7 @@ const dbRef = ref(getDatabase());
 get(child(dbRef,`account`))
   .then((snapshot)=>{
     if(snapshot.exists()){
-      console.log(snapshot.val());
+      // console.log(snapshot.val());
     }
     else{
       console.log("không có data")

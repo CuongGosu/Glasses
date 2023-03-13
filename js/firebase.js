@@ -1,7 +1,7 @@
   //////////////////////////////////////////////////////
-  const axios = require('axios');
+  import axios from 'axios';
   
-  module.exports = axios.create({
+  export default axios.create({
     baseURL: "https://glasses-store-fd757-default-rtdb.asia-southeast1.firebasedatabase.app/"
   })
   

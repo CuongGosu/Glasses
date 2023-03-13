@@ -1,20 +1,5 @@
 var API = "http://localhost:3000/account";
 
-
-
-
-
-
-// const { getDatabase, ref, set } = require("firebase/database");
-// const { response } = require("express");
-// const jsdom = require("jsdom");
-// const { JSDOM } = jsdom;
-// global.document = new JSDOM(``).window.document;
-// var btn = global.document.getElementById('register-btn');
-// console.log(btn);
-
-
-
 // sign up = fetch()
 function POST(data){
     var response  = {
