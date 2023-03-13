@@ -44,7 +44,6 @@
 </body>
 <!-- <script type="module" src="../js/signUp.js"></script> -->
 <script type="module" src="/server.js"></script>
-
 <!--//////////////////////////////////////////////////////////////////-->
 <script>
  let form = document.querySelector('.Sign-Up-Form');
@@ -56,11 +55,11 @@
         payload[inputs[i].id] = inputs[i].value;
     }
     let xhr = new XMLHttpRequest();
-    xhr.open('POST','/');
+    xhr.open('POST','../server.js',true);
     xhr.setRequestHeader('Content-Type','application/json');
     // console.log(payload);
     let payloadString = JSON.stringify(payload);
-    xhr.send(payloadString);
+    xhr.send();
  })
 </script> 
 </html>
