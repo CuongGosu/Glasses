@@ -1,0 +1,137 @@
+*,::after,::before {
+    box-sizing: border-box
+}
+.breadcrumb_background {
+    background-image: url(https://bizweb.dktcdn.net/100/332/764/themes/894770/assets/breadcrumb.jpg?1665388816899);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 200px;
+    z-index: 9;
+    padding: 75px 0 40px;
+    position: relative;
+    margin-bottom: 30px;
+}
+.breadcrumb_background::before {
+    content: "";
+    background: #000;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    opacity: .5;
+}
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.title_page {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 30px;
+    color: #fff;
+    margin: 0 0 15px;
+    position: relative;
+    text-transform: uppercase;
+}
+.breadcrumb {
+    font-family: "Arial",sans-serif;
+    margin: 0;
+    font-size: 14px;
+    border-radius: 0;
+    padding: 0;
+    font-weight: 400;
+    background-color: transparent;
+    width: 100%;
+    display: block;
+    line-height: 24px;
+    text-align: left;
+    z-index: 1;
+}
+section {
+    display: block;
+}
+.breadcrumb li {
+    display: inline;
+    text-decoration: none;
+}
+
+.breadcrumb li>a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.breadcrumb li>a>span {
+    color: #fff
+}
+
+.breadcrumb li .mr_lr {
+    padding: 0px 3px;
+    color: #fff
+}
+.breadcrumb li>strong>span {
+    color: #428bca;
+    font-weight: 400;
+}
+.a-center {
+    text-align: center !important;
+}
+.bread-crumb {
+    z-index: 0;
+    position: absolute;
+}
+.page-login span, .a-left{
+    font-size: 14px;
+    line-height: 1.7;
+}
+.section .page-login, .h-recover{
+    font-size: 14px;
+}
+.form-group{
+    margin-bottom: 1rem;
+}
+.form-group input{
+    height: 45px;
+    padding: 0 20px;
+    color: #333;
+    line-height: 45px;
+    border-radius: 5px;
+}
+.form-group .form-control{
+    display: block;
+    width: 100%;
+    min-height: 40px;
+    padding: 10px 15px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #fff;
+    margin-bottom: 15px;
+    border: 1px solid #EAEBF3;
+    border-radius: 5px;
+}
+.page_login .btn{
+    color: #fff;
+    background: #428bca;
+    border: solid 1px #428bca;
+    font-size: 16px;
+    line-height: 45px;
+    display: inline-block;
+    margin-right: 10px;
+    padding: 0 20px;
+    border-radius: 0px;
+    height: 45px;
+}
+.form-recover{
+    margin-top: 2.4rem;
+}
+.button_bottom{
+    padding-bottom: 2rem;
+}
+.a-left{
+    padding-bottom: 1rem;
+}
