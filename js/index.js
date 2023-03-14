@@ -257,3 +257,12 @@ moreInfo_Footer.forEach((listInfo) => {
     if (subInfo != null) subInfo.classList.toggle('hidden-footer');
   });
 });
+// CLICK DETAIL_PRODUCT
+const btnViewE = document.querySelectorAll('.btn-view');
+btnViewE.forEach((btnView) => {
+  btnView.addEventListener('click', (e) => {
+    e.preventDefault();
+    const productId = e.target.dataset.id;
+    localStorage.setItem('currentProductId', productId);
+  });
+});

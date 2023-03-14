@@ -14,7 +14,7 @@
     />
     <link href="../css/general.css" rel="stylesheet" />
     <link href="../css/footer.css" rel="stylesheet" />
-    <link href="../css/product.css" rel="stylesheet" />
+    <link href="../css/detailProduct.css" rel="stylesheet" />
     <link rel="stylesheet" href="../responsive/main_Queries.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,7 +30,7 @@
           <nav class="header-nav">
             <ul class="header-nav-list nav_right">
               <li>
-                <a class="header-nav-link" href="home.html">Trang chủ</a>
+                <a class="header-nav-link" href="index.html">Trang chủ</a>
               </li>
               <li>
                 <a class="header-nav-link" href="#">Giới thiệu</a>
@@ -44,24 +44,50 @@
                 <a class="header-nav-link" href="#">Kiểm tra đơn hàng</a>
               </li>
               <li>
-                <a class="header-nav-link" href="#">đăng nhập</a>
+                <a class="header-nav-link no-user" href="FormSignIn.html"
+                  >đăng nhập</a
+                >
               </li>
               <li>
-                <a class="header-nav-link" href="#">đăng ký</a>
+                <a class="header-nav-link no-user" href="FormSignUp.html"
+                  >đăng ký</a
+                >
               </li>
             </ul>
+            <div class="info_contacts-mobile">
+              <div class="phone-contacts">
+                hotline:
+                <a class="phone-number" href="tel:0843445456">0843445456</a>
+              </div>
+              <div class="address-contacts">(Thứ 2 - CN: 9:00 -18:00)</div>
+            </div>
           </nav>
         </div>
       </div>
+
       <div class="mid-header">
         <div class="container">
           <div class="content-header">
-            <a class="content-header_left" href="#">
-              <img
-                src="https://bizweb.dktcdn.net/100/332/764/themes/880395/assets/logo.png?1665388816899"
-                alt="Logo glasses"
-              />
-            </a>
+            <div class="content-header_left">
+              <button class="btn-mobile-nav open-menu">
+                <ion-icon
+                  class="icon-mobile-nav"
+                  name="menu-outline"
+                ></ion-icon>
+              </button>
+              <a class="logo-header" href="#">
+                <img
+                  src="https://bizweb.dktcdn.net/100/332/764/themes/880395/assets/logo.png?1665388816899"
+                  alt="Logo glasses"
+                />
+              </a>
+              <a class="logo-cart">
+                <img
+                  src="https://bizweb.dktcdn.net/100/332/764/themes/880395/assets/icon_cart.png?1665388816899"
+                  alt="logo-cart"
+                />
+              </a>
+            </div>
             <div class="content-header_right">
               <div class="header_search">
                 <input
@@ -82,25 +108,27 @@
                   <div class="info_contacts">
                     <div class="phone-contacts">
                       hotline:
-                      <a class="phone-number" href="#">1900 6750</a>
+                      <a class="phone-number" href="tel:0843445456"
+                        >0843445456</a
+                      >
                     </div>
                     <div class="address-contacts">Thứ 2 - CN: 9:00 -18:00</div>
                   </div>
                 </div>
                 <div class="header-cart">
-                  <div class="header-cart_text">
+                  <a class="header-cart_text">
                     <img
                       src="https://bizweb.dktcdn.net/100/332/764/themes/880395/assets/icon_cart.png?1665388816899"
                       alt="logo-cart"
                     />
                     <p>Giỏ hàng:</p>
                     <span class="count-item">0</span>
-                    Sản phẩm
+                    <p class="cart_item-span">Sản phẩm</p>
                     <ion-icon
                       class="icon-down_cart"
                       name="chevron-down-outline"
                     ></ion-icon>
-                  </div>
+                  </a>
                   <div class="dropdown-cart">Không có sản phẩm nào.</div>
                 </div>
               </div>
@@ -115,7 +143,7 @@
         <nav class="menu-nav">
           <ul class="menu-nav_list">
             <li class="menu-nav_item">
-              <a href="home.html" class="menu-link">Trang chủ</a>
+              <a href="index.html" class="menu-link">Trang chủ</a>
             </li>
             <li class="menu-nav_item" data-more-link>
               <div class="more-item">
@@ -126,7 +154,7 @@
                 ></ion-icon>
               </div>
               <ul class="item-small">
-                <li>
+                <li class="link-sub">
                   <a class="link-small" href="#"
                     >Hướng dẫn sử dụng theme Glasses</a
                   >
@@ -142,15 +170,15 @@
                 ></ion-icon>
               </div>
               <ul class="item-small">
-                <li>
+                <li class="link-sub">
                   <a href="product.html" class="link-small">Sản phẩm mới</a>
                 </li>
-                <li>
+                <li class="link-sub">
                   <a href="product.html" class="link-small"
                     >Sản phẩm khuyến mãi</a
                   >
                 </li>
-                <li>
+                <li class="link-sub">
                   <a href="product.html" class="link-small">Sản phẩm nổi bật</a>
                 </li>
               </ul>
@@ -163,7 +191,82 @@
             </li>
           </ul>
         </nav>
+        <nav class="menu-nav_mobile">
+          <ul class="menu-nav-list_mobile">
+            <li class="menu-nav-item_mobile btn-Login_Mobile">
+              <a href="FormSignIn.html" class="menu-link">Đăng nhập</a>
+            </li>
+            <li class="menu-nav-item_mobile btn-SignUp_Mobile">
+              <a href="FormSignUp.html" class="menu-link">Đăng ký</a>
+            </li>
+            <li class="menu-nav-item_mobile">
+              <a href="index.html" class="menu-link">Trang chủ</a>
+            </li>
+            <li class="menu-nav-item_mobile" data-more-link>
+              <div class="more-item">
+                <a href="intro.html" class="menu-link">Giới thiệu</a>
+
+                <ion-icon
+                  class="icon-forward_cart"
+                  name="chevron-forward-outline"
+                ></ion-icon>
+              </div>
+              <ul class="item-small_mobile">
+                <li class="link-sub_mobile">
+                  <div class="back-menu">
+                    <ion-icon name="chevron-back-outline"></ion-icon>
+                    <p>Menu</p>
+                  </div>
+                </li>
+                <li class="link-sub_mobile">
+                  <a class="link-small" href="#"
+                    >Hướng dẫn sử dụng theme Glasses</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="menu-nav-item_mobile" data-more-link>
+              <div class="more-item">
+                <a href="product.html" class="menu-link">Sản phẩm</a>
+                <ion-icon
+                  class="icon-forward_cart"
+                  name="chevron-forward-outline"
+                ></ion-icon>
+              </div>
+              <ul class="item-small_mobile">
+                <li class="link-sub_mobile">
+                  <div class="back-menu">
+                    <ion-icon name="chevron-back-outline"></ion-icon>
+                    <p>Menu</p>
+                  </div>
+                </li>
+                <li class="link-sub_mobile">
+                  <a href="product.html" class="link-small">Sản phẩm mới</a>
+                </li>
+                <li class="link-sub_mobile">
+                  <a href="product.html" class="link-small"
+                    >Sản phẩm khuyến mãi</a
+                  >
+                </li>
+                <li class="link-sub_mobile">
+                  <a href="product.html" class="link-small">Sản phẩm nổi bật</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-nav-item_mobile">
+              <a href="news.html" class="menu-link">Tin tức</a>
+            </li>
+            <li class="menu-nav-item_mobile">
+              <a href="contact.html" class="menu-link">Liên hệ</a>
+            </li>
+          </ul>
+        </nav>
+
+        <button class="btn-mobile-nav close-menu">
+          <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
+        </button>
       </div>
+      <div class="page-background"></div>
     </header>
     <main>
       <section class="section-background">
@@ -185,7 +288,100 @@
         </div>
       </section>
       <section class="section-wrap_background">
-        <div class="container"></div>
+        <div class="container">
+          <div class="details-product">
+            <div class="row">
+              <div class="details-product_left">
+                <div class="img-product-main">
+                  <img
+                    src="https://bizweb.dktcdn.net/thumb/1024x1024/100/332/764/products/asdas.png?v=1544067486277"
+                    alt="img"
+                  />
+                </div>
+                <ul class="list-img-sub">
+                  <li class="item-img">
+                    <img
+                      class="img-product_sub"
+                      src="https://bizweb.dktcdn.net/thumb/1024x1024/100/332/764/products/asdas.png?v=1544067486277"
+                      alt="img"
+                    />
+                  </li>
+                  <li class="item-img">
+                    <img
+                      class="img-product_sub"
+                      src="https://bizweb.dktcdn.net/thumb/1024x1024/100/332/764/products/asdas.png?v=1544067486277"
+                      alt="img"
+                    />
+                  </li>
+                  <li class="item-img">
+                    <img
+                      class="img-product_sub"
+                      src="https://bizweb.dktcdn.net/thumb/1024x1024/100/332/764/products/asdas.png?v=1544067486277"
+                      alt="img"
+                    />
+                  </li>
+                </ul>
+              </div>
+              <div class="details-product_right">
+                <div class="name-product">
+                  <h1>Kính nữ Q&J gọng mắt mèo</h1>
+                </div>
+                <div class="brand-product">
+                  <p>Thương hiệu: <span class="name-brand">Q&J</span></p>
+                  <p>
+                    Mã sản phẩm :
+                    <span class="id-product">H4G6L8</span>
+                  </p>
+                </div>
+                <div class="price-product">300.000 ₫</div>
+                <div class="gender-product">
+                  <span class="form-gender">Phù hợp :</span>
+                  <div class="gender man">Nam</div>
+                  <div class="gender women">Nữ</div>
+                </div>
+                <div class="info-product">
+                  Kính nữ phân cực Q&J gọng mắt mèo style Retro kiểu dáng sang
+                  trọng, trẻ trung, màu sắc nữ tính, nhẹ nhàng, chất liệu PC cao
+                  cấp, tính năng phân cực rõ nét, là một món phụ kiện thời trang
+                  sành điệu không thể thiếu của phái nữ.
+                </div>
+                <div class="number-product">
+                  <p>Số lượng :</p>
+                  <div class="selection-number">
+                    <button class="btn-selection-number btn-remove">
+                      <ion-icon name="remove-outline"></ion-icon>
+                    </button>
+                    <input class="value-number" value="1" />
+                    <button class="btn-selection-number btn-add">
+                      <ion-icon name="add-outline"></ion-icon>
+                    </button>
+                  </div>
+                </div>
+                <div class="button-action">
+                  <button class="btn-action btn-add_product">
+                    <ion-icon name="cart"></ion-icon>
+                    Thêm vào giỏ hàng
+                  </button>
+                  <button class="btn-action btn-buy_product">
+                    Mua sản phẩm
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="details-description">
+            <h1>Mô tả sản phẩm:</h1>
+            <div class="description-products">
+              - Kính nữ Q&J gọng mắt mèo style Retro kiểu dáng sang trọng, trẻ
+              trung, được lòng nhiều người bởi kiểu dáng phù hợp với khuôn mặt,
+              trang phục, không phân biệt giới tính, tuổi tác. - Mắt kính phân
+              cực độ HD rõ nét, chống tia cực tím, UV400, UVB, chống lóa, mỏi
+              mắt, bảo vệ đôi mắt khỏi bị lão hóa, thâm quầng. - Gọng kính kim
+              loại, khớp nối nhạy bén, tạo hình tinh tế, có thể điều chỉnh rộng
+              hẹp tùy theo kích thước khuôn mặt.
+            </div>
+          </div>
+        </div>
       </section>
     </main>
     <footer class="footer">
@@ -459,4 +655,5 @@
   <script src="../js/swiper-bundle.min.js"></script>
   <script src="../js/index.js"></script>
   <script src="../js/lazyload.js"></script>
+  <script src="../js/detailProduct.js"></script>
 </html>

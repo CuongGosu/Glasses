@@ -61,14 +61,14 @@ function renderProductTab(product) {
       <div class="item-product swiper-slide">
         <div class="product-thumbnail">
           <img src="${product.img}"
-           data-src="${product.img}" alt="${product.name}" class="img-thumb" />
+           data-src="${product.img}" alt="${product.name}" class="img-thumb" "/>
           <div class="product-action">
-            <div class="btn-card">
+            <a class="btn-card">
               <ion-icon name="cart"></ion-icon>
-            </div>
-            <div class="btn-view">
+            </a>
+            <a class="btn-view" href="detail.html">
               <ion-icon name="eye"></ion-icon>
-            </div>
+            </a>
           </div>
         </div>
         <div class="product-info">
@@ -97,12 +97,12 @@ function renderProductGender(product) {
       <div class="item-product swiper-slide">
         <div class="product-thumbnail">
           <img src="${product.img}"
-           data-src="${product.img}" alt="${product.name}" class="img-thumb" />
+           data-src="${product.img}" alt="${product.name}" class="img-thumb"/>
           <div class="product-action">
             <div class="btn-card">
               <ion-icon name="cart"></ion-icon>
             </div>
-            <div class="btn-view">
+            <div class="btn-view" data-id="${product.id}>
               <ion-icon name="eye"></ion-icon>
             </div>
           </div>
@@ -127,7 +127,7 @@ function renderProductChoice(product) {
           <div class="btn-card">
             <ion-icon name="cart"></ion-icon>
           </div>
-          <div class="btn-view">
+          <div class="btn-view" data-id="${product.id}>
             <ion-icon name="eye"></ion-icon>
           </div>
         </div>
