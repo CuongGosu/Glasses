@@ -59,14 +59,16 @@ function renderProductTab(product) {
       'beforeend',
       `
       <div class="item-product swiper-slide">
-        <div class="product-thumbnail">
-          <img src="${product.img}"
-           data-src="${product.img}" alt="${product.name}" class="img-thumb" "/>
+        <div class="product-thumbnail" >
+        <a class="link-detail-product" href="detail.html" data-id="${product.id}">
+        <img src="${product.img}"
+        data-src="${product.img}" alt="${product.name}" class="img-thumb" "/>
+        </a>
           <div class="product-action">
             <a class="btn-card">
               <ion-icon name="cart"></ion-icon>
             </a>
-            <a class="btn-view" href="detail.html">
+            <a class="btn-view" href="detail.html" data-id="${product.id}">
               <ion-icon name="eye"></ion-icon>
             </a>
           </div>
@@ -95,16 +97,18 @@ function renderProductGender(product) {
       'beforeend',
       `
       <div class="item-product swiper-slide">
-        <div class="product-thumbnail">
-          <img src="${product.img}"
-           data-src="${product.img}" alt="${product.name}" class="img-thumb"/>
+        <div class="product-thumbnail" ">
+        <a class="link-detail-product" href="detail.html" data-id="${product.id}">
+        <img src="${product.img}"
+        data-src="${product.img}" alt="${product.name}" class="img-thumb" "/>
+        </a>
           <div class="product-action">
-            <div class="btn-card">
-              <ion-icon name="cart"></ion-icon>
-            </div>
-            <div class="btn-view" data-id="${product.id}>
-              <ion-icon name="eye"></ion-icon>
-            </div>
+          <a class="btn-card">
+          <ion-icon name="cart"></ion-icon>
+        </a>
+        <a class="btn-view" href="detail.html" data-id="${product.id}">
+          <ion-icon name="eye"></ion-icon>
+        </a>
           </div>
         </div>
         <div class="product-info">
@@ -121,15 +125,17 @@ function renderProductChoice(product) {
   const productHTML = `
     <div class="item-product_choice swiper-slide">
       <div class="product-thumbnail">
-        <img src="${product.img}"
-         data-src="${product.img}" alt="${product.name}" class="img-thumb" />
+      <a class="link-detail-product" href="detail.html" data-id="${product.id}">
+      <img src="${product.img}"
+      data-src="${product.img}" alt="${product.name}" class="img-thumb" "/>
+      </a>
         <div class="product-action">
-          <div class="btn-card">
-            <ion-icon name="cart"></ion-icon>
-          </div>
-          <div class="btn-view" data-id="${product.id}>
-            <ion-icon name="eye"></ion-icon>
-          </div>
+        <a class="btn-card">
+              <ion-icon name="cart"></ion-icon>
+            </a>
+        <a class="btn-view" href="detail.html" data-id="${product.id}">
+              <ion-icon name="eye"></ion-icon>
+            </a>
         </div>
       </div>
       <div class="product-info">
@@ -141,3 +147,23 @@ function renderProductChoice(product) {
   productsWrapper.insertAdjacentHTML('beforeend', productHTML);
 }
 start();
+// CLICK DETAIL_PRODUCT
+
+function myGreeting() {
+  const btnViewList = document.querySelectorAll('.btn-view');
+
+  const linkDetailList = document.querySelectorAll('.link-detail-product');
+  btnViewList.forEach((btnView) => {
+    btnView.addEventListener('click', (e) => {
+      const productId = btnView.getAttribute('data-id');
+      localStorage.setItem('productId', productId);
+    });
+  });
+  linkDetailList.forEach((linkDetail) => {
+    linkDetail.addEventListener('click', (e) => {
+      const productId = linkDetail.getAttribute('data-id');
+      localStorage.setItem('productId', productId);
+    });
+  });
+}
+const myTimeout = setTimeout(myGreeting, 500);

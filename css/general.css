@@ -381,9 +381,9 @@ body {
   cursor: pointer;
   z-index: 99999;
 }
-.link-detail-product {
+/* .link-detail-product {
   display: block;
-}
+} */
 .product-thumbnail {
   flex: 1;
   margin-bottom: 2rem;

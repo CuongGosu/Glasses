@@ -162,7 +162,14 @@
   height: 5rem;
   border-radius: 50%;
   font-weight: 400;
-  background-color: #ddd;
+  color: #fff;
+  font-size: 1.6rem;
+}
+.man {
+  background-color: #0074d9;
+}
+.women {
+  background-color: #ff69b4;
 }
 /* DESCRIPTION */
 .details-description {
@@ -175,4 +182,8 @@
 .description-products {
   font-size: 1.6rem;
   line-height: 1.7;
+}
+/* MORE PRODUCT */
+.title-section-product {
+  margin-top: 6rem;
 }
