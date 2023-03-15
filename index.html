@@ -5,17 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Glasses</title>
-    <link rel="stylesheet" href="../css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
       integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
       crossorigin=""
     />
-    <link href="../css/general.css" rel="stylesheet" />
-    <link href="../css/style.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../responsive/main_Queries.css" />
-    <link rel="stylesheet" href="../responsive/home_Queries.css" />
+    <link href="css/general.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="responsive/main_Queries.css" />
+    <link rel="stylesheet" href="responsive/home_Queries.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -33,10 +33,10 @@
                 <a class="header-nav-link" href="index.html">Trang chủ</a>
               </li>
               <li>
-                <a class="header-nav-link" href="#">Giới thiệu</a>
+                <a class="header-nav-link" href="html/intro.html">Giới thiệu</a>
               </li>
               <li>
-                <a class="header-nav-link" href="product.html">Sản phẩm</a>
+                <a class="header-nav-link" href="html/product.html">Sản phẩm</a>
               </li>
             </ul>
             <ul class="header-nav-list nav_left">
@@ -44,12 +44,12 @@
                 <a class="header-nav-link" href="#">Kiểm tra đơn hàng</a>
               </li>
               <li>
-                <a class="header-nav-link no-user" href="SignIn.html"
+                <a class="header-nav-link no-user" href="html/SignIn.html"
                   >đăng nhập</a
                 >
               </li>
               <li>
-                <a class="header-nav-link no-user" href="SignUp.html"
+                <a class="header-nav-link no-user" href="html/SignUp.html"
                   >đăng ký</a
                 >
               </li>
@@ -147,7 +147,7 @@
             </li>
             <li class="menu-nav_item" data-more-link>
               <div class="more-item">
-                <a href="intro.html" class="menu-link">Giới thiệu</a>
+                <a href="html/intro.html" class="menu-link">Giới thiệu</a>
                 <ion-icon
                   class="icon-down_cart"
                   name="chevron-down-outline"
@@ -163,7 +163,7 @@
             </li>
             <li class="menu-nav_item" data-more-link>
               <div class="more-item">
-                <a href="product.html" class="menu-link">Sản phẩm</a>
+                <a href="html/product.html" class="menu-link">Sản phẩm</a>
                 <ion-icon
                   class="icon-down_cart"
                   name="chevron-down-outline"
@@ -171,40 +171,44 @@
               </div>
               <ul class="item-small">
                 <li class="link-sub">
-                  <a href="product.html" class="link-small">Sản phẩm mới</a>
+                  <a href="html/product.html" class="link-small"
+                    >Sản phẩm mới</a
+                  >
                 </li>
                 <li class="link-sub">
-                  <a href="product.html" class="link-small"
+                  <a href="html/product.html" class="link-small"
                     >Sản phẩm khuyến mãi</a
                   >
                 </li>
                 <li class="link-sub">
-                  <a href="product.html" class="link-small">Sản phẩm nổi bật</a>
+                  <a href="html/product.html" class="link-small"
+                    >Sản phẩm nổi bật</a
+                  >
                 </li>
               </ul>
             </li>
             <li class="menu-nav_item">
-              <a href="news.html" class="menu-link">Tin tức</a>
+              <a href="html/news.html" class="menu-link">Tin tức</a>
             </li>
             <li class="menu-nav_item">
-              <a href="contact.html" class="menu-link">Liên hệ</a>
+              <a href="html/contact.html" class="menu-link">Liên hệ</a>
             </li>
           </ul>
         </nav>
         <nav class="menu-nav_mobile">
           <ul class="menu-nav-list_mobile">
             <li class="menu-nav-item_mobile btn-Login_Mobile">
-              <a href="SignIn.html" class="menu-link">Đăng nhập</a>
+              <a href="html/SignIn.html" class="menu-link">Đăng nhập</a>
             </li>
             <li class="menu-nav-item_mobile btn-SignUp_Mobile">
-              <a href="SignUp.html" class="menu-link">Đăng ký</a>
+              <a href="html/SignUp.html" class="menu-link">Đăng ký</a>
             </li>
             <li class="menu-nav-item_mobile">
               <a href="index.html" class="menu-link">Trang chủ</a>
             </li>
             <li class="menu-nav-item_mobile" data-more-link>
               <div class="more-item">
-                <a href="intro.html" class="menu-link">Giới thiệu</a>
+                <a href="html/intro.html" class="menu-link">Giới thiệu</a>
 
                 <ion-icon
                   class="icon-forward_cart"
@@ -227,7 +231,7 @@
             </li>
             <li class="menu-nav-item_mobile" data-more-link>
               <div class="more-item">
-                <a href="product.html" class="menu-link">Sản phẩm</a>
+                <a href="html/product.html" class="menu-link">Sản phẩm</a>
                 <ion-icon
                   class="icon-forward_cart"
                   name="chevron-forward-outline"
@@ -241,23 +245,27 @@
                   </div>
                 </li>
                 <li class="link-sub_mobile">
-                  <a href="product.html" class="link-small">Sản phẩm mới</a>
+                  <a href="html/product.html" class="link-small"
+                    >Sản phẩm mới</a
+                  >
                 </li>
                 <li class="link-sub_mobile">
-                  <a href="product.html" class="link-small"
+                  <a href="html/product.html" class="link-small"
                     >Sản phẩm khuyến mãi</a
                   >
                 </li>
                 <li class="link-sub_mobile">
-                  <a href="product.html" class="link-small">Sản phẩm nổi bật</a>
+                  <a href="html/product.html" class="link-small"
+                    >Sản phẩm nổi bật</a
+                  >
                 </li>
               </ul>
             </li>
             <li class="menu-nav-item_mobile">
-              <a href="news.html" class="menu-link">Tin tức</a>
+              <a href="html/news.html" class="menu-link">Tin tức</a>
             </li>
             <li class="menu-nav-item_mobile">
-              <a href="contact.html" class="menu-link">Liên hệ</a>
+              <a href="html/contact.html" class="menu-link">Liên hệ</a>
             </li>
           </ul>
         </nav>
@@ -1060,8 +1068,8 @@
     nomodule
     src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
   ></script>
-  <script src="../js/swiper-bundle.min.js"></script>
-  <script src="../js/home.js"></script>
-  <script src="../js/lazyload.js"></script>
-  <script src="../js/index.js"></script>
+  <script src="js/swiper-bundle.min.js"></script>
+  <script src="js/home.js"></script>
+  <script src="js/lazyload.js"></script>
+  <script src="js/index.js"></script>
 </html>

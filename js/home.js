@@ -60,7 +60,7 @@ function renderProductTab(product) {
       `
       <div class="item-product swiper-slide">
         <div class="product-thumbnail" >
-        <a class="link-detail-product" href="detail.html" data-id="${product.id}">
+        <a class="link-detail-product" href="html/detail.html" data-id="${product.id}">
         <img src="${product.img}"
         data-src="${product.img}" alt="${product.name}" class="img-thumb" "/>
         </a>
@@ -68,7 +68,7 @@ function renderProductTab(product) {
             <a class="btn-card">
               <ion-icon name="cart"></ion-icon>
             </a>
-            <a class="btn-view" href="detail.html" data-id="${product.id}">
+            <a class="btn-view" href="html/detail.html" data-id="${product.id}">
               <ion-icon name="eye"></ion-icon>
             </a>
           </div>
@@ -98,7 +98,7 @@ function renderProductGender(product) {
       `
       <div class="item-product swiper-slide">
         <div class="product-thumbnail" ">
-        <a class="link-detail-product" href="detail.html" data-id="${product.id}">
+        <a class="link-detail-product" href="html/detail.html" data-id="${product.id}">
         <img src="${product.img}"
         data-src="${product.img}" alt="${product.name}" class="img-thumb" "/>
         </a>
@@ -106,7 +106,7 @@ function renderProductGender(product) {
           <a class="btn-card">
           <ion-icon name="cart"></ion-icon>
         </a>
-        <a class="btn-view" href="detail.html" data-id="${product.id}">
+        <a class="btn-view" href="html/detail.html" data-id="${product.id}">
           <ion-icon name="eye"></ion-icon>
         </a>
           </div>
@@ -125,7 +125,7 @@ function renderProductChoice(product) {
   const productHTML = `
     <div class="item-product_choice swiper-slide">
       <div class="product-thumbnail">
-      <a class="link-detail-product" href="detail.html" data-id="${product.id}">
+      <a class="link-detail-product" href="html/detail.html" data-id="${product.id}">
       <img src="${product.img}"
       data-src="${product.img}" alt="${product.name}" class="img-thumb" "/>
       </a>
@@ -133,7 +133,7 @@ function renderProductChoice(product) {
         <a class="btn-card">
               <ion-icon name="cart"></ion-icon>
             </a>
-        <a class="btn-view" href="detail.html" data-id="${product.id}">
+        <a class="btn-view" href="html/detail.html" data-id="${product.id}">
               <ion-icon name="eye"></ion-icon>
             </a>
         </div>
