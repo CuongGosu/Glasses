@@ -17,10 +17,11 @@ async function getProductApi(callback) {
 }
 function renderProduct(products) {
   products.forEach((product) => {
-    // render detail
     if (product.id == productID) {
+      // render detail
       renderProductDetail(product);
       renderProductDescription(product);
+      // render similar products
       products.forEach((productBrandAPI) => {
         if (
           product.id != productBrandAPI.id &&
@@ -29,6 +30,8 @@ function renderProduct(products) {
           renderProductSimilar(product);
         }
       });
+      const namePage = document.querySelector('.children-page');
+      namePage.innerHTML = `${product.name}`;
     }
   });
 }
