@@ -14,10 +14,8 @@
     />
     <link href="../css/general.css" rel="stylesheet" />
     <link href="../css/style.css" rel="stylesheet" />
-    <link href="../css/contact.css" rel="stylesheet" />
-    <link href="../css/footer.css" rel="stylesheet" />
     <link rel="stylesheet" href="../responsive/main_Queries.css" />
-    <link rel="stylesheet" href="../responsive/contact_Queries.css" />
+    <link rel="stylesheet" href="../responsive/home_Queries.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -32,7 +30,7 @@
           <nav class="header-nav">
             <ul class="header-nav-list nav_right">
               <li>
-                <a class="header-nav-link" href="../index.html">Trang chủ</a>
+                <a class="header-nav-link" href="index.html">Trang chủ</a>
               </li>
               <li>
                 <a class="header-nav-link" href="#">Giới thiệu</a>
@@ -77,7 +75,7 @@
                   name="menu-outline"
                 ></ion-icon>
               </button>
-              <a class="logo-header" href="../index.html">
+              <a class="logo-header" href="index.html">
                 <img
                   src="https://bizweb.dktcdn.net/100/332/764/themes/880395/assets/logo.png?1665388816899"
                   alt="Logo glasses"
@@ -145,7 +143,7 @@
         <nav class="menu-nav">
           <ul class="menu-nav_list">
             <li class="menu-nav_item">
-              <a href="../index.html" class="menu-link">Trang chủ</a>
+              <a href="index.html" class="menu-link">Trang chủ</a>
             </li>
             <li class="menu-nav_item" data-more-link>
               <div class="more-item">
@@ -202,7 +200,7 @@
               <a href="SignUp.html" class="menu-link">Đăng ký</a>
             </li>
             <li class="menu-nav-item_mobile">
-              <a href="../index.html" class="menu-link">Trang chủ</a>
+              <a href="index.html" class="menu-link">Trang chủ</a>
             </li>
             <li class="menu-nav-item_mobile" data-more-link>
               <div class="more-item">
@@ -271,83 +269,525 @@
       <div class="page-background"></div>
     </header>
     <main class="main">
-      <section class="section-background">
-        <div class="title-menu">
-          <div class="container">
-            <div class="title-page">
-              <h1>Liên hệ</h1>
-            </div>
-            <ul class="bread-crumb">
-              <li class="home-page">
-                <a href="../index.html">Trang chủ </a>
-                <span>/</span>
+      <section class="section-hero">
+        <div class="container">
+          <div class="hero-data-carousel swiper">
+            <ul class="hero-data-slides swiper-wrapper">
+              <li class="hero-slide swiper-slide">
+                <img
+                  class="img-hero-slide"
+                  src="https://bizweb.dktcdn.net/100/332/764/themes/880395/assets/slider_2.jpg?1665388816899"
+                  alt="slide-1"
+                />
               </li>
-              <li class="children-page">
-                <a>Liên hệ</a>
+              <li class="hero-slide swiper-slide">
+                <img
+                  class="img-hero-slide"
+                  src="https://s3.cloud.cmctelecom.vn/tinhte2/2020/09/5148148_tinhte_thuong_hieu_kinh_mat_noi_tieng_nhat_Rayban.jpg"
+                  alt="slide-2"
+                />
+              </li>
+
+              <li class="hero-slide swiper-slide">
+                <img
+                  class="img-hero-slide"
+                  src="https://s3.cloud.cmctelecom.vn/tinhte2/2020/09/5148145_tinhte_thuong_hieu_kinh_mat_noi_tieng_nhat_Moscot.jpg"
+                  alt="slide-3"
+                />
               </li>
             </ul>
+            <button class="swiper-button-prev"></button>
+            <button class="swiper-button-next"></button>
+            <div class="swiper-pagination"></div>
           </div>
         </div>
       </section>
-      <section class="section-form-contact">
-        <div class="container row">
-          <form action="" method="POST" class="form-contact" id="form-1">
-            <h1 class="title-form">
-              Điền thông tin và nội dung tin nhắn dưới đây
-            </h1>
-            <div class="form-group">
-              <label for="fullname" class="form-label">Họ và tên</label>
-              <input
-                id="fullname"
-                name="fullname"
-                type="text"
-                placeholder="Họ và Tên*"
-                class="form-control"
-              />
-              <span class="form-message"></span>
+      <section class="section-category">
+        <div class="container">
+          <div class="category-box">
+            <div class="category-title">
+              <h2>Các kiểu kính phổ biến</h2>
             </div>
-            <div class="form-group">
-              <label for="email" class="form-label">Email</label>
-              <input
-                id="email"
-                name="email"
-                type="text"
-                placeholder="Email*"
-                class="form-control"
-              />
-              <span class="form-message"></span>
-            </div>
-            <div class="form-group">
-              <label for="comment" title="Comment" class="form-label"
-                >Nội dung</label
-              >
-              <textarea
-                id="comment"
-                name="comment"
-                type="text"
-                placeholder="Nội dung*"
-                class="form-control"
-                rows="5"
-              ></textarea>
+            <div>
+              <div class="category-data-slicks swiper">
+                <ul class="category-data-slides swiper-wrapper">
+                  <li class="category-slide swiper-slide">
+                    <a class="category-link" href="#">
+                      <img
+                        src="https://bizweb.dktcdn.net/100/332/764/collections/sm3.png?v=1540549985233"
+                        alt="slide-1"
+                      />
+                    </a>
+                    <a class="category-title" href="#">
+                      <p>Kính Rayban</p>
+                    </a>
+                  </li>
+                  <li class="category-slide swiper-slide">
+                    <a class="category-link" href="#">
+                      <img
+                        src="https://bizweb.dktcdn.net/100/332/764/collections/qr.png?v=1540805011667"
+                        alt="slide-2"
+                      />
+                    </a>
+                    <a class="category-title" href="#">Kính Q&J</a>
+                  </li>
 
-              <span class="form-message"></span>
+                  <li class="category-slide swiper-slide">
+                    <a class="category-link" href="#">
+                      <img
+                        src="https://bizweb.dktcdn.net/100/332/764/collections/sm4.png?v=1540549718577"
+                        alt="slide-3"
+                      />
+                    </a>
+                    <a class="category-title" href="#">Gọng kính cận</a>
+                  </li>
+                  <li class="category-slide swiper-slide">
+                    <a class="category-link" href="#">
+                      <img
+                        src="https://bizweb.dktcdn.net/100/332/764/collections/sm2.png?v=1540549567257"
+                        alt="slide-4"
+                      />
+                    </a>
+                    <a class="category-title" href="#">Kính Lascote</a>
+                  </li>
+                  <li class="category-slide swiper-slide">
+                    <a class="category-link" href="#">
+                      <img
+                        src="https://bizweb.dktcdn.net/100/332/764/collections/sm1.png?v=1540549494840"
+                        alt="slide-5"
+                      />
+                    </a>
+                    <a class="category-title" href="#">Kính Oakley</a>
+                  </li>
+                  <li class="category-slide swiper-slide">
+                    <a class="category-link" href="#">
+                      <img
+                        src="https://bizweb.dktcdn.net/100/332/764/collections/sm5.png?v=1540549821770"
+                        alt="slide-6"
+                      />
+                    </a>
+                    <a class="category-title" href="#">Kính Nobita</a>
+                  </li>
+                </ul>
+                <button class="swiper-button-prev"></button>
+                <button class="swiper-button-next"></button>
+                <!-- <div class="swiper-pagination"></div> -->
+              </div>
             </div>
-            <button class="form-submit">Gửi tin nhắn cho chúng tôi</button>
-          </form>
-          <div id="info-contact">
-            <div class="tel-contact flex">
-              <ion-icon name="call" class="icon-contact"></ion-icon>
-              <a href="0843445456">0843445456</a>
+          </div>
+        </div>
+      </section>
+      <section class="section-tab">
+        <div class="container">
+          <div class="title-section-product">
+            <h2>
+              <a href="#">sản phẩm nổi bật</a>
+            </h2>
+            <div></div>
+          </div>
+          <div class="wrap-tab">
+            <div class="selection-tab">
+              <ul class="list-link-tab">
+                <li class="title-link-tab active" data-tab="tab-selection_1">
+                  <img
+                    class="tab-link"
+                    alt="tab-link1"
+                    src="https://bizweb.dktcdn.net/100/332/764/themes/880395/assets/tab_1.png?1665388816899"
+                  />
+                  <h4>Kính thời trang mới</h4>
+                </li>
+                <li class="title-link-tab" data-tab="tab-selection_2">
+                  <img
+                    class="tab-link"
+                    alt="tab-link2"
+                    src="https://bizweb.dktcdn.net/100/332/764/themes/880395/assets/tab_2.png?1665388816899"
+                  />
+                  <h4>Kính râm</h4>
+                </li>
+                <li class="title-link-tab" data-tab="tab-selection_3">
+                  <img
+                    class="tab-link"
+                    alt="tab-link3"
+                    src="https://bizweb.dktcdn.net/100/332/764/themes/880395/assets/tab_3.png?1665388816899"
+                  />
+                  <h4>Dáng HOT 2022</h4>
+                </li>
+                <li class="title-link-tab" data-tab="tab-selection_4">
+                  <img
+                    class="tab-link"
+                    alt="tab-link4"
+                    src="https://bizweb.dktcdn.net/100/332/764/themes/880395/assets/tab_4.png?1665388816899"
+                  />
+                  <h4>Bán chạy</h4>
+                </li>
+                <li class="title-link-tab" data-tab="tab-selection_5">
+                  <img
+                    class="tab-link"
+                    alt="tab-link5"
+                    src="https://bizweb.dktcdn.net/100/332/764/themes/880395/assets/tab_5.png?1665388816899"
+                  />
+                  <h4>Đang giảm giá</h4>
+                </li>
+              </ul>
             </div>
-            <div class="tel-contact flex">
-              <ion-icon name="mail" class="icon-contact"></ion-icon>
-              <a href="0843445456">hoangngocquoccuong@gmail.com</a>
+            <div class="swiper-tab-container">
+              <div class="swiper-tab-product">
+                <div id="tab-selection_1" class="tab-product current swiper">
+                  <div class="swiper-wrapper"></div>
+                </div>
+                <div id="tab-selection_2" class="tab-product swiper">
+                  <div class="swiper-wrapper"></div>
+                </div>
+                <div id="tab-selection_3" class="tab-product swiper">
+                  <div class="swiper-wrapper"></div>
+                </div>
+                <div id="tab-selection_4" class="tab-product swiper">
+                  <div class="swiper-wrapper"></div>
+                </div>
+                <div id="tab-selection_5" class="tab-product swiper">
+                  <div class="swiper-wrapper"></div>
+                </div>
+              </div>
             </div>
-            <div class="tel-contact flex">
-              <ion-icon name="location" class="icon-contact"></ion-icon>
-              <a href="0843445456">266 Đội Cấn, P Cống Vị, Q Ba Đình, Hà Nội</a>
+          </div>
+        </div>
+      </section>
+      <section class="section-product">
+        <div class="container">
+          <div class="row">
+            <div class="col-product">
+              <div class="title-section-product">
+                <h2>
+                  <a href="#">Kính nam</a>
+                </h2>
+                <div class="info-product"></div>
+              </div>
+              <div class="swiper-index-container">
+                <div class="swiper-product">
+                  <div id="products-man" class="index-product swiper">
+                    <div class="swiper-wrapper"></div>
+
+                    <button class="swiper-button-prev"></button>
+                    <button class="swiper-button-next"></button>
+                    <div class="swiper-pagination"></div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div id="map-address"></div>
+            <div class="hot-img-product">
+              <img
+                alt="hot-img1"
+                src="https://bizweb.dktcdn.net/100/332/764/themes/880395/assets/banner_1.jpg?1665388816899"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-product">
+        <div class="container">
+          <div class="row">
+            <div class="col-product">
+              <div class="title-section-product">
+                <h2>
+                  <a href="#">Kính nữ</a>
+                </h2>
+                <div class="info-product"></div>
+              </div>
+              <div class="swiper-index-container">
+                <div class="swiper-product">
+                  <div id="products-women" class="index-product swiper">
+                    <div class="swiper-wrapper"></div>
+
+                    <button class="swiper-button-prev"></button>
+                    <button class="swiper-button-next"></button>
+                    <div class="swiper-pagination"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="hot-img-product">
+              <img
+                alt="hot-img1"
+                src="https://bizweb.dktcdn.net/100/332/764/themes/880395/assets/banner_2.jpg?1665388816899"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section-product-choice">
+        <div class="container">
+          <div class="title-section">
+            <h2>
+              <a href="#">thêm nhiều sự lựa chọn cho bạn</a>
+            </h2>
+            <div class="img-title-choice"></div>
+          </div>
+
+          <div class="swiper product-choice-swiper">
+            <div class="list-product_choice swiper-wrapper"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+      <section class="section-blog">
+        <div class="container">
+          <div class="title-section">
+            <h2>
+              <a href="#">kiến thức về kính</a>
+            </h2>
+            <div class="img-title-choice"></div>
+          </div>
+          <div class="swiper swiper-blog-container">
+            <div class="swiper-wrapper swiper-blog-list">
+              <div class="swiper-slide">
+                <div class="blog-thumbnail">
+                  <a>
+                    <img
+                      src="//bizweb.dktcdn.net/100/332/764/articles/deo-kinh-hang-hieu-sao-viet-nao-sanh-dieu-nhat-b016f6.jpg?v=1540197035383"
+                      alt="blog-1"
+                    />
+                  </a>
+                  <span class="post-day">30/11/2022</span>
+                </div>
+                <div class="content-blog">
+                  <h3>
+                    <a href="#">Kính râm và các vấn đề sức khỏe</a>
+                  </h3>
+
+                  <p>
+                    Kính râm và các vấn đề sức khỏe Mọi người đều biết tới những
+                    nguy hiểm của ánh nắng mặt trời đối với làn da của chúng ta.
+                    Nhưng nhiều người khôn...
+                  </p>
+                  <a>Xem thêm</a>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="content-blog">
+                  <h3>
+                    <a href="#">Kính râm và các vấn đề sức khỏe</a>
+                  </h3>
+
+                  <p>
+                    Kính râm và các vấn đề sức khỏe Mọi người đều biết tới những
+                    nguy hiểm của ánh nắng mặt trời đối với làn da của chúng ta.
+                    Nhưng nhiều người khôn...
+                  </p>
+                  <a>Xem thêm</a>
+                </div>
+                <div class="blog-thumbnail">
+                  <a>
+                    <img
+                      src="https://bizweb.dktcdn.net/100/332/764/articles/kinh-ram-can-rayban-club-master-3.jpg?v=1544064669880"
+                      alt="blog-2"
+                    />
+                  </a>
+                  <span class="post-day">30/11/2022</span>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="blog-thumbnail">
+                  <a>
+                    <img
+                      src="https://bizweb.dktcdn.net/100/332/764/articles/ddd.jpg?v=1544065261837"
+                      alt="blog-3"
+                    />
+                  </a>
+                  <span class="post-day">30/11/2022</span>
+                </div>
+                <div class="content-blog">
+                  <h3>
+                    <a href="#">Kính râm và các vấn đề sức khỏe</a>
+                  </h3>
+
+                  <p>
+                    Kính râm và các vấn đề sức khỏe Mọi người đều biết tới những
+                    nguy hiểm của ánh nắng mặt trời đối với làn da của chúng ta.
+                    Nhưng nhiều người khôn...
+                  </p>
+                  <a>Xem thêm</a>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="content-blog">
+                  <h3>
+                    <a href="#">Kính râm và các vấn đề sức khỏe</a>
+                  </h3>
+
+                  <p>
+                    Kính râm và các vấn đề sức khỏe Mọi người đều biết tới những
+                    nguy hiểm của ánh nắng mặt trời đối với làn da của chúng ta.
+                    Nhưng nhiều người khôn...
+                  </p>
+                  <a>Xem thêm</a>
+                </div>
+                <div class="blog-thumbnail">
+                  <a>
+                    <img
+                      src="https://bizweb.dktcdn.net/100/332/764/articles/minh-hang2.jpg?v=1540197312523"
+                      alt="blog-4"
+                    />
+                  </a>
+                  <span class="post-day">30/11/2022</span>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="blog-thumbnail">
+                  <a>
+                    <img
+                      src="https://bizweb.dktcdn.net/100/332/764/articles/son-tung-mtp-9-1467097745762.jpg?v=1540197332813"
+                      alt="blog-5"
+                    />
+                  </a>
+                  <span class="post-day">30/11/2022</span>
+                </div>
+                <div class="content-blog">
+                  <h3>
+                    <a href="#">Kính râm và các vấn đề sức khỏe</a>
+                  </h3>
+
+                  <p>
+                    Kính râm và các vấn đề sức khỏe Mọi người đều biết tới những
+                    nguy hiểm của ánh nắng mặt trời đối với làn da của chúng ta.
+                    Nhưng nhiều người khôn...
+                  </p>
+                  <a>Xem thêm</a>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="content-blog">
+                  <h3>
+                    <a href="#">Kính râm và các vấn đề sức khỏe</a>
+                  </h3>
+
+                  <p>
+                    Kính râm và các vấn đề sức khỏe Mọi người đều biết tới những
+                    nguy hiểm của ánh nắng mặt trời đối với làn da của chúng ta.
+                    Nhưng nhiều người khôn...
+                  </p>
+                  <a>Xem thêm</a>
+                </div>
+                <div class="blog-thumbnail">
+                  <a>
+                    <img
+                      src="https://bizweb.dktcdn.net/100/332/764/articles/160130-yangyang-airport-2-05.jpg?v=1544064563567"
+                      alt="blog6"
+                    />
+                  </a>
+                  <span class="post-day">30/11/2022</span>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+      <section class="section-service">
+        <div class="container">
+          <div class="row">
+            <div class="col-service">
+              <div class="service-title">
+                <img
+                  src="https://bizweb.dktcdn.net/100/332/764/themes/880395/assets/service_1.png?1665388816899"
+                  alt="img-title"
+                />
+                Giao hàng nhanh
+              </div>
+              <div class="service-des">
+                Tại Hà Nội có nhân viên giao trong ngày. Ngoại tỉnh dùng chuyển
+                phát nhanh chỉ từ 1-2 ngày.
+              </div>
+            </div>
+            <div class="col-service">
+              <div class="service-title">
+                <img
+                  src="https://bizweb.dktcdn.net/100/332/764/themes/880395/assets/service_2.png?1665388816899"
+                  alt="img-title"
+                />Bảo hành 1 năm
+              </div>
+              <div class="service-des">
+                Miễn phí áp dụng cho tất cả các dòng kính đã và đang bán, bao
+                gồm lỗi kí thuật do nhà sản xuất
+              </div>
+            </div>
+            <div class="col-service">
+              <div class="service-title">
+                <img
+                  src="https://bizweb.dktcdn.net/100/332/764/themes/880395/assets/service_3.png?1665388816899"
+                  alt="img-title"
+                />Chính sách đổi trả
+              </div>
+              <div class="service-des">
+                Được đổi hàng trong vòng 7 ngày nếu sản phẩm còn nguyên vẹn. Đổi
+                và chọn hàng tại cửa hàng.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section-brand">
+        <div class="container">
+          <div class="swiper brand-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="img-brand">
+                  <img
+                    alt="logo-brand"
+                    src="https://bizweb.dktcdn.net/100/332/764/themes/880395/assets/brand1.png?1665388816899"
+                  />
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="img-brand">
+                  <img
+                    alt="logo-brand"
+                    src=" https://bizweb.dktcdn.net/100/332/764/themes/880395/assets/brand2.png?1665388816899"
+                  />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="img-brand">
+                  <img
+                    alt="logo-brand"
+                    src="https://bizweb.dktcdn.net/100/332/764/themes/880395/assets/brand3.png?1665388816899"
+                  />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="img-brand">
+                  <img
+                    alt="logo-brand"
+                    src="https://bizweb.dktcdn.net/100/332/764/themes/880395/assets/brand4.png?1665388816899"
+                  />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="img-brand">
+                  <img
+                    alt="logo-brand"
+                    src="https://bizweb.dktcdn.net/100/332/764/themes/880395/assets/brand5.png?1665388816899"
+                  />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="img-brand">
+                  <img
+                    alt="logo-brand"
+                    src="https://bizweb.dktcdn.net/100/332/764/themes/880395/assets/brand6.png?1665388816899"
+                  />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="img-brand">
+                  <img
+                    alt="logo-brand"
+                    src="https://bizweb.dktcdn.net/100/332/764/themes/880395/assets/brand7.png?1665388816899"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -601,6 +1041,7 @@
       </a>
     </footer>
   </body>
+
   <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <!-- leaflet -->
@@ -620,6 +1061,7 @@
     src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
   ></script>
   <script src="../js/swiper-bundle.min.js"></script>
-  <script src="../js/contact.js"></script>
+  <script src="../js/home.js"></script>
+  <script src="../js/lazyload.js"></script>
   <script src="../js/index.js"></script>
 </html>
