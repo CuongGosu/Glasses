@@ -180,16 +180,33 @@ function actionAddRemoveProduct() {
   });
 }
 const myTimeout = setTimeout(actionAddRemoveProduct, 500);
-var swiperProduct = new Swiper('.product-similar-swiper', {
-  slidesPerView: 5,
+var swiperSimilarProduct = new Swiper('.product-similar-swiper', {
+  slidesPerView: 4,
   spaceBetween: 30,
   pagination: {
     el: '.swiper-pagination',
     clickable: true,
     dynamicBullets: true,
   },
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+  breakpoints: {
+    1072: {
+      slidesPerView: 4,
+    },
+    730: {
+      slidesPerView: 4,
+      spaceBetween: 5,
+    },
+    672: {
+      slidesPerView: 3,
+      spaceBetween: 5,
+    },
+    400: {
+      slidesPerView: 2,
+      spaceBetween: 5,
+    },
+    100: {
+      slidesPerView: 2,
+      spaceBetween: 0,
+    },
   },
 });

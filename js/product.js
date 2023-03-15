@@ -26,21 +26,18 @@ function renderProduct(product) {
     `
   <div class="item-product">
   <div class="product-thumbnail">
-    <img
-    img src="${product.img}"
-    data-src="${product.img}" alt="${product.name}"
-      class="img-thumb"
-    />
+  <a class="link-detail-product" href="detail.html" data-id="${product.id}">
+  <img src="${product.img}"
+  data-src="${product.img}" alt="${product.name}" class="img-thumb" "/>
     <div class="product-action">
       <div class="btn-card">
         <ion-icon name="cart"></ion-icon>
       </div>
-      <div class="btn-view">
+      <div class="btn-view" href="detail.html" data-id="${product.id}">
         <ion-icon name="eye"></ion-icon>
       </div>
     </div>
   </div>
-
   <div class="product-info">
     <a class="product-name" href="#"
       >${product.name}</a
@@ -48,7 +45,9 @@ function renderProduct(product) {
     <div class="price-box">${product.price} đ</div>
     <div class="text-details">
     ${shortText(product.info, 190)}
-      <a>Xem chi tiết</a>
+      <a class="link-text_details" href="detail.html" data-id="${
+        product.id
+      }">Xem chi tiết</a>
     </div>
   </div>
 </div>
@@ -111,10 +110,35 @@ function renderSortAZ() {
   let defaultBtn = document.querySelector('.item-sort_default');
   defaultBtn.addEventListener('click', () => {});
 }
-
 //start
 function start() {
   renderListProduct();
   renderSortAZ();
 }
 start();
+// CLICK DETAIL_PRODUCT
+
+function clickDetailProduct() {
+  const btnViewList = document.querySelectorAll('.btn-view');
+  const linkTextInfo = document.querySelectorAll('.link-text_details');
+  const linkDetailList = document.querySelectorAll('.link-detail-product');
+  linkTextInfo.forEach((textView) => {
+    textView.addEventListener('click', (e) => {
+      const productId = textView.getAttribute('data-id');
+      localStorage.setItem('productId', productId);
+    });
+  });
+  btnViewList.forEach((btnView) => {
+    btnView.addEventListener('click', (e) => {
+      const productId = btnView.getAttribute('data-id');
+      localStorage.setItem('productId', productId);
+    });
+  });
+  linkDetailList.forEach((linkDetail) => {
+    linkDetail.addEventListener('click', (e) => {
+      const productId = linkDetail.getAttribute('data-id');
+      localStorage.setItem('productId', productId);
+    });
+  });
+}
+const myTimeout = setTimeout(clickDetailProduct, 500);

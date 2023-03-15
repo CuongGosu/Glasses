@@ -207,3 +207,6 @@
   min-width: 10.9rem;
   object-fit: cover;
 }
+.link-text_details {
+  text-decoration: none;
+}

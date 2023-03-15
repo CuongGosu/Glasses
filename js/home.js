@@ -149,9 +149,8 @@ function renderProductChoice(product) {
 start();
 // CLICK DETAIL_PRODUCT
 
-function myGreeting() {
+function clickDetailProduct() {
   const btnViewList = document.querySelectorAll('.btn-view');
-
   const linkDetailList = document.querySelectorAll('.link-detail-product');
   btnViewList.forEach((btnView) => {
     btnView.addEventListener('click', (e) => {
@@ -166,4 +165,4 @@ function myGreeting() {
     });
   });
 }
-const myTimeout = setTimeout(myGreeting, 500);
+const myTimeout = setTimeout(clickDetailProduct, 500);

@@ -140,7 +140,7 @@ var swiperBrand = new Swiper('.brand-container', {
       slidesPerView: 6,
       spaceBetween: 20,
     },
-    1072: {
+    1008: {
       slidesPerView: 6,
       spaceBetween: 10,
     },
@@ -152,7 +152,11 @@ var swiperBrand = new Swiper('.brand-container', {
       slidesPerView: 5,
       spaceBetween: 5,
     },
-    300: {
+    400: {
+      slidesPerView: 4,
+      spaceBetween: 5,
+    },
+    100: {
       slidesPerView: 4,
       spaceBetween: 5,
     },

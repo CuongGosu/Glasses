@@ -1,0 +1,31 @@
+/**************************/
+/* BELOW  1008px  MOBILE*/
+/**************************/
+@media (max-width: 63em) {
+  .row {
+    flex-direction: column;
+  }
+  .details-product_left,
+  .details-product_right {
+    width: 100%;
+  }
+  .name-product {
+    margin-bottom: 2rem;
+  }
+  .brand-product,
+  .gender-product {
+    margin-bottom: 1.2rem;
+  }
+  .price-product {
+    margin-bottom: 1rem;
+  }
+  .details-description {
+    margin-top: 4rem;
+  }
+  .details-description h1 {
+    margin-bottom: 1.5rem;
+  }
+  .title-section-product {
+    margin-top: 4rem;
+  }
+}
