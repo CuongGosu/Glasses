@@ -134,7 +134,7 @@ function sortASC(products){
   }
 }
 
-function renderSortZA(a) {
+function renderSortASC(a) {
   a= [];
   getProducts((products) => {
     sortASC(products)
@@ -160,7 +160,7 @@ function sortDESC(products){
   }
 }
 
-function renderSortZA(a) {
+function renderSortDESC(a) {
   a= [];
   getProducts((products) => {
     sortDESC(products)
@@ -177,5 +177,7 @@ function start() {
   renderListProduct();
   renderSortAZ();
   renderSortZA();
+  renderSortASC();
+  renderSortDESC();
 }
 start();
