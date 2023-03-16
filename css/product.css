@@ -129,6 +129,7 @@
 }
 .item-sort:hover {
   color: #428bca;
+  cursor: pointer;
 }
 
 .sort-choice:hover > .sort-default + .list-sort,

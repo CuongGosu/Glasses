@@ -76,7 +76,9 @@ function start() {
   renderListProduct();
 }
 start();
+// ****************
 //ASIDE: SELECTION LIST NAV ITEM VIEW PRODUCTS
+// ****************
 const listNavItem = document.querySelectorAll('.nav-item');
 listNavItem.forEach((navItem) => {
   navItem.addEventListener('click', (e) => {
@@ -120,3 +122,13 @@ function clickDetailProduct() {
   });
 }
 const myTimeout = setTimeout(clickDetailProduct, 500);
+//
+function sortDefault() {
+  const sortDefaultELement = document.querySelector('.item-sort_default');
+  console.log(sortDefaultELement);
+  sortDefaultELement.addEventListener('click', () => {
+    console.log('...');
+    renderListProduct();
+  });
+}
+const myTimeout2 = setTimeout(sortDefault, 500);
