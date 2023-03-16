@@ -29,6 +29,7 @@ async function getProducts(cb) {
 
 function renderListProduct() {
   getProducts((products) => {
+    // console.log(products)
     products.forEach(renderProduct);
   });
 }
@@ -69,6 +70,16 @@ function renderProduct(product) {
   );
 }
 
+//sort default
+function renderDefault(){
+  let defaultBtn = document.querySelector('.item-sort_default');
+    defaultBtn.addEventListener('click', () => {
+      renderListProduct();
+    });
+}
+
+
+
 ///sortAZ
 function renderSortAZ(a) {
   a= [];
@@ -79,6 +90,7 @@ function renderSortAZ(a) {
       let defaultBtn = document.querySelector('.item-sort_A-Z');
       defaultBtn.addEventListener('click', () => {
         a.forEach(renderProduct);
+        // console.log(a);
       });
   });
 }
@@ -175,6 +187,7 @@ function renderSortDESC(a) {
 //start
 function start() {
   renderListProduct();
+  renderDefault();
   renderSortAZ();
   renderSortZA();
   renderSortASC();
