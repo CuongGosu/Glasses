@@ -33,11 +33,12 @@
   height: 3rem;
   color: #428bca;
 }
-.aside-title h2 {
+.aside-title h2 a {
   color: #428bca;
   font-size: 1.8rem;
   font-weight: 400;
   text-transform: uppercase;
+  text-decoration: none;
 }
 .list-nav-bars {
   list-style: none;

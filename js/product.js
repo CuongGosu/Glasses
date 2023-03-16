@@ -54,26 +54,6 @@ function renderProduct(product) {
   `
   );
 }
-// *************************
-// **********SELECTION VIEW PRODUCTS******
-// *************************
-// ASIDE: list nav selection
-const tabLinks = document.querySelectorAll('.nav-item');
-const tabItems = document.querySelectorAll('.tab-product');
-tabLinks.forEach((link) => {
-  link.addEventListener('click', () => {
-    tabLinks.forEach((link) => link.classList.remove('active'));
-    link.classList.add('active');
-    const selectedTab = link.dataset.tab;
-    tabItems.forEach((item) => {
-      item.classList.remove('current');
-      item.style.display = 'none';
-      if (item.id == selectedTab) {
-        item.classList.add('current');
-      }
-    });
-  });
-});
 // VIEW MODE: grid-list
 const itemList = document.querySelector('.view-products');
 const gridViewBtn = document.querySelector('.view-grid');
@@ -91,31 +71,29 @@ detailsViewBtn.addEventListener('click', () => {
   gridViewBtn.classList.remove('active-btn');
   itemList.classList.add('info-detail');
 });
-
-///sort
-function sortAZ() {
-  getProducts((products) => {
-    for (var i = 0; i < products.length - 1; i++)
-      for (var j = i + 1; j < products.length; j++) {
-        if (products[i].name > products[j].name) {
-          var temp;
-          temp = products[j];
-          products[j] = products[i];
-          products[i] = temp;
-        }
-      }
-  });
-}
-function renderSortAZ() {
-  let defaultBtn = document.querySelector('.item-sort_default');
-  defaultBtn.addEventListener('click', () => {});
-}
-//start
+//start render
 function start() {
   renderListProduct();
-  renderSortAZ();
 }
 start();
+//ASIDE: SELECTION LIST NAV ITEM VIEW PRODUCTS
+const listNavItem = document.querySelectorAll('.nav-item');
+listNavItem.forEach((navItem) => {
+  navItem.addEventListener('click', (e) => {
+    const typeItem = navItem.getAttribute('data-tab');
+    let viewProduct = document.querySelector('.view-products');
+    viewProduct.innerHTML = '';
+    getProducts((products) => {
+      products.forEach((product) => {
+        for (let i = 0; i < product.type.length; i++) {
+          if (product.type[i] == typeItem) {
+            renderProduct(product);
+          }
+        }
+      });
+    });
+  });
+});
 // CLICK DETAIL_PRODUCT
 
 function clickDetailProduct() {
