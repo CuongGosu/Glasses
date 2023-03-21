@@ -1,4 +1,4 @@
-var productAPI = 'http://localhost:3000/product';
+var productAPI = 'https://glasses-67sp43rtm-cuonggosu.vercel.app/db.json';
 function shortText(text, maxLength) {
   let shortText = text.substr(0, maxLength);
   if (text.length > maxLength) {
@@ -9,7 +9,7 @@ function shortText(text, maxLength) {
 async function getProducts(callback) {
   try {
     const response = await axios.get(productAPI);
-    callback(response.data);
+    callback(response.data.product);
   } catch (error) {
     console.log(error);
   }

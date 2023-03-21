@@ -16,7 +16,7 @@ tabLinks.forEach((link) => {
   });
 });
 // ProductAPI
-var productAPI = 'http://localhost:3000/product';
+var productAPI = 'https://glasses-67sp43rtm-cuonggosu.vercel.app/db.json';
 var products = [];
 function start() {
   getProductApi(renderProduct);
@@ -25,7 +25,7 @@ async function getProductApi(callback) {
   try {
     const response = await axios.get(productAPI);
 
-    products = response.data;
+    products = response.data.product;
     callback(products);
   } catch (error) {
     console.log(error);
