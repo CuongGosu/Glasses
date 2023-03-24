@@ -1,5 +1,5 @@
 // GET API PRODUCT
-var productAPI = 'http://localhost:3000/product';
+var productAPI = 'https://glasses-67sp43rtm-cuonggosu.vercel.app/db.json';
 const productID = localStorage.getItem('productId');
 // Xóa thông tin sản phẩm khỏi localStorage
 
