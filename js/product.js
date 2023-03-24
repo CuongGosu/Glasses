@@ -39,7 +39,7 @@ function renderProduct(product) {
     </div>
   </div>
   <div class="product-info">
-    <a class="product-name" href="#"
+    <a class="product-name" href="detail.html" data-id="${product.id}"
       >${product.name}</a
     >
     <div class="price-box">${product.price} đ</div>
@@ -54,6 +54,7 @@ function renderProduct(product) {
   `
   );
 }
+
 // VIEW MODE: grid-list
 const itemList = document.querySelector('.view-products');
 const gridViewBtn = document.querySelector('.view-grid');
@@ -76,6 +77,14 @@ function start() {
   renderListProduct();
 }
 start();
+// change text in backgroundIMG
+function changeInfoWeb(content) {
+  document.title = content;
+  const titlePage = document.querySelector('.title-page h1');
+  const textChildrenPage = document.querySelector('.children-page');
+  titlePage.innerHTML = content;
+  textChildrenPage.innerHTML = content;
+}
 // ****************
 //ASIDE: SELECTION LIST NAV ITEM VIEW PRODUCTS
 // ****************
@@ -96,12 +105,14 @@ listNavItem.forEach((navItem) => {
     });
   });
 });
+
 // CLICK DETAIL_PRODUCT
 
 function clickDetailProduct() {
   const btnViewList = document.querySelectorAll('.btn-view');
   const linkTextInfo = document.querySelectorAll('.link-text_details');
   const linkDetailList = document.querySelectorAll('.link-detail-product');
+  const nameDetailProduct = document.querySelectorAll('.product-name');
   linkTextInfo.forEach((textView) => {
     textView.addEventListener('click', (e) => {
       const productId = textView.getAttribute('data-id');
@@ -117,6 +128,12 @@ function clickDetailProduct() {
   linkDetailList.forEach((linkDetail) => {
     linkDetail.addEventListener('click', (e) => {
       const productId = linkDetail.getAttribute('data-id');
+      localStorage.setItem('productId', productId);
+    });
+  });
+  nameDetailProduct.forEach((nameDetail) => {
+    nameDetail.addEventListener('click', (e) => {
+      const productId = nameDetail.getAttribute('data-id');
       localStorage.setItem('productId', productId);
     });
   });

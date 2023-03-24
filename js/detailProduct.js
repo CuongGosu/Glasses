@@ -2,7 +2,6 @@
 var productAPI = 'https://glasses-67sp43rtm-cuonggosu.vercel.app/db.json';
 const productID = localStorage.getItem('productId');
 // Xóa thông tin sản phẩm khỏi localStorage
-
 function start() {
   getProductApi(renderProduct);
 }
@@ -17,6 +16,8 @@ async function getProductApi(callback) {
 function renderProduct(products) {
   products.forEach((product) => {
     if (product.id == productID) {
+      // change info web
+      changeInfoWeb(product.name);
       // render detail
       renderProductDetail(product);
       renderProductDescription(product);
@@ -29,15 +30,20 @@ function renderProduct(products) {
           renderProductSimilar(product);
         }
       });
-      const namePage = document.querySelector('.children-page');
-      namePage.innerHTML = `${product.name}`;
     }
   });
+}
+// change text in backgroundIMG
+function changeInfoWeb(content) {
+  document.title = content;
+  const titlePage = document.querySelector('.title-page h1');
+  const textChildrenPage = document.querySelector('.children-page');
+  titlePage.innerHTML = content;
+  textChildrenPage.innerHTML = content;
 }
 function renderProductDetail(product) {
   const ProductDetail = document.querySelector('.details-product');
   let genderHTML = '';
-
   for (let i = 0; i < product.gender.length; i++) {
     if (product.gender[i] === 'man') {
       genderHTML += '<div class="gender man">Nam</div>';
@@ -156,7 +162,7 @@ function renderProductSimilar(product) {
           </div>
         </div>
         <div class="product-info">
-          <a class="product-name" href="#">${product.name}</a>
+        <a class="product-name" href="detail.html" data-id="${product.id}">${product.name}</a>
           <div class="price-box">${product.price} ₫</div>
         </div>
       </div>

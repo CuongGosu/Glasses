@@ -188,3 +188,7 @@
   margin-top: 6rem;
   margin-bottom: 3rem;
 }
+.item-product_choice:hover .product-action {
+  opacity: 1;
+  transform: scale(1.2);
+}

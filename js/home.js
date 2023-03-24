@@ -74,7 +74,7 @@ function renderProductTab(product) {
           </div>
         </div>
         <div class="product-info">
-          <a class="product-name" href="#">${product.name}</a>
+        <a class="product-name" href="html/detail.html" data-id="${product.id}">${product.name}</a>
           <div class="price-box">${product.price} ₫</div>
         </div>
       </div>
@@ -112,7 +112,7 @@ function renderProductGender(product) {
           </div>
         </div>
         <div class="product-info">
-          <a class="product-name" href="#">${product.name}</a>
+        <a class="product-name" href="html/detail.html" data-id="${product.id}">${product.name}</a>
           <div class="price-box">${product.price} ₫</div>
         </div>
       </div>
@@ -139,7 +139,7 @@ function renderProductChoice(product) {
         </div>
       </div>
       <div class="product-info">
-        <a class="product-name" href="#">${product.name}</a>
+        <a class="product-name" href="html/detail.html" data-id="${product.id}">${product.name}</a>
         <div class="price-box">${product.price} ₫</div>
       </div>
     </div>
@@ -152,6 +152,7 @@ start();
 function clickDetailProduct() {
   const btnViewList = document.querySelectorAll('.btn-view');
   const linkDetailList = document.querySelectorAll('.link-detail-product');
+  const nameDetailProduct = document.querySelectorAll('.product-name');
   btnViewList.forEach((btnView) => {
     btnView.addEventListener('click', (e) => {
       const productId = btnView.getAttribute('data-id');
@@ -161,6 +162,12 @@ function clickDetailProduct() {
   linkDetailList.forEach((linkDetail) => {
     linkDetail.addEventListener('click', (e) => {
       const productId = linkDetail.getAttribute('data-id');
+      localStorage.setItem('productId', productId);
+    });
+  });
+  nameDetailProduct.forEach((nameDetail) => {
+    nameDetail.addEventListener('click', (e) => {
+      const productId = nameDetail.getAttribute('data-id');
       localStorage.setItem('productId', productId);
     });
   });
