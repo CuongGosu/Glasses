@@ -9,8 +9,7 @@ function start() {
 async function getProductApi(callback) {
   try {
     const response = await axios.get(productAPI);
-    products = response.data;
-    callback(products);
+    callback(response.data.product);
   } catch (error) {
     console.log(error);
   }
