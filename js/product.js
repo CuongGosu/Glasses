@@ -94,6 +94,9 @@ listNavItem.forEach((navItem) => {
     const typeItem = navItem.getAttribute('data-tab');
     let viewProduct = document.querySelector('.view-products');
     viewProduct.innerHTML = '';
+    if (typeItem == 'new') changeInfoWeb('Sản phẩm mới');
+    else if (typeItem == 'sale') changeInfoWeb('Sản phẩm khuyến mãi');
+    else if (typeItem == 'hot') changeInfoWeb('Sản phẩm nổi bật');
     getProducts((products) => {
       products.forEach((product) => {
         for (let i = 0; i < product.type.length; i++) {
@@ -113,6 +116,7 @@ function clickDetailProduct() {
   const linkTextInfo = document.querySelectorAll('.link-text_details');
   const linkDetailList = document.querySelectorAll('.link-detail-product');
   const nameDetailProduct = document.querySelectorAll('.product-name');
+
   linkTextInfo.forEach((textView) => {
     textView.addEventListener('click', (e) => {
       const productId = textView.getAttribute('data-id');
@@ -149,3 +153,45 @@ function sortDefault() {
   });
 }
 const myTimeout2 = setTimeout(sortDefault, 500);
+// **********************************************
+// *******************SORT PRODUCT****************
+// **********************************************
+// Lưu trữ mảng sản phẩm được lấy từ API vào bộ nhớ đệm
+let cachedProducts = [];
+
+async function getCachedProducts() {
+  if (cachedProducts.length === 0) {
+    const response = await axios.get(productAPI);
+    cachedProducts = response.data.product;
+  }
+  return cachedProducts;
+}
+
+// Sắp xếp sản phẩm theo giá tăng dần
+async function sortProductsByPriceAsc() {
+  const products = await getCachedProducts();
+  const sortedProducts = products.sort((a, b) => a.price - b.price);
+  renderProducts(sortedProducts);
+}
+
+// Sắp xếp sản phẩm theo giá giảm dần
+async function sortProductsByPriceDesc() {
+  const products = await getCachedProducts();
+  const sortedProducts = products.sort((a, b) => b.price - a.price);
+  renderProducts(sortedProducts);
+}
+
+// Render danh sách sản phẩm
+function renderProducts(products) {
+  const viewProduct = document.querySelector('.view-products');
+  viewProduct.innerHTML = '';
+  products.forEach(renderProduct);
+}
+
+// Sử dụng event listener để gọi hàm sắp xếp sản phẩm khi người dùng click vào button
+document
+  .querySelector('.item-sort_price-asc')
+  .addEventListener('click', sortProductsByPriceAsc);
+document
+  .querySelector('.item-sort_price-desc')
+  .addEventListener('click', sortProductsByPriceDesc);
