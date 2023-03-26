@@ -36,7 +36,7 @@ async function getProductsAPI() {
   try {
     const response = await axios.get(productAPI);
     dataProducts = response.data.product;
-    cachedProducts = dataProducts;
+    cachedProducts = [...dataProducts];
   } catch (error) {
     console.log(error);
   }
@@ -101,6 +101,8 @@ listNavItem.forEach((navItem) => {
     cachedProducts = dataProducts.filter((product) => {
       return product.type.includes(typeItem);
     });
+    typeSort = 'default';
+    currentSelectionSort();
     renderListProduct(cachedProducts);
   });
 });
