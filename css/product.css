@@ -43,6 +43,9 @@
 .list-nav-bars {
   list-style: none;
 }
+.list-nav-bars:hover {
+  cursor: pointer;
+}
 .nav-item {
   padding: 1rem 0;
   width: 100%;

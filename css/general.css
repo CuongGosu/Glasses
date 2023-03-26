@@ -254,7 +254,7 @@ body {
 }
 .item-small li {
   border: 1px solid #b2b2b2;
-  padding: 1rem 2rem;
+  /* padding: 1rem 2rem; */
   display: flex;
   justify-content: start;
 }
@@ -263,6 +263,10 @@ body {
   font-size: 1.4rem;
   text-decoration: none;
   line-height: 1.5rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
 }
 .menu-nav_item {
   height: 100%;
@@ -286,6 +290,13 @@ body {
   background-color: #428bca;
   color: #fff;
 }
+/* .link-sub a {
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  width: 100%;
+  height: 3rem;
+} */
 /* ******************************GENERAL***************** */
 .border {
   width: 100%;

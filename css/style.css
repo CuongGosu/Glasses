@@ -284,6 +284,7 @@
 .blog-thumbnail a img {
   width: 100%;
   min-height: 25.5rem;
+  object-fit: cover;
 }
 .content-blog {
   padding: 5rem 3rem 1rem 3rem;
