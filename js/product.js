@@ -15,7 +15,6 @@ detailsViewBtn.addEventListener('click', () => {
 });
 // change text in backgroundIMG
 function changeInfoWeb(content) {
-  document.title = content;
   const titlePage = document.querySelector('.title-page h1');
   const textChildrenPage = document.querySelector('.children-page');
   titlePage.innerHTML = content;
@@ -98,9 +97,29 @@ async function start() {
   renderListProduct(dataProducts);
 }
 start();
+// ********************view product for click type
+function checkTypeViewClicked() {
+  var typeProduct = localStorage.getItem('productType');
+  if (typeProduct != null) {
+    // changeInfoWeb('Tất cả các sản phẩm');
+    if (typeProduct == 'new') changeInfoWeb('Sản phẩm mới');
+    else if (typeProduct == 'sale') changeInfoWeb('Sản phẩm khuyến mãi');
+    else if (typeProduct == 'hot') changeInfoWeb('Sản phẩm nổi bật');
+    cachedProducts = dataProducts.filter((product) => {
+      return product.type.includes(typeProduct);
+    });
+    renderListProduct(cachedProducts);
+    // Xóa thông tin sản phẩm khỏi localStorage
+    localStorage.removeItem('productType');
+  } else {
+    changeInfoWeb('Tất cả các sản phẩm');
+  }
+}
+const myTimeout3 = setTimeout(checkTypeViewClicked, 100);
 // ****************
 //ASIDE: SELECTION LIST NAV ITEM VIEW PRODUCTS
 // ****************
+
 const listNavItem = document.querySelectorAll('.nav-item');
 listNavItem.forEach((navItem) => {
   navItem.addEventListener('click', (e) => {
@@ -177,8 +196,6 @@ async function sortProductsByPriceAsc() {
   currentSelectionSort();
   const products = [...cachedProducts];
   const sortedProducts = products.sort((a, b) => a.price - b.price);
-  console.log(sortedProducts);
-
   renderListProduct(sortedProducts);
 }
 // Sắp xếp sản phẩm theo giá giảm dần
@@ -187,7 +204,6 @@ async function sortProductsByPriceDesc() {
   currentSelectionSort();
   const products = [...cachedProducts];
   const sortedProducts = products.sort((a, b) => b.price - a.price);
-  console.log(sortedProducts);
   renderListProduct(sortedProducts);
 }
 

@@ -1,7 +1,6 @@
 // GET API PRODUCT
 var productAPI = 'https://glasses-67sp43rtm-cuonggosu.vercel.app/db.json';
 const productID = localStorage.getItem('productId');
-// Xóa thông tin sản phẩm khỏi localStorage
 function start() {
   getProductApi(renderProduct);
 }
@@ -184,7 +183,8 @@ function renderProductSimilar(product) {
   productsSimilar.insertAdjacentHTML('beforeend', productHTML);
 }
 start();
-localStorage.removeItem('currentProductId');
+// Xóa thông tin sản phẩm khỏi localStorage
+localStorage.removeItem('productId');
 // btn add-remove
 function actionAddRemoveProduct() {
   const btnRemove = document.querySelector('.btn-remove');

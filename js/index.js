@@ -261,3 +261,14 @@ moreInfo_Footer.forEach((listInfo) => {
     if (subInfo != null) subInfo.classList.toggle('hidden-footer');
   });
 });
+// Click type-product
+function clickDetailProduct() {
+  const dataTypeElement = document.querySelectorAll('.data-type-product');
+  dataTypeElement.forEach((typeProduct) => {
+    typeProduct.addEventListener('click', (e) => {
+      const product_type = e.target.getAttribute('data-type-product');
+      localStorage.setItem('productType', product_type);
+    });
+  });
+}
+clickDetailProduct();

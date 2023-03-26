@@ -44,12 +44,12 @@
                 <a class="header-nav-link" href="#">Kiểm tra đơn hàng</a>
               </li>
               <li>
-                <a class="header-nav-link no-user" href="SignIn.html"
+                <a class="header-nav-link no-user" href="FormSignIn.html"
                   >đăng nhập</a
                 >
               </li>
               <li>
-                <a class="header-nav-link no-user" href="SignUp.html"
+                <a class="header-nav-link no-user" href="FormSignUp.html"
                   >đăng ký</a
                 >
               </li>
@@ -64,7 +64,6 @@
           </nav>
         </div>
       </div>
-
       <div class="mid-header">
         <div class="container">
           <div class="content-header">
@@ -170,16 +169,29 @@
                 ></ion-icon>
               </div>
               <ul class="item-small">
-                <li class="link-sub">
-                  <a href="product.html" class="link-small">Sản phẩm mới</a>
+                <li class="link-sub data-type-product">
+                  <a
+                    href="product.html"
+                    class="link-small"
+                    data-type-product="new"
+                    >Sản phẩm mới</a
+                  >
                 </li>
-                <li class="link-sub">
-                  <a href="product.html" class="link-small"
+                <li class="link-sub data-type-product">
+                  <a
+                    href="product.html"
+                    class="link-small"
+                    data-type-product="sale"
                     >Sản phẩm khuyến mãi</a
                   >
                 </li>
-                <li class="link-sub">
-                  <a href="product.html" class="link-small">Sản phẩm nổi bật</a>
+                <li class="link-sub data-type-product">
+                  <a
+                    href="product.html"
+                    class="link-small"
+                    data-type-product="hot"
+                    >Sản phẩm nổi bật</a
+                  >
                 </li>
               </ul>
             </li>
@@ -194,10 +206,10 @@
         <nav class="menu-nav_mobile">
           <ul class="menu-nav-list_mobile">
             <li class="menu-nav-item_mobile btn-Login_Mobile">
-              <a href="SignIn.html" class="menu-link">Đăng nhập</a>
+              <a href="FormSignIn.html" class="menu-link">Đăng nhập</a>
             </li>
             <li class="menu-nav-item_mobile btn-SignUp_Mobile">
-              <a href="SignUp.html" class="menu-link">Đăng ký</a>
+              <a href="FormSignUp.html" class="menu-link">Đăng ký</a>
             </li>
             <li class="menu-nav-item_mobile">
               <a href="../index.html" class="menu-link">Trang chủ</a>
@@ -241,15 +253,28 @@
                   </div>
                 </li>
                 <li class="link-sub_mobile">
-                  <a href="product.html" class="link-small">Sản phẩm mới</a>
+                  <a
+                    href="product.html"
+                    class="link-small data-type-product"
+                    data-type-product="new"
+                    >Sản phẩm mới</a
+                  >
                 </li>
                 <li class="link-sub_mobile">
-                  <a href="product.html" class="link-small"
+                  <a
+                    href="product.html"
+                    class="link-small data-type-product"
+                    data-type-product="sale"
                     >Sản phẩm khuyến mãi</a
                   >
                 </li>
                 <li class="link-sub_mobile">
-                  <a href="product.html" class="link-small">Sản phẩm nổi bật</a>
+                  <a
+                    href="product.html"
+                    class="link-small data-type-product"
+                    data-type-product="hot"
+                    >Sản phẩm nổi bật</a
+                  >
                 </li>
               </ul>
             </li>
