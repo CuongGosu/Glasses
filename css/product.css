@@ -132,7 +132,7 @@
   cursor: pointer;
 }
 
-.sort-choice:hover > .sort-default + .list-sort,
+.sort-choice:hover > .sort-current + .list-sort,
 .list-sort:hover {
   display: flex;
   z-index: 99;

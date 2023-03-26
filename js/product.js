@@ -1,4 +1,26 @@
-var productAPI = 'https://glasses-67sp43rtm-cuonggosu.vercel.app/db.json';
+// VIEW MODE: grid-list
+const itemList = document.querySelector('.view-products');
+const gridViewBtn = document.querySelector('.view-grid');
+const detailsViewBtn = document.querySelector('.view-detail');
+gridViewBtn.classList.add('active-btn');
+gridViewBtn.addEventListener('click', () => {
+  gridViewBtn.classList.add('active-btn');
+  detailsViewBtn.classList.remove('active-btn');
+  itemList.classList.remove('info-detail');
+});
+detailsViewBtn.addEventListener('click', () => {
+  detailsViewBtn.classList.add('active-btn');
+  gridViewBtn.classList.remove('active-btn');
+  itemList.classList.add('info-detail');
+});
+// change text in backgroundIMG
+function changeInfoWeb(content) {
+  document.title = content;
+  const titlePage = document.querySelector('.title-page h1');
+  const textChildrenPage = document.querySelector('.children-page');
+  titlePage.innerHTML = content;
+  textChildrenPage.innerHTML = content;
+}
 function shortText(text, maxLength) {
   let shortText = text.substr(0, maxLength);
   if (text.length > maxLength) {
@@ -6,18 +28,24 @@ function shortText(text, maxLength) {
   }
   return shortText;
 }
-async function getProducts(callback) {
+var productAPI = 'https://glasses-67sp43rtm-cuonggosu.vercel.app/db.json';
+var dataProducts = [];
+var cachedProducts = [];
+
+async function getProductsAPI() {
   try {
     const response = await axios.get(productAPI);
-    callback(response.data.product);
+    dataProducts = response.data.product;
+    cachedProducts = dataProducts;
   } catch (error) {
     console.log(error);
   }
 }
-function renderListProduct() {
-  getProducts((products) => {
-    products.forEach(renderProduct);
-  });
+async function renderListProduct(listProduct) {
+  let viewProduct = document.querySelector('.view-products');
+  viewProduct.innerHTML = '';
+  const products = listProduct;
+  products.forEach(renderProduct);
 }
 function renderProduct(product) {
   let viewProduct = document.querySelector('.view-products');
@@ -54,37 +82,12 @@ function renderProduct(product) {
   `
   );
 }
-
-// VIEW MODE: grid-list
-const itemList = document.querySelector('.view-products');
-const gridViewBtn = document.querySelector('.view-grid');
-const detailsViewBtn = document.querySelector('.view-detail');
-
-gridViewBtn.classList.add('active-btn');
-gridViewBtn.addEventListener('click', () => {
-  gridViewBtn.classList.add('active-btn');
-  detailsViewBtn.classList.remove('active-btn');
-  itemList.classList.remove('info-detail');
-});
-
-detailsViewBtn.addEventListener('click', () => {
-  detailsViewBtn.classList.add('active-btn');
-  gridViewBtn.classList.remove('active-btn');
-  itemList.classList.add('info-detail');
-});
 //start render
-function start() {
-  renderListProduct();
+async function start() {
+  await getProductsAPI();
+  renderListProduct(dataProducts);
 }
 start();
-// change text in backgroundIMG
-function changeInfoWeb(content) {
-  document.title = content;
-  const titlePage = document.querySelector('.title-page h1');
-  const textChildrenPage = document.querySelector('.children-page');
-  titlePage.innerHTML = content;
-  textChildrenPage.innerHTML = content;
-}
 // ****************
 //ASIDE: SELECTION LIST NAV ITEM VIEW PRODUCTS
 // ****************
@@ -92,20 +95,13 @@ const listNavItem = document.querySelectorAll('.nav-item');
 listNavItem.forEach((navItem) => {
   navItem.addEventListener('click', (e) => {
     const typeItem = navItem.getAttribute('data-tab');
-    let viewProduct = document.querySelector('.view-products');
-    viewProduct.innerHTML = '';
     if (typeItem == 'new') changeInfoWeb('Sản phẩm mới');
     else if (typeItem == 'sale') changeInfoWeb('Sản phẩm khuyến mãi');
     else if (typeItem == 'hot') changeInfoWeb('Sản phẩm nổi bật');
-    getProducts((products) => {
-      products.forEach((product) => {
-        for (let i = 0; i < product.type.length; i++) {
-          if (product.type[i] == typeItem) {
-            renderProduct(product);
-          }
-        }
-      });
+    cachedProducts = dataProducts.filter((product) => {
+      return product.type.includes(typeItem);
     });
+    renderListProduct(cachedProducts);
   });
 });
 
@@ -144,51 +140,48 @@ function clickDetailProduct() {
 }
 const myTimeout = setTimeout(clickDetailProduct, 500);
 //
-function sortDefault() {
-  const sortDefaultELement = document.querySelector('.item-sort_default');
-  console.log(sortDefaultELement);
-  sortDefaultELement.addEventListener('click', () => {
-    console.log('...');
-    renderListProduct();
-  });
-}
-const myTimeout2 = setTimeout(sortDefault, 500);
 // **********************************************
 // *******************SORT PRODUCT****************
 // **********************************************
-// Lưu trữ mảng sản phẩm được lấy từ API vào bộ nhớ đệm
-let cachedProducts = [];
-
-async function getCachedProducts() {
-  if (cachedProducts.length === 0) {
-    const response = await axios.get(productAPI);
-    cachedProducts = response.data.product;
-  }
-  return cachedProducts;
-}
 
 // Sắp xếp sản phẩm theo giá tăng dần
-async function sortProductsByPriceAsc() {
-  const products = await getCachedProducts();
-  const sortedProducts = products.sort((a, b) => a.price - b.price);
-  renderProducts(sortedProducts);
+// type sort
+const typeSortCurrent = document.querySelector('.sort-current');
+let typeSort = 'default';
+async function currentSelectionSort() {
+  if (typeSort == 'default') {
+    typeSortCurrent.innerHTML = 'Mặc định';
+  } else if (typeSort == 'Asc') {
+    typeSortCurrent.innerHTML = 'Giá tăng dần';
+  } else typeSortCurrent.innerHTML = 'Giá giảm dần';
 }
+async function sortProductsByDefault() {
+  typeSort = 'default';
+  currentSelectionSort();
+  renderListProduct(cachedProducts);
+}
+async function sortProductsByPriceAsc() {
+  typeSort = 'Asc';
+  currentSelectionSort();
+  const products = [...cachedProducts];
+  const sortedProducts = products.sort((a, b) => a.price - b.price);
+  console.log(sortedProducts);
 
+  renderListProduct(sortedProducts);
+}
 // Sắp xếp sản phẩm theo giá giảm dần
 async function sortProductsByPriceDesc() {
-  const products = await getCachedProducts();
+  typeSort = 'Desc';
+  currentSelectionSort();
+  const products = [...cachedProducts];
   const sortedProducts = products.sort((a, b) => b.price - a.price);
-  renderProducts(sortedProducts);
+  console.log(sortedProducts);
+  renderListProduct(sortedProducts);
 }
 
-// Render danh sách sản phẩm
-function renderProducts(products) {
-  const viewProduct = document.querySelector('.view-products');
-  viewProduct.innerHTML = '';
-  products.forEach(renderProduct);
-}
-
-// Sử dụng event listener để gọi hàm sắp xếp sản phẩm khi người dùng click vào button
+document
+  .querySelector('.item-sort_default')
+  .addEventListener('click', sortProductsByDefault);
 document
   .querySelector('.item-sort_price-asc')
   .addEventListener('click', sortProductsByPriceAsc);
