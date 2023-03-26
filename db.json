@@ -208,28 +208,5 @@
         "Kiểu dáng vuông, mảnh nhẹ dễ đeo, phù hợp cho đa số người sử dụng"
       ]
     }
-  ],
-  "account": [
-    {
-      "id": "001",
-      "firstName": "Trương Bá",
-      "lastName": "Nhật Hoàng",
-      "userName": "banhathoang01@gmail.com",
-      "password": "1234qwer"
-    },
-    {
-      "id": "002",
-      "firstName": "Hoàng Ngọc",
-      "lastName": "Quốc Cường",
-      "userName": "hoangngocquoccuong@gmail.com",
-      "password": "1234qwer"
-    },
-    {
-      "id": 71,
-      "firstName": "Trương",
-      "lastName": "Trường",
-      "userName": "truongtbn@gmail.com",
-      "password": "123"
-    }
   ]
 }

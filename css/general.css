@@ -267,6 +267,7 @@ body {
   align-items: center;
   width: 100%;
   padding: 1rem;
+  pointer-events: auto;
 }
 .menu-nav_item {
   height: 100%;
