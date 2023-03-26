@@ -94,12 +94,12 @@ function renderProduct(product) {
 //start render
 async function start() {
   await getProductsAPI();
-  renderListProduct(dataProducts);
+  if (typeProduct == null) renderListProduct(dataProducts);
 }
 start();
 // ********************view product for click type
+var typeProduct = localStorage.getItem('productType');
 function checkTypeViewClicked() {
-  var typeProduct = localStorage.getItem('productType');
   if (typeProduct != null) {
     // changeInfoWeb('Tất cả các sản phẩm');
     if (typeProduct == 'new') changeInfoWeb('Sản phẩm mới');
