@@ -33,6 +33,16 @@ function renderProduct(products) {
     }
   });
 }
+// chuyển đổi số tiền sang chuỗi có định dạng tiền tệ
+function formattedPrice(price) {
+  const formattedPrice = price.toLocaleString('vi-VN', {
+    style: 'currency',
+    currency: 'VND',
+  });
+  return formattedPrice.replace(/^(\D*)(\d+)(\D*)$/, (match, p1, p2, p3) => {
+    return p1 + p2.replace(/\d{3}(?=\d)/g, '$&,') + p3;
+  });
+}
 // change text in backgroundIMG
 function changeInfoWeb(content) {
   document.title = content;
@@ -95,7 +105,7 @@ function renderProductDetail(product) {
         <span class="id-product">${product.id}</span>
       </p>
     </div>
-    <div class="price-product">${product.price} ₫</div>
+    <div class="price-product">${formattedPrice(product.price)}</div>
     <div class="gender-product">
       <span class="form-gender">Phù hợp :</span>
       ${genderHTML}
@@ -148,7 +158,9 @@ function renderProductSimilar(product) {
   let productHTML = `
       <div class="item-product_choice swiper-slide">
         <div class="product-thumbnail">
-        <a class="link-detail-product" href="detail.html" data-id="${product.id}">
+        <a class="link-detail-product" href="detail.html" data-id="${
+          product.id
+        }">
         <img src="${product.img}"
         data-src="${product.img}" alt="${product.name}" class="img-thumb" "/>
         </a>
@@ -162,8 +174,10 @@ function renderProductSimilar(product) {
           </div>
         </div>
         <div class="product-info">
-        <a class="product-name" href="detail.html" data-id="${product.id}">${product.name}</a>
-          <div class="price-box">${product.price} ₫</div>
+        <a class="product-name" href="detail.html" data-id="${product.id}">${
+    product.name
+  }</a>
+          <div class="price-box">${formattedPrice(product.price)}</div>
         </div>
       </div>
     `;

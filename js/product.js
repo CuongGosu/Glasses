@@ -28,6 +28,16 @@ function shortText(text, maxLength) {
   }
   return shortText;
 }
+// chuyển đổi số tiền sang chuỗi có định dạng tiền tệ
+function formattedPrice(price) {
+  const formattedPrice = price.toLocaleString('vi-VN', {
+    style: 'currency',
+    currency: 'VND',
+  });
+  return formattedPrice.replace(/^(\D*)(\d+)(\D*)$/, (match, p1, p2, p3) => {
+    return p1 + p2.replace(/\d{3}(?=\d)/g, '$&,') + p3;
+  });
+}
 var productAPI = 'https://glasses-67sp43rtm-cuonggosu.vercel.app/db.json';
 var dataProducts = [];
 var cachedProducts = [];
@@ -70,7 +80,7 @@ function renderProduct(product) {
     <a class="product-name" href="detail.html" data-id="${product.id}"
       >${product.name}</a
     >
-    <div class="price-box">${product.price} đ</div>
+    <div class="price-box">${formattedPrice(product.price)}</div>
     <div class="text-details">
     ${shortText(product.info, 190)}
       <a class="link-text_details" href="detail.html" data-id="${

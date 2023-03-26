@@ -31,6 +31,16 @@ async function getProductApi(callback) {
     console.log(error);
   }
 }
+// chuyển đổi số tiền sang chuỗi có định dạng tiền tệ
+function formattedPrice(price) {
+  const formattedPrice = price.toLocaleString('vi-VN', {
+    style: 'currency',
+    currency: 'VND',
+  });
+  return formattedPrice.replace(/^(\D*)(\d+)(\D*)$/, (match, p1, p2, p3) => {
+    return p1 + p2.replace(/\d{3}(?=\d)/g, '$&,') + p3;
+  });
+}
 const productTypes = {
   new: 1,
   sunglasses: 2,
@@ -60,7 +70,9 @@ function renderProductTab(product) {
       `
       <div class="item-product swiper-slide">
         <div class="product-thumbnail" >
-        <a class="link-detail-product" href="html/detail.html" data-id="${product.id}">
+        <a class="link-detail-product" href="html/detail.html" data-id="${
+          product.id
+        }">
         <img src="${product.img}"
         data-src="${product.img}" alt="${product.name}" class="img-thumb" "/>
         </a>
@@ -74,8 +86,10 @@ function renderProductTab(product) {
           </div>
         </div>
         <div class="product-info">
-        <a class="product-name" href="html/detail.html" data-id="${product.id}">${product.name}</a>
-          <div class="price-box">${product.price} ₫</div>
+        <a class="product-name" href="html/detail.html" data-id="${
+          product.id
+        }">${product.name}</a>
+          <div class="price-box">${formattedPrice(product.price)}</div>
         </div>
       </div>
     `
@@ -98,7 +112,9 @@ function renderProductGender(product) {
       `
       <div class="item-product swiper-slide">
         <div class="product-thumbnail" ">
-        <a class="link-detail-product" href="html/detail.html" data-id="${product.id}">
+        <a class="link-detail-product" href="html/detail.html" data-id="${
+          product.id
+        }">
         <img src="${product.img}"
         data-src="${product.img}" alt="${product.name}" class="img-thumb" "/>
         </a>
@@ -112,8 +128,10 @@ function renderProductGender(product) {
           </div>
         </div>
         <div class="product-info">
-        <a class="product-name" href="html/detail.html" data-id="${product.id}">${product.name}</a>
-          <div class="price-box">${product.price} ₫</div>
+        <a class="product-name" href="html/detail.html" data-id="${
+          product.id
+        }">${product.name}</a>
+          <div class="price-box">${formattedPrice(product.price)}</div>
         </div>
       </div>
     `
@@ -125,7 +143,9 @@ function renderProductChoice(product) {
   const productHTML = `
     <div class="item-product_choice swiper-slide">
       <div class="product-thumbnail">
-      <a class="link-detail-product" href="html/detail.html" data-id="${product.id}">
+      <a class="link-detail-product" href="html/detail.html" data-id="${
+        product.id
+      }">
       <img src="${product.img}"
       data-src="${product.img}" alt="${product.name}" class="img-thumb" "/>
       </a>
@@ -139,8 +159,10 @@ function renderProductChoice(product) {
         </div>
       </div>
       <div class="product-info">
-        <a class="product-name" href="html/detail.html" data-id="${product.id}">${product.name}</a>
-        <div class="price-box">${product.price} ₫</div>
+        <a class="product-name" href="html/detail.html" data-id="${
+          product.id
+        }">${product.name}</a>
+        <div class="price-box">${formattedPrice(product.price)}</div>
       </div>
     </div>
   `;
