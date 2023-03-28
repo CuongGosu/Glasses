@@ -319,7 +319,7 @@
               <label for="fullEmail" class="form-label">Email </label>
               <input
                 id="fullEmail"
-                name="fullEmail"
+                name="Email"
                 type="text"
                 placeholder="abc@gmail.com*"
                 class="form-control"
@@ -330,7 +330,7 @@
               <label for="email" class="form-label">Mật khẩu </label>
               <input
                 id="password"
-                name="password"
+                name="Mật khẩu"
                 type="password"
                 placeholder="Mật khẩu"
                 class="form-control"
@@ -340,16 +340,16 @@
             <div class="form-group form-input">
               <label for="email" class="form-label">Xác nhận mật khẩu </label>
               <input
-                id="password"
-                name="password"
+                id="confirm_password"
+                name="Mật khẩu xác nhận"
                 type="password"
-                placeholder="Mật khẩu"
+                placeholder="Xác nhận mật khẩu"
                 class="form-control"
               />
               <span class="form-message"></span>
             </div>
             <div class="form-group">
-              <button class="form-submit">Đăng nhập</button>
+              <button onclick="register()" class="form-submit">Đăng ký</button>
             </div>
             <div class="form-group">
               <a href="SignIn.html" class="btn-signIn">Đăng nhập</a>
@@ -357,7 +357,7 @@
             </div>
             <div class="line-more">
               <div class="line_more"></div>
-              <span>Hoặc</span>
+              <span>Hoặc đăng nhập</span>
               <div class="line_more"></div>
             </div>
             <div class="form-group">
@@ -641,6 +641,11 @@
     nomodule
     src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
   ></script>
+  <!-- FIREBASE -->
+  <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-database.js"></script>
   <script src="../js/swiper-bundle.min.js"></script>
   <script src="../js/index.js"></script>
+  <script src="../js/SignUp.js"></script>
 </html>
