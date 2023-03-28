@@ -23,6 +23,8 @@ This project was developed using the following technologies:
 - HTML
 - CSS
 - JavaScript
+- Swiperjs
+- Leaflet
 
 ## FEATURE:
 
@@ -33,6 +35,7 @@ This project was developed using the following technologies:
 - Detailed product view for each item, including specifications and pricing
 - Categorization of products into different groups based on their status, including hot, sale, and new items
 - View sort products
+- SignIn, SignUp with firebase (Authentication)
 
 ## Installation:
 
