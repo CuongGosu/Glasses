@@ -106,3 +106,24 @@
   flex: 1;
   height: 1px;
 }
+.form-control {
+  border-radius: 3px;
+  border: 1px solid #b3b3b3;
+  outline: none;
+  font-size: 1.4rem;
+}
+.form-control:hover {
+  border-color: #1dbfaf;
+}
+.invalid .form-control {
+  border-color: #f33a58;
+}
+
+.invalid .form-message {
+  color: #f33a58;
+}
+.form-message {
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  padding: 4px 0 0;
+}

@@ -44,12 +44,12 @@
                 <a class="header-nav-link" href="#">Kiểm tra đơn hàng</a>
               </li>
               <li>
-                <a class="header-nav-link no-user" href="FormSignIn.html"
+                <a class="header-nav-link no-user" href="SignIn.html"
                   >đăng nhập</a
                 >
               </li>
               <li>
-                <a class="header-nav-link no-user" href="FormSignUp.html"
+                <a class="header-nav-link no-user" href="SignUp.html"
                   >đăng ký</a
                 >
               </li>
@@ -206,10 +206,10 @@
         <nav class="menu-nav_mobile">
           <ul class="menu-nav-list_mobile">
             <li class="menu-nav-item_mobile btn-Login_Mobile">
-              <a href="FormSignIn.html" class="menu-link">Đăng nhập</a>
+              <a href="SignIn.html" class="menu-link">Đăng nhập</a>
             </li>
             <li class="menu-nav-item_mobile btn-SignUp_Mobile">
-              <a href="FormSignUp.html" class="menu-link">Đăng ký</a>
+              <a href="SignUp.html" class="menu-link">Đăng ký</a>
             </li>
             <li class="menu-nav-item_mobile">
               <a href="../index.html" class="menu-link">Trang chủ</a>
@@ -338,7 +338,7 @@
               <span class="form-message"></span>
             </div>
             <div class="form-group">
-              <button class="form-submit">Đăng nhập</button>
+              <button onclick="login()" class="form-submit">Đăng nhập</button>
             </div>
             <div class="form-group">
               <a href="SignUp.html" class="btn-signUp">Đăng ký</a>
@@ -630,6 +630,10 @@
     nomodule
     src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
   ></script>
+  <!-- FIREBASE -->
+  <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-database.js"></script>
   <script src="../js/swiper-bundle.min.js"></script>
   <script src="../js/index.js"></script>
 </html>
