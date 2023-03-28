@@ -314,7 +314,7 @@
       </section>
       <section class="section-SignUp">
         <div class="container">
-          <form action="" method="POST" class="form-SignUp" id="form-SignUp">
+          <form class="form-SignUp" id="form-SignUp">
             <div class="form-group form-input">
               <label for="fullEmail" class="form-label">Email </label>
               <input
@@ -349,7 +349,7 @@
               <span class="form-message"></span>
             </div>
             <div class="form-group">
-              <button onclick="register()" class="form-submit">Đăng ký</button>
+              <button class="form-submit">Đăng ký</button>
             </div>
             <div class="form-group">
               <a href="SignIn.html" class="btn-signIn">Đăng nhập</a>
@@ -641,10 +641,15 @@
     nomodule
     src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
   ></script>
-  <!-- FIREBASE -->
-  <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-database.js"></script>
+  <!-- Firebase App - Required for Firebase features -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+
+  <!-- Firebase Auth -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+
+  <!-- Firebase Realtime Database -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+
   <script src="../js/swiper-bundle.min.js"></script>
   <script src="../js/index.js"></script>
   <script src="../js/SignUp.js"></script>

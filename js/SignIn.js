@@ -12,15 +12,14 @@ firebase.initializeApp(firebaseConfig);
 // Initialize Firebase
 const auth = firebase.auth();
 const database = firebase.database();
-const formSignUp = document.querySelector('.form-SignUp');
-formSignUp.onsubmit = (e) => {
+const formSignIn = document.querySelector('.form-SignIn');
+formSignIn.onsubmit = (e) => {
   e.preventDefault();
-  register();
+  login();
 };
-function register() {
+function login() {
   const email = document.getElementById('fullEmail');
   const password = document.getElementById('password');
-  const confirm_password = document.getElementById('confirm_password');
   const formInput = document.querySelectorAll('.form-input');
   let checkRule = [];
   formInput.forEach((form_group) => {
@@ -38,10 +37,10 @@ function register() {
       form_group.classList.remove('invalid');
     }
   });
+  if (checkRule[email.id]) return;
   var parentElement, errorMessage;
   parentElement = email.closest('.form-input');
   errorMessage = parentElement.querySelector('.form-message');
-  if (checkRule[email.id]) return;
   if (!validate_email(email)) {
     errorMessage.innerHTML = 'Email vừa nhập không đúng định dạng';
     parentElement.classList.add('invalid');
@@ -51,9 +50,9 @@ function register() {
     errorMessage.innerText = '';
     parentElement.classList.remove('invalid');
   }
+  if (checkRule[password.id]) return;
   parentElement = password.closest('.form-input');
   errorMessage = parentElement.querySelector('.form-message');
-  if (checkRule[password.id]) return;
   if (!validate_password(password)) {
     errorMessage.innerHTML = 'Mật khẩu không được ngắn hơn 6 kí tự';
     parentElement.classList.add('invalid');
@@ -63,35 +62,20 @@ function register() {
     errorMessage.innerText = '';
     parentElement.classList.remove('invalid');
   }
-  parentElement = confirm_password.closest('.form-input');
-  errorMessage = parentElement.querySelector('.form-message');
-  if (checkRule[confirm_password.id]) return;
-  if (!validate_confirm_password(confirm_password, password)) {
-    errorMessage.innerHTML = 'Mật khẩu xác nhận không khớp';
-    parentElement.classList.add('invalid');
-    confirm_password.focus();
-    console.log('sai');
-    return;
-  } else {
-    errorMessage.innerText = '';
-    parentElement.classList.remove('invalid');
-  }
   // AUTHENTICATION
   firebase
     .auth()
-    .createUserWithEmailAndPassword(email.value, password.value)
+    .signInWithEmailAndPassword(email.value, password.value)
     .then(function () {
       var user = auth.currentUser;
       // add this user to Firebase database
       var database_ref = database.ref();
       // creater user data
       var user_data = {
-        email: email.value,
-        password: password.value,
         last_login: Date.now(),
       };
-      database_ref.child('users/' + user.uid).set(user_data);
-      alert('Đăng ký thành công!');
+      database_ref.child('users/' + user.uid).update(user_data);
+      alert('Đăng nhập thành công!');
     })
     .catch((error) => {
       var errorCode = error.code;
@@ -99,7 +83,6 @@ function register() {
       alert(errorMessage);
     });
 }
-// VALIDATOR
 function validate_email(inputEmail) {
   const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   if (inputEmail.value.match(mailformat)) {
@@ -109,12 +92,6 @@ function validate_email(inputEmail) {
 }
 function validate_password(inputPassword) {
   if (inputPassword.value.length < 6) {
-    return false;
-  }
-  return true;
-}
-function validate_confirm_password(confirm_password, password) {
-  if (confirm_password.value != password.value) {
     return false;
   }
   return true;
