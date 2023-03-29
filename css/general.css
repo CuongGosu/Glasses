@@ -46,7 +46,7 @@ body {
   display: flex;
   gap: 1.5rem;
 }
-.header-nav-list li:not(:nth-child(3)) {
+.header-nav-list li:not(:nth-last-child(1)) {
   border-right: 1px solid #cccccc;
   padding-right: 1.5rem;
 }
@@ -60,6 +60,9 @@ body {
 .header-nav-link:active {
   color: #428bca;
   cursor: pointer;
+}
+.is_users {
+  display: none;
 }
 /* *************************** MID HEADER *************** */
 .mid-header {
@@ -136,6 +139,7 @@ body {
   font-size: 1.3rem;
   color: #919191;
 }
+/* CART */
 .header-cart {
   background-color: #f3f3f3;
   flex: 1;
@@ -173,13 +177,10 @@ body {
 
 .dropdown-cart {
   position: absolute;
-  padding: 2.5rem;
   font-size: 1.5rem;
   width: 30rem;
-  height: 3rem;
   right: 0;
   top: 100%;
-  background-color: #fff;
   text-align: left;
   box-shadow: 0 0 15px -5px rgb(0 0 0 / 40%);
   display: none;
@@ -191,6 +192,67 @@ body {
   align-items: center;
   pointer-events: auto;
 }
+.text-cart-default {
+  display: flex;
+  /* display: none; */
+  padding: 2rem;
+  height: 3rem;
+  justify-content: center;
+  text-align: left;
+  box-shadow: 0 0 15px -5px rgb(0 0 0 / 40%);
+  align-items: center;
+  background-color: #fff;
+}
+.list-item-mini_cart {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  max-height: 26rem;
+  width: 100%;
+  z-index: 10;
+  background-color: #fff;
+  box-shadow: 0 0 15px -5px rgb(0 0 0 / 40%);
+  overflow: auto;
+}
+.item-mini_cart {
+  /* display: flex; */
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10px;
+  border-bottom: solid 1px #ebebeb;
+}
+.img-product-mini_cart {
+  max-width: 25%;
+  object-fit: cover;
+}
+.img-mini_cart img {
+  max-width: 100%;
+  height: auto;
+}
+.info-product-mini_cart {
+  max-width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.price-product-mini_cart {
+  color: red;
+}
+.text-product-mini_cart {
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+.delete-product-mini_cart {
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  font-weight: 400;
+}
+
+/* HEADER */
 .header-menu {
   margin-top: -1rem;
   width: 100%;

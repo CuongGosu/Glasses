@@ -272,3 +272,71 @@ function clickDetailProduct() {
   });
 }
 clickDetailProduct();
+// CLICK ADD PRODUCT CAR
+
+// async function addProductCart() {
+//   const btnCardElement = document.querySelectorAll('.btn-card');
+//   btnCardElement.forEach((btnCard) => {
+//     btnCard.addEventListener('click', (e) => {
+//       const productId = btnCard.getAttribute('data-id');
+//       let product_cartID =
+//         JSON.parse(localStorage.getItem('product-cart-id')) || [];
+//       product_cartID.push(productId);
+//       localStorage.setItem('product-cart-id', JSON.stringify(product_cartID));
+//       renderMiniCart();
+//     });
+//   });
+// }
+
+// function renderMiniCart() {
+//   const product_cartID = JSON.parse(
+//     localStorage.getItem('product-cart-id') || '[]'
+//   );
+//   const countMiniCart = document.querySelector('.count-item');
+//   countMiniCart.innerHTML = product_cartID.length;
+// }
+// RENDER INFO ACCOUNT
+function renderInfoUser() {
+  var displayUser = document.querySelector('.is_users');
+  var displayUser_mobile = document.querySelector('.info_users-mobile');
+  var navLeft = document.querySelector('.nav_left');
+  var btnSign = document.querySelectorAll('.btn-Sign_Mobile');
+  const infoUser = localStorage.getItem('userLogin');
+  const nameUserElement = document.querySelector('.info_users');
+  var nameUser_Mobile = document.querySelector('.info_users-mobile a');
+  const btnSignOut_Mobile = document.querySelector('.sign-out_mobile');
+
+  if (infoUser != null) {
+    nameUserElement.innerHTML = `${infoUser}`;
+    displayUser.style.display = 'flex';
+    navLeft.style.display = 'none';
+    const btnSignout = document.querySelector('.sign-out');
+    btnSignout.addEventListener('click', (e) => {
+      localStorage.removeItem('userLogin');
+      window.location.reload();
+    });
+    btnSignOut_Mobile.addEventListener('click', (e) => {
+      localStorage.removeItem('userLogin');
+      window.location.reload();
+    });
+    nameUser_Mobile.innerHTML = `
+    <ion-icon
+    name="person-circle"
+    class="icon-info_users"
+    ></ion-icon> ${infoUser}`;
+    displayUser_mobile.style.display = 'block';
+    btnSignOut_Mobile.style.display = 'block';
+    btnSign.forEach((btn_mobile) => {
+      btn_mobile.style.display = 'none';
+    });
+  } else {
+    navLeft.style.display = 'flex';
+    displayUser.style.display = 'none';
+    displayUser_mobile.style.display = 'none';
+    btnSignOut_Mobile.style.display = 'none';
+    btnSign.forEach((btn_mobile) => {
+      btn_mobile.style.display = 'block';
+    });
+  }
+}
+renderInfoUser();

@@ -50,12 +50,14 @@
     pointer-events: auto;
   }
   .header-nav .header-nav-list {
-    display: none;
+    display: none !important;
   }
   .info_contacts-mobile {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 1rem;
+    width: 100%;
   }
   .mid-header .container {
     display: flex;
@@ -245,6 +247,26 @@
     cursor: pointer;
     pointer-events: auto;
     padding: 1rem 0;
+  }
+  .icon-info_users {
+    width: 5rem;
+    height: 5rem;
+  }
+  .menu-link {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+  }
+  .icon-sign-out,
+  .icon-login-mobile {
+    width: 3rem;
+    height: 3rem;
+    pointer-events: auto;
+  }
+  .sign-out_mobile,
+  .info_users-mobile {
+    display: none;
   }
   /* FOOTER */
   .footer {
