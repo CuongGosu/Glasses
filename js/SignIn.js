@@ -75,7 +75,10 @@ function login() {
         last_login: Date.now(),
       };
       database_ref.child('users/' + user.uid).update(user_data);
+      const infoAccount = email.value;
+      localStorage.setItem('userLogin', infoAccount);
       alert('Đăng nhập thành công!');
+      window.location.href = '../index.html';
     })
     .catch((error) => {
       var errorCode = error.code;

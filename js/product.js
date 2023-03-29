@@ -102,15 +102,17 @@ var typeProduct = localStorage.getItem('productType');
 function checkTypeViewClicked() {
   if (typeProduct != null) {
     // changeInfoWeb('Tất cả các sản phẩm');
-    if (typeProduct == 'new') changeInfoWeb('Sản phẩm mới');
-    else if (typeProduct == 'sale') changeInfoWeb('Sản phẩm khuyến mãi');
-    else if (typeProduct == 'hot') changeInfoWeb('Sản phẩm nổi bật');
+    if (typeProduct == 'new') {
+      changeInfoWeb('Sản phẩm mới');
+    } else if (typeProduct == 'sale') {
+      changeInfoWeb('Sản phẩm khuyến mãi');
+    } else if (typeProduct == 'hot') {
+      changeInfoWeb('Sản phẩm nổi bật');
+    }
     cachedProducts = dataProducts.filter((product) => {
       return product.type.includes(typeProduct);
     });
     renderListProduct(cachedProducts);
-    // Xóa thông tin sản phẩm khỏi localStorage
-    localStorage.removeItem('productType');
   } else {
     changeInfoWeb('Tất cả các sản phẩm');
   }
@@ -124,9 +126,17 @@ const listNavItem = document.querySelectorAll('.nav-item');
 listNavItem.forEach((navItem) => {
   navItem.addEventListener('click', (e) => {
     const typeItem = navItem.getAttribute('data-tab');
-    if (typeItem == 'new') changeInfoWeb('Sản phẩm mới');
-    else if (typeItem == 'sale') changeInfoWeb('Sản phẩm khuyến mãi');
-    else if (typeItem == 'hot') changeInfoWeb('Sản phẩm nổi bật');
+    if (typeItem == 'new') {
+      localStorage.setItem('productType', typeItem);
+      changeInfoWeb('Sản phẩm mới');
+    } else if (typeItem == 'sale') {
+      localStorage.setItem('productType', typeItem);
+      changeInfoWeb('Sản phẩm khuyến mãi');
+    } else if (typeItem == 'hot') {
+      localStorage.setItem('productType', typeItem);
+      changeInfoWeb('Sản phẩm nổi bật');
+    }
+
     cachedProducts = dataProducts.filter((product) => {
       return product.type.includes(typeItem);
     });
@@ -146,24 +156,28 @@ function clickDetailProduct() {
 
   linkTextInfo.forEach((textView) => {
     textView.addEventListener('click', (e) => {
+      localStorage.removeItem('productId');
       const productId = textView.getAttribute('data-id');
       localStorage.setItem('productId', productId);
     });
   });
   btnViewList.forEach((btnView) => {
     btnView.addEventListener('click', (e) => {
+      localStorage.removeItem('productId');
       const productId = btnView.getAttribute('data-id');
       localStorage.setItem('productId', productId);
     });
   });
   linkDetailList.forEach((linkDetail) => {
     linkDetail.addEventListener('click', (e) => {
+      localStorage.removeItem('productId');
       const productId = linkDetail.getAttribute('data-id');
       localStorage.setItem('productId', productId);
     });
   });
   nameDetailProduct.forEach((nameDetail) => {
     nameDetail.addEventListener('click', (e) => {
+      localStorage.removeItem('productId');
       const productId = nameDetail.getAttribute('data-id');
       localStorage.setItem('productId', productId);
     });

@@ -76,7 +76,7 @@ function renderProductTab(product) {
         data-src="${product.img}" alt="${product.name}" class="img-thumb" "/>
         </a>
           <div class="product-action">
-            <a class="btn-card">
+            <a class="btn-card" data-id=${product.id}>
               <ion-icon name="cart"></ion-icon>
             </a>
             <a class="btn-view" href="html/detail.html" data-id="${product.id}">
@@ -176,18 +176,21 @@ function clickDetailProduct() {
   const nameDetailProduct = document.querySelectorAll('.product-name');
   btnViewList.forEach((btnView) => {
     btnView.addEventListener('click', (e) => {
+      localStorage.removeItem('productId');
       const productId = btnView.getAttribute('data-id');
       localStorage.setItem('productId', productId);
     });
   });
   linkDetailList.forEach((linkDetail) => {
     linkDetail.addEventListener('click', (e) => {
+      localStorage.removeItem('productId');
       const productId = linkDetail.getAttribute('data-id');
       localStorage.setItem('productId', productId);
     });
   });
   nameDetailProduct.forEach((nameDetail) => {
     nameDetail.addEventListener('click', (e) => {
+      localStorage.removeItem('productId');
       const productId = nameDetail.getAttribute('data-id');
       localStorage.setItem('productId', productId);
     });

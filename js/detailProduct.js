@@ -183,8 +183,34 @@ function renderProductSimilar(product) {
   productsSimilar.insertAdjacentHTML('beforeend', productHTML);
 }
 start();
-// Xóa thông tin sản phẩm khỏi localStorage
-localStorage.removeItem('productId');
+
+function clickDetailProduct() {
+  const btnViewList = document.querySelectorAll('.btn-view');
+  const linkDetailList = document.querySelectorAll('.link-detail-product');
+  const nameDetailProduct = document.querySelectorAll('.product-name');
+  btnViewList.forEach((btnView) => {
+    btnView.addEventListener('click', (e) => {
+      localStorage.removeItem('productId');
+      const productId = btnView.getAttribute('data-id');
+      localStorage.setItem('productId', productId);
+    });
+  });
+  linkDetailList.forEach((linkDetail) => {
+    linkDetail.addEventListener('click', (e) => {
+      localStorage.removeItem('productId');
+      const productId = linkDetail.getAttribute('data-id');
+      localStorage.setItem('productId', productId);
+    });
+  });
+  nameDetailProduct.forEach((nameDetail) => {
+    nameDetail.addEventListener('click', (e) => {
+      localStorage.removeItem('productId');
+      const productId = nameDetail.getAttribute('data-id');
+      localStorage.setItem('productId', productId);
+    });
+  });
+}
+const clickMoreProduct = setTimeout(clickDetailProduct, 500);
 // btn add-remove
 function actionAddRemoveProduct() {
   const btnRemove = document.querySelector('.btn-remove');

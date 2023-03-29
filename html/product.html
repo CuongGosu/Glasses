@@ -42,17 +42,22 @@
             </ul>
             <ul class="header-nav-list nav_left">
               <li>
-                <a class="header-nav-link" href="#">Kiểm tra đơn hàng</a>
-              </li>
-              <li>
                 <a class="header-nav-link no-user" href="SignIn.html"
                   >đăng nhập</a
                 >
               </li>
               <li>
-                <a class="header-nav-link no-user" href="SignUp.html"
+                <a class="header-nav-link no-users" href="SignUp.html"
                   >đăng ký</a
                 >
+              </li>
+            </ul>
+            <ul class="header-nav-list is_users">
+              <li>
+                <a class="header-nav-link info_users"></a>
+              </li>
+              <li>
+                <a class="header-nav-link sign-out">Đăng xuất</a>
               </li>
             </ul>
             <div class="info_contacts-mobile">
@@ -129,7 +134,11 @@
                       name="chevron-down-outline"
                     ></ion-icon>
                   </a>
-                  <div class="dropdown-cart">Không có sản phẩm nào.</div>
+                  <div class="dropdown-cart">
+                    <ul class="list-item-mini_cart">
+                      <p class="text-cart-default">Không có sản phẩm nào.</p>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>

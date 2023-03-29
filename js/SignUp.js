@@ -92,6 +92,7 @@ function register() {
       };
       database_ref.child('users/' + user.uid).set(user_data);
       alert('Đăng ký thành công!');
+      window.location.href = 'SignIn.html';
     })
     .catch((error) => {
       var errorCode = error.code;
