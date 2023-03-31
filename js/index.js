@@ -301,6 +301,7 @@ function renderInfoUser() {
   var displayUser_mobile = document.querySelector('.info_users-mobile');
   var navLeft = document.querySelector('.nav_left');
   var btnSign = document.querySelectorAll('.btn-Sign_Mobile');
+  console.log(btnSign);
   const infoUser = localStorage.getItem('userLogin');
   const nameUserElement = document.querySelector('.info_users');
   var nameUser_Mobile = document.querySelector('.info_users-mobile a');

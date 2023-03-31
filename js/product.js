@@ -117,7 +117,7 @@ function checkTypeViewClicked() {
     changeInfoWeb('Tất cả các sản phẩm');
   }
 }
-const myTimeout3 = setTimeout(checkTypeViewClicked, 500);
+const myTimeout3 = setTimeout(checkTypeViewClicked, 600);
 // ****************
 //ASIDE: SELECTION LIST NAV ITEM VIEW PRODUCTS
 // ****************
