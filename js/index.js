@@ -52,6 +52,10 @@ var swiperTab = new Swiper('.tab-product', {
     clickable: true,
     dynamicBullets: true,
   },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
 });
 var swiperProduct = new Swiper('.index-product', {
   slidesPerView: 3,
