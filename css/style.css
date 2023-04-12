@@ -11,7 +11,6 @@
 .hero-data-slides {
   list-style: none;
 }
-.hero-data-slides,
 .swiper-button-prev,
 .swiper-button-next {
   transform: translateY(50%);
@@ -22,7 +21,7 @@
 }
 .hero-slide img {
   object-fit: cover;
-  object-position: center;
+  object-position: top;
   width: 114rem;
   height: 36rem;
 }
@@ -64,17 +63,19 @@
   list-style: none;
 }
 .category-slide {
-  width: 16.36rem;
+  width: 161.6px;
   display: flex;
   text-align: center;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   gap: 1rem;
+  margin-right: 3rem;
 }
 .category-link img {
   width: 100%;
-  height: auto;
+  height: 8rem;
+  object-fit: contain;
 }
 .category-link {
   font-size: 1.3rem;
