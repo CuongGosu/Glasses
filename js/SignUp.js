@@ -8,7 +8,7 @@ var firebaseConfig = {
   appId: '1:697380575615:web:70d3d0ea7206219330e24a',
 };
 firebase.initializeApp(firebaseConfig);
-
+const dbCart_ref = firebase.firestore();
 // Initialize Firebase
 const auth = firebase.auth();
 const database = firebase.database();
@@ -80,24 +80,28 @@ function register() {
   firebase
     .auth()
     .createUserWithEmailAndPassword(email.value, password.value)
-    .then(function () {
+    .then(async function () {
       var user = auth.currentUser;
-      // add this user to Firebase database
       var database_ref = database.ref();
-      // creater user data
       var user_data = {
         email: email.value,
         password: password.value,
         last_login: Date.now(),
       };
-      database_ref.child('users/' + user.uid).set(user_data);
+      var userPromise = database_ref.child('users/' + user.uid).set(user_data);
+      var cartRef = dbCart_ref.collection('carts').doc(user.uid);
+      var cartPromise = cartRef.set({
+        products: [],
+        total: 0,
+      });
+      await Promise.all([cartPromise, userPromise]);
       alert('Đăng ký thành công!');
       window.location.href = 'SignIn.html';
     })
     .catch((error) => {
       var errorCode = error.code;
       var errorMessage = error.message;
-      alert(errorMessage);
+      alert(errorCode);
     });
 }
 // VALIDATOR

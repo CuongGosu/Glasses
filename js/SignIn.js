@@ -76,7 +76,9 @@ function login() {
       };
       database_ref.child('users/' + user.uid).update(user_data);
       const infoAccount = email.value;
+      const infoCarts = user.uid;
       localStorage.setItem('userLogin', infoAccount);
+      localStorage.setItem('userCarts', infoCarts);
       alert('Đăng nhập thành công!');
       window.location.href = '../index.html';
     })

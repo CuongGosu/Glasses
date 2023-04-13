@@ -16,20 +16,15 @@ tabLinks.forEach((link) => {
   });
 });
 // ProductAPI
-var productAPI = 'https://glasses-67sp43rtm-cuonggosu.vercel.app/db.json';
-var products = [];
-function start() {
-  getProductApi(renderProduct);
+import { fetchDataProducts, getDataProducts } from './dataAPI.js';
+var dataProducts;
+async function start() {
+  await fetchDataProducts();
+  dataProducts = await getDataProducts();
+  console.log(dataProducts);
+  renderProduct(dataProducts);
 }
-async function getProductApi(callback) {
-  try {
-    const response = await axios.get(productAPI);
-    products = response.data.product;
-    callback(products);
-  } catch (error) {
-    console.log(error);
-  }
-}
+
 // chuyển đổi số tiền sang chuỗi có định dạng tiền tệ
 function formattedPrice(price) {
   const formattedPrice = price.toLocaleString('vi-VN', {
@@ -118,7 +113,7 @@ function renderProductGender(product) {
         data-src="${product.img}" alt="${product.name}" class="img-thumb" "/>
         </a>
           <div class="product-action">
-          <a class="btn-card">
+          <a class="btn-card" data-id=${product.id}>
           <ion-icon name="cart"></ion-icon>
         </a>
         <a class="btn-view" href="html/detail.html" data-id="${product.id}">
@@ -149,7 +144,7 @@ function renderProductChoice(product) {
       data-src="${product.img}" alt="${product.name}" class="img-thumb" "/>
       </a>
         <div class="product-action">
-        <a class="btn-card">
+        <a class="btn-card" data-id=${product.id}>
               <ion-icon name="cart"></ion-icon>
             </a>
         <a class="btn-view" href="html/detail.html" data-id="${product.id}">
@@ -193,4 +188,4 @@ function clickDetailProduct() {
     });
   });
 }
-const myTimeout = setTimeout(clickDetailProduct, 500);
+window.addEventListener('load', clickDetailProduct);

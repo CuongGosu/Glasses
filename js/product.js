@@ -1,3 +1,9 @@
+// product.js
+import { getDataProducts } from './dataAPI.js';
+var dataProducts;
+dataProducts = await getDataProducts();
+var cachedProducts = [...dataProducts];
+console.log(cachedProducts);
 // VIEW MODE: grid-list
 const itemList = document.querySelector('.view-products');
 const gridViewBtn = document.querySelector('.view-grid');
@@ -37,19 +43,7 @@ function formattedPrice(price) {
     return p1 + p2.replace(/\d{3}(?=\d)/g, '$&,') + p3;
   });
 }
-var productAPI = 'https://glasses-67sp43rtm-cuonggosu.vercel.app/db.json';
-var dataProducts = [];
-var cachedProducts = [];
 
-async function getProductsAPI() {
-  try {
-    const response = await axios.get(productAPI);
-    dataProducts = response.data.product;
-    cachedProducts = [...dataProducts];
-  } catch (error) {
-    console.log(error);
-  }
-}
 async function renderListProduct(listProduct) {
   let viewProduct = document.querySelector('.view-products');
   viewProduct.innerHTML = '';
@@ -65,20 +59,22 @@ function renderProduct(product) {
   <div class="product-thumbnail">
   <a class="link-detail-product" href="detail.html" data-id="${product.id}">
   <img src="${product.img}"
-  data-src="${product.img}" alt="${product.name}" class="img-thumb" "/>
+  data-src="${product.img}" alt="${product.name}" class="img-thumb" data-id="${
+      product.id
+    }"/>
+    </a>
     <div class="product-action">
-      <div class="btn-card">
-        <ion-icon name="cart"></ion-icon>
-      </div>
-      <div class="btn-view" href="detail.html" data-id="${product.id}">
-        <ion-icon name="eye"></ion-icon>
-      </div>
+    <a class="btn-card" data-id=${product.id}>
+    <ion-icon name="cart"></ion-icon>
+  </a>
+  <a class="btn-view" href="detail.html" data-id="${product.id}">
+  <ion-icon name="eye"></ion-icon>
+  </a>
     </div>
   </div>
   <div class="product-info">
     <a class="product-name" href="detail.html" data-id="${product.id}"
-      >${product.name}</a
-    >
+      >${product.name}</a>
     <div class="price-box">${formattedPrice(product.price)}</div>
     <div class="text-details">
     ${shortText(product.info, 190)}
@@ -93,7 +89,6 @@ function renderProduct(product) {
 }
 //start render
 async function start() {
-  await getProductsAPI();
   if (typeProduct == null) renderListProduct(dataProducts);
 }
 start();
@@ -115,9 +110,10 @@ function checkTypeViewClicked() {
     renderListProduct(cachedProducts);
   } else {
     changeInfoWeb('Tất cả các sản phẩm');
+    renderListProduct(dataProducts);
   }
 }
-const myTimeout3 = setTimeout(checkTypeViewClicked, 600);
+window.addEventListener('load', checkTypeViewClicked);
 // ****************
 //ASIDE: SELECTION LIST NAV ITEM VIEW PRODUCTS
 // ****************
@@ -151,39 +147,35 @@ listNavItem.forEach((navItem) => {
 function clickDetailProduct() {
   const btnViewList = document.querySelectorAll('.btn-view');
   const linkTextInfo = document.querySelectorAll('.link-text_details');
-  const linkDetailList = document.querySelectorAll('.link-detail-product');
+  const linkDetailList = document.querySelectorAll('.img-thumb');
   const nameDetailProduct = document.querySelectorAll('.product-name');
 
   linkTextInfo.forEach((textView) => {
     textView.addEventListener('click', (e) => {
-      localStorage.removeItem('productId');
       const productId = textView.getAttribute('data-id');
       localStorage.setItem('productId', productId);
     });
   });
   btnViewList.forEach((btnView) => {
     btnView.addEventListener('click', (e) => {
-      localStorage.removeItem('productId');
       const productId = btnView.getAttribute('data-id');
       localStorage.setItem('productId', productId);
     });
   });
   linkDetailList.forEach((linkDetail) => {
     linkDetail.addEventListener('click', (e) => {
-      localStorage.removeItem('productId');
       const productId = linkDetail.getAttribute('data-id');
       localStorage.setItem('productId', productId);
     });
   });
   nameDetailProduct.forEach((nameDetail) => {
     nameDetail.addEventListener('click', (e) => {
-      localStorage.removeItem('productId');
       const productId = nameDetail.getAttribute('data-id');
       localStorage.setItem('productId', productId);
     });
   });
 }
-const myTimeout = setTimeout(clickDetailProduct, 500);
+window.addEventListener('load', clickDetailProduct);
 //
 // **********************************************
 // *******************SORT PRODUCT****************

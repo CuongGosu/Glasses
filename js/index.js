@@ -23,7 +23,6 @@ var swiperCategory = new Swiper('.category-data-slicks', {
   spaceBetween: 30,
   slidesPerGroup: 1,
   loop: true,
-  loopFillGroupWithBlank: true,
   grabCursor: 'true',
   navigation: {
     nextEl: '.swiper-button-next',
@@ -266,7 +265,7 @@ moreInfo_Footer.forEach((listInfo) => {
   });
 });
 // Click type-product
-function clickDetailProduct() {
+function clickTypeProduct() {
   const dataTypeElement = document.querySelectorAll('.data-type-product');
   dataTypeElement.forEach((typeProduct) => {
     typeProduct.addEventListener('click', (e) => {
@@ -275,37 +274,13 @@ function clickDetailProduct() {
     });
   });
 }
-clickDetailProduct();
-// CLICK ADD PRODUCT CAR
-
-// async function addProductCart() {
-//   const btnCardElement = document.querySelectorAll('.btn-card');
-//   btnCardElement.forEach((btnCard) => {
-//     btnCard.addEventListener('click', (e) => {
-//       const productId = btnCard.getAttribute('data-id');
-//       let product_cartID =
-//         JSON.parse(localStorage.getItem('product-cart-id')) || [];
-//       product_cartID.push(productId);
-//       localStorage.setItem('product-cart-id', JSON.stringify(product_cartID));
-//       renderMiniCart();
-//     });
-//   });
-// }
-
-// function renderMiniCart() {
-//   const product_cartID = JSON.parse(
-//     localStorage.getItem('product-cart-id') || '[]'
-//   );
-//   const countMiniCart = document.querySelector('.count-item');
-//   countMiniCart.innerHTML = product_cartID.length;
-// }
+clickTypeProduct();
 // RENDER INFO ACCOUNT
 function renderInfoUser() {
   var displayUser = document.querySelector('.is_users');
   var displayUser_mobile = document.querySelector('.info_users-mobile');
   var navLeft = document.querySelector('.nav_left');
   var btnSign = document.querySelectorAll('.btn-Sign_Mobile');
-  console.log(btnSign);
   const infoUser = localStorage.getItem('userLogin');
   const nameUserElement = document.querySelector('.info_users');
   var nameUser_Mobile = document.querySelector('.info_users-mobile a');
@@ -318,10 +293,16 @@ function renderInfoUser() {
     const btnSignout = document.querySelector('.sign-out');
     btnSignout.addEventListener('click', (e) => {
       localStorage.removeItem('userLogin');
+      localStorage.removeItem('userCarts');
+      localStorage.removeItem('countCarts');
+
       window.location.reload();
     });
     btnSignOut_Mobile.addEventListener('click', (e) => {
       localStorage.removeItem('userLogin');
+      localStorage.removeItem('userCarts');
+      localStorage.removeItem('countCarts');
+
       window.location.reload();
     });
     nameUser_Mobile.innerHTML = `
@@ -345,3 +326,13 @@ function renderInfoUser() {
   }
 }
 renderInfoUser();
+// *******
+function renderTypeAllProduct() {
+  const typeAllProductE = document.querySelectorAll('.all-product');
+  typeAllProductE.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      localStorage.removeItem('productType');
+    });
+  });
+}
+renderTypeAllProduct();

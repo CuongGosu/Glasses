@@ -1,16 +1,10 @@
 // GET API PRODUCT
-var productAPI = 'https://glasses-67sp43rtm-cuonggosu.vercel.app/db.json';
+import { getDataProducts } from './dataAPI.js';
+var dataProducts;
+dataProducts = await getDataProducts();
 const productID = localStorage.getItem('productId');
 function start() {
-  getProductApi(renderProduct);
-}
-async function getProductApi(callback) {
-  try {
-    const response = await axios.get(productAPI);
-    callback(response.data.product);
-  } catch (error) {
-    console.log(error);
-  }
+  renderProduct(dataProducts);
 }
 function renderProduct(products) {
   products.forEach((product) => {
@@ -207,7 +201,7 @@ function clickDetailProduct() {
     });
   });
 }
-const clickMoreProduct = setTimeout(clickDetailProduct, 500);
+window.addEventListener('load', clickDetailProduct);
 // btn add-remove
 function actionAddRemoveProduct() {
   const btnRemove = document.querySelector('.btn-remove');
@@ -224,7 +218,7 @@ function actionAddRemoveProduct() {
     valueNumber.value = value + 1;
   });
 }
-const myTimeout = setTimeout(actionAddRemoveProduct, 500);
+window.addEventListener('load', actionAddRemoveProduct);
 var swiperSimilarProduct = new Swiper('.product-similar-swiper', {
   slidesPerView: 4,
   spaceBetween: 30,
