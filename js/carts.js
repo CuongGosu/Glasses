@@ -625,19 +625,28 @@ function addProductToCart_PageDetail() {
     if (existingProductIndex > -1) {
       const existingProduct = dataCarts.products[existingProductIndex];
       const countValue = parseInt(countValueE.value);
+      console.log(countValueE);
       const updatedProduct = {
         ...existingProduct,
         quantity: existingProduct.quantity + countValue,
       };
+
       dataCarts.products[existingProductIndex] = updatedProduct;
-      dataCarts.total += newProduct.price;
+      dataCarts.total += newProduct.price * countValue;
       cartRef.update({
         products: [...dataCarts.products],
         total: firebase.firestore.FieldValue.increment(newProduct.price),
       });
     } else {
-      dataCarts.products.push(newProduct);
-      dataCarts.total += newProduct.price;
+      const countValue = parseInt(countValueE.value);
+
+      const updatedProduct = {
+        ...newProduct,
+        quantity: countValue,
+      };
+      dataCarts.products.push(updatedProduct);
+      dataCarts.total += updatedProduct.price * countValue;
+
       cartRef.update({
         products: firebase.firestore.FieldValue.arrayUnion(newProduct),
         total: firebase.firestore.FieldValue.increment(newProduct.price),
