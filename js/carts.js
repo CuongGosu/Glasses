@@ -477,6 +477,7 @@ function isUserCart() {
       logoCartE.href = 'html/cart.html';
     } else {
       headerCartE.href = 'cart.html';
+      logoCartE.href = 'cart.html';
     }
   } else {
     if (directory == 'index.html') {
