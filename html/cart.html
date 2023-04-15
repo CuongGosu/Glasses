@@ -12,15 +12,11 @@
       integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
       crossorigin=""
     />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.min.css"
-    />
     <link href="../css/general.css" rel="stylesheet" />
     <link href="../css/footer.css" rel="stylesheet" />
-    <link href="../css/detailProduct.css" rel="stylesheet" />
+    <link href="../css/cart.css" rel="stylesheet" />
     <link rel="stylesheet" href="../responsive/main_Queries.css" />
-    <link rel="stylesheet" href="../responsive/detail_Queries.css" />
+    <link rel="stylesheet" href="../responsive/cart_Queries.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -340,10 +336,10 @@
     </header>
     <main>
       <section class="section-background">
-        <div class="title-menu">
-          <div class="container">
+        <div class="container">
+          <div class="title-menu">
             <div class="title-page">
-              <h1></h1>
+              <h1>Giỏ hàng</h1>
             </div>
             <ul class="bread-crumb">
               <li class="home-page">
@@ -351,28 +347,20 @@
                 <span>/</span>
               </li>
               <li class="children-page">
-                <a></a>
+                <a>Giỏ hàng</a>
               </li>
             </ul>
           </div>
         </div>
       </section>
-      <section class="section-wrap_background">
+      <section class="section-cart">
         <div class="container">
-          <div class="details-product"></div>
-          <div class="details-description">
-            <h1>Mô tả sản phẩm:</h1>
-            <div class="description-products"></div>
-          </div>
-          <div class="title-section-product">
-            <h2>
-              <a href="#">Có thể bạn thích</a>
-            </h2>
-            <div class="info-product"></div>
-          </div>
-          <div class="similar-product product-similar-swiper">
-            <div class="swiper-wrapper"></div>
-            <div class="swiper-pagination"></div>
+          <div class="container-cart">
+            <div class="cart-thread"></div>
+            <div class="info-product">
+              <ul class="list-item-cart"></ul>
+            </div>
+            <div class="container-buy"></div>
           </div>
         </div>
       </section>
@@ -635,8 +623,12 @@
     crossorigin=""
   ></script>
   <!-- AXIOS -->
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.5/axios.min.js"
+    integrity="sha512-nnNHpffPSgINrsR8ZAIgFUIMexORL5tPwsfktOTxVYSv+AUAILuFYWES8IHl+hhIhpFGlKvWFiz9ZEusrPcSBQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
   <script
     type="module"
     src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
@@ -644,12 +636,6 @@
   <script
     nomodule
     src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-  ></script>
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.5/axios.min.js"
-    integrity="sha512-nnNHpffPSgINrsR8ZAIgFUIMexORL5tPwsfktOTxVYSv+AUAILuFYWES8IHl+hhIhpFGlKvWFiz9ZEusrPcSBQ=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
   ></script>
   <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
 
@@ -661,10 +647,6 @@
   <!-- Firebase Realtime Database -->
   <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
   <script src="../js/swiper-bundle.min.js"></script>
-  <!-- swal -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.min.js"></script>
   <script src="../js/index.js"></script>
-  <script src="../js/lazyload.js"></script>
-  <script type="module" src="../js/detailProduct.js"></script>
   <script type="module" src="../js/carts.js"></script>
 </html>

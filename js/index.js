@@ -295,7 +295,7 @@ function renderInfoUser() {
       localStorage.removeItem('userLogin');
       localStorage.removeItem('userCarts');
       localStorage.removeItem('countCarts');
-
+      localStorage.removeItem('dataCarts');
       window.location.reload();
     });
     btnSignOut_Mobile.addEventListener('click', (e) => {

@@ -21,7 +21,6 @@ var dataProducts;
 async function start() {
   await fetchDataProducts();
   dataProducts = await getDataProducts();
-  console.log(dataProducts);
   renderProduct(dataProducts);
 }
 

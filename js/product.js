@@ -3,7 +3,6 @@ import { getDataProducts } from './dataAPI.js';
 var dataProducts;
 dataProducts = await getDataProducts();
 var cachedProducts = [...dataProducts];
-console.log(cachedProducts);
 // VIEW MODE: grid-list
 const itemList = document.querySelector('.view-products');
 const gridViewBtn = document.querySelector('.view-grid');
@@ -113,7 +112,7 @@ function checkTypeViewClicked() {
     renderListProduct(dataProducts);
   }
 }
-window.addEventListener('load', checkTypeViewClicked);
+checkTypeViewClicked();
 // ****************
 //ASIDE: SELECTION LIST NAV ITEM VIEW PRODUCTS
 // ****************

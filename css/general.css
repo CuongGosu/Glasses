@@ -154,6 +154,8 @@ body {
   width: 100%;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
+  color: #333;
 }
 .header-cart_text:hover {
   color: #428bca;
@@ -780,4 +782,26 @@ body {
   margin: 0 0.5rem;
   font-size: 1.2rem;
   font-weight: bold;
+}
+.count-item {
+  display: block;
+  width: 2rem;
+}
+.logo-cart {
+  position: relative;
+}
+.count-item_product_mobile {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  min-width: 20px;
+  min-height: 20px;
+  padding: 0 2px;
+  border-radius: 50%;
+  background: #ff0000;
+  text-align: center;
+  line-height: 20px;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 400;
 }

@@ -119,7 +119,7 @@ function renderProductDetail(product) {
       </div>
     </div>
     <div class="button-action">
-      <button class="btn-action btn-add_product">
+      <button class="btn-action btn-add_product" data-id="${product.id}">
         <ion-icon name="cart"></ion-icon>
         Thêm vào giỏ hàng
       </button>
@@ -131,6 +131,9 @@ function renderProductDetail(product) {
 </div>
   `;
   ProductDetail.insertAdjacentHTML('beforeend', productHTML);
+  // add function
+  clickDetailProduct();
+  actionAddRemoveProduct();
 }
 function renderProductDescription(product) {
   const ProductDetail = document.querySelector('.description-products');
@@ -201,7 +204,6 @@ function clickDetailProduct() {
     });
   });
 }
-window.addEventListener('load', clickDetailProduct);
 // btn add-remove
 function actionAddRemoveProduct() {
   const btnRemove = document.querySelector('.btn-remove');
@@ -218,7 +220,6 @@ function actionAddRemoveProduct() {
     valueNumber.value = value + 1;
   });
 }
-window.addEventListener('load', actionAddRemoveProduct);
 var swiperSimilarProduct = new Swiper('.product-similar-swiper', {
   slidesPerView: 4,
   spaceBetween: 30,
