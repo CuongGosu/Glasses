@@ -376,8 +376,7 @@ function showAddToCart() {
 function pathNameCurrent() {
   var pathArray = window.location.pathname.split('/');
   var directory = pathArray[pathArray.length - 1];
-  if (directory == 'index.html' || directory == undefined)
-    return 'html/detail.html';
+  if (directory == 'index.html' || directory == '') return 'html/detail.html';
   return '../html/detail.html';
 }
 // ************************* render page cart.html
@@ -473,7 +472,7 @@ function isUserCart() {
   var directory = pathArray[pathArray.length - 1];
 
   if (infoUser) {
-    if (directory == 'index.html' || directory == undefined) {
+    if (directory == 'index.html' || directory == '') {
       headerCartE.href = 'html/cart.html';
       logoCartE.href = 'html/cart.html';
     } else {
@@ -481,7 +480,7 @@ function isUserCart() {
       logoCartE.href = 'cart.html';
     }
   } else {
-    if (directory == 'index.html' || directory == undefined) {
+    if (directory == 'index.html' || directory == '') {
       headerCartE.href = 'html/SignIn.html';
       logoCartE.href = 'html/SignIn.html';
       btnCartE.forEach((btnCart) => {
