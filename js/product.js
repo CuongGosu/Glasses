@@ -48,6 +48,7 @@ async function renderListProduct(listProduct) {
   viewProduct.innerHTML = '';
   const products = listProduct;
   products.forEach(renderProduct);
+  clickDetailProduct();
 }
 function renderProduct(product) {
   let viewProduct = document.querySelector('.view-products');
@@ -138,6 +139,8 @@ listNavItem.forEach((navItem) => {
     typeSort = 'default';
     currentSelectionSort();
     renderListProduct(cachedProducts);
+    clickDetailProduct();
+    window.location.reload();
   });
 });
 
@@ -174,7 +177,6 @@ function clickDetailProduct() {
     });
   });
 }
-window.addEventListener('load', clickDetailProduct);
 //
 // **********************************************
 // *******************SORT PRODUCT****************
@@ -195,6 +197,7 @@ async function sortProductsByDefault() {
   typeSort = 'default';
   currentSelectionSort();
   renderListProduct(cachedProducts);
+  window.location.reload();
 }
 async function sortProductsByPriceAsc() {
   typeSort = 'Asc';
@@ -202,6 +205,7 @@ async function sortProductsByPriceAsc() {
   const products = [...cachedProducts];
   const sortedProducts = products.sort((a, b) => a.price - b.price);
   renderListProduct(sortedProducts);
+  window.location.reload();
 }
 // Sắp xếp sản phẩm theo giá giảm dần
 async function sortProductsByPriceDesc() {
@@ -210,6 +214,7 @@ async function sortProductsByPriceDesc() {
   const products = [...cachedProducts];
   const sortedProducts = products.sort((a, b) => b.price - a.price);
   renderListProduct(sortedProducts);
+  window.location.reload();
 }
 
 document

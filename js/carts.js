@@ -543,8 +543,8 @@ function handleQuantityButtons_Page(dataCarts_localStore) {
         quantityValue.textContent = updatedProduct.quantity;
         changeTotalCarts();
         localStorage.setItem('dataCarts', JSON.stringify(dataCarts));
-        renderMiniCart();
         changeListToTalCart_Page(dataCarts.total);
+        renderMiniCart();
         const totalItemProduct = listItem.querySelector('.total-cart-product');
         totalItemProduct.textContent = formattedPrice(
           priceItemProduct(updatedProduct.price, updatedProduct.quantity)
@@ -564,15 +564,15 @@ function handleQuantityButtons_Page(dataCarts_localStore) {
             total: firebase.firestore.FieldValue.increment(-product.price),
           });
           quantityValue.textContent = updatedProduct.quantity;
-          changeTotalCarts();
           const totalItemProduct = listItem.querySelector(
             '.total-cart-product'
           );
           totalItemProduct.textContent = formattedPrice(
             priceItemProduct(updatedProduct.price, updatedProduct.quantity)
           );
-          changeListToTalCart_Page(dataCarts.total);
           localStorage.setItem('dataCarts', JSON.stringify(dataCarts));
+          changeListToTalCart_Page(dataCarts.total);
+          changeTotalCarts();
           renderMiniCart();
         }
       }
