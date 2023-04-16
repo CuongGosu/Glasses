@@ -6,11 +6,21 @@ This project is a responsive e-commerce website designed for selling glasses. Th
 
 #### Giao diện chính của trang web trên thiết bị pc,laptop
 
-![Giao diện chính của trang web trên thiết bị pc,laptop](https://scontent.fdad3-6.fna.fbcdn.net/v/t1.15752-9/336478089_603658321315807_6465524635536255184_n.png?_nc_cat=109&ccb=1-7&_nc_sid=ae9488&_nc_ohc=4o6aWXHRrA0AX8MXPqV&_nc_ht=scontent.fdad3-6.fna&oh=03_AdS0gG7HdGJ8ihAF_IBUcDfq61IMwZs6Gn9SXBwgeaqTzw&oe=6441570A)
+![Giao diện chính của trang web trên thiết bị pc,laptop](blob:https://www.facebook.com/2f8de8be-3446-493b-8f93-40943a019d17)
 
 #### Giao diện chính của trang web trên thiết bị mobile
 
-![Giao diện chính của trang web trên thiết bị mobile](https://scontent.fdad3-6.fna.fbcdn.net/v/t1.15752-9/336321561_433585508974829_2944348642883139683_n.png?_nc_cat=109&ccb=1-7&_nc_sid=ae9488&_nc_ohc=XYEAvMepgksAX-D8Po9&_nc_ht=scontent.fdad3-6.fna&oh=03_AdROybPUxd2JdLjz6Fmr6KUC2yfUrr0Nc3iyhxW1ZW_VGQ&oe=64414BB9)
+![Giao diện chính của trang web trên thiết bị mobile](blob:https://www.facebook.com/b3f9800d-aa42-430c-b7d1-fec5676082be)
+
+### DEMO WEBSITE:
+
+![Giao diện của trang web](https://www.facebook.com/messenger_media/?attachment_id=1254356048797624&message_id=mid.%24cAAAADtTOtdKNuz4xUGHifjOwenwG&thread_id=100011454351067)
+![Giao diện của trang web](https://www.facebook.com/messenger_media/?attachment_id=1390875511691562&message_id=mid.%24cAAAADtTOtdKNu0CqrmHiftJ23O3X&thread_id=100011454351067)
+![Giao diện của trang web](https://www.facebook.com/messenger_media/?attachment_id=550565697211714&message_id=mid.%24cAAAADtTOtdKNu0GPlGHifwm6ZqgZ&thread_id=100011454351067)
+![Giao diện của trang web](https://www.facebook.com/messenger_media/?attachment_id=174640528888810&message_id=mid.%24cAAAADtTOtdKNu0KLVGHif0pTbs4z&thread_id=100011454351067)
+![Giao diện của trang web](https://www.facebook.com/messenger_media/?attachment_id=194938283321706&message_id=mid.%24cAAAADtTOtdKNu5KGmGHik0e1XZi0&thread_id=100011454351067)
+![Giao diện của trang web](https://www.facebook.com/messenger_media/?attachment_id=1236449513930984&message_id=mid.%24cAAAADtTOtdKNu5OdKGHik46GMGXQ&thread_id=100011454351067)
+![Giao diện của trang web](https://www.facebook.com/messenger_media/?attachment_id=1454121731659536&message_id=mid.%24cAAAADtTOtdKNu5SLdWHik8nbL-Mx&thread_id=100011454351067)
 
 ## LINK DEMO WEBSITE:
 
@@ -36,6 +46,7 @@ This project was developed using the following technologies:
 - Categorization of products into different groups based on their status, including hot, sale, and new items
 - View sort products
 - SignIn, SignUp with firebase (Authentication)
+- CRUD cart with firestore
 
 ## Installation:
 
