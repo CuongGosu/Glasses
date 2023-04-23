@@ -1,5 +1,8 @@
 // product.js
 import { getDataProducts } from './dataAPI.js';
+import { addProductCart } from './carts.js';
+const infoUser = localStorage.getItem('userCarts');
+
 var dataProducts;
 dataProducts = await getDataProducts();
 var cachedProducts = [...dataProducts];
@@ -49,6 +52,17 @@ async function renderListProduct(listProduct) {
   const products = listProduct;
   products.forEach(renderProduct);
   clickDetailProduct();
+  if (infoUser) {
+    addProductCart(infoUser);
+  } else {
+    const btncardE = document.querySelectorAll('.btn-card');
+    console.log(btncardE);
+    btncardE.forEach((btncard) => {
+      btncard.addEventListener('click', () => {
+        window.location.href = 'SignIn.html';
+      });
+    });
+  }
 }
 function renderProduct(product) {
   let viewProduct = document.querySelector('.view-products');
@@ -64,7 +78,7 @@ function renderProduct(product) {
     }"/>
     </a>
     <div class="product-action">
-    <a class="btn-card" data-id=${product.id}>
+    <a class="btn-card" data-id="${product.id}">
     <ion-icon name="cart"></ion-icon>
   </a>
   <a class="btn-view" href="detail.html" data-id="${product.id}">
@@ -107,9 +121,11 @@ function checkTypeViewClicked() {
     cachedProducts = dataProducts.filter((product) => {
       return product.type.includes(typeProduct);
     });
+    console.log('co phai la may khong checktype?');
     renderListProduct(cachedProducts);
   } else {
     changeInfoWeb('Tất cả các sản phẩm');
+    console.log('co phai la may khong checktype?');
     renderListProduct(dataProducts);
   }
 }
@@ -140,7 +156,6 @@ listNavItem.forEach((navItem) => {
     currentSelectionSort();
     renderListProduct(cachedProducts);
     clickDetailProduct();
-    window.location.reload();
   });
 });
 
@@ -197,7 +212,6 @@ async function sortProductsByDefault() {
   typeSort = 'default';
   currentSelectionSort();
   renderListProduct(cachedProducts);
-  window.location.reload();
 }
 async function sortProductsByPriceAsc() {
   typeSort = 'Asc';
@@ -205,7 +219,6 @@ async function sortProductsByPriceAsc() {
   const products = [...cachedProducts];
   const sortedProducts = products.sort((a, b) => a.price - b.price);
   renderListProduct(sortedProducts);
-  window.location.reload();
 }
 // Sắp xếp sản phẩm theo giá giảm dần
 async function sortProductsByPriceDesc() {
@@ -214,7 +227,6 @@ async function sortProductsByPriceDesc() {
   const products = [...cachedProducts];
   const sortedProducts = products.sort((a, b) => b.price - a.price);
   renderListProduct(sortedProducts);
-  window.location.reload();
 }
 
 document

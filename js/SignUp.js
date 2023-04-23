@@ -15,6 +15,8 @@ const database = firebase.database();
 const formSignUp = document.querySelector('.form-SignUp');
 formSignUp.onsubmit = (e) => {
   e.preventDefault();
+  document.getElementById('loading-animation').style.display = 'block';
+  document.getElementById('overlay').style.display = 'block';
   register();
 };
 function register() {
@@ -95,8 +97,13 @@ function register() {
         total: 0,
       });
       await Promise.all([cartPromise, userPromise]);
-      alert('Đăng ký thành công!');
-      window.location.href = 'SignIn.html';
+      document.getElementById('loading-animation').style.display = 'none';
+      document.getElementById('success-message').style.display = 'flex';
+      setTimeout(() => {
+        window.location.href = 'SignIn.html';
+        document.getElementById('success-message').style.display = 'none';
+        document.getElementById('overlay').style.display = 'none';
+      }, 1300);
     })
     .catch((error) => {
       var errorCode = error.code;

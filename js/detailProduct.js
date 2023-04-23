@@ -1,5 +1,7 @@
 // GET API PRODUCT
 import { getDataProducts } from './dataAPI.js';
+import { addProductCart, addProductToCart_PageDetail } from './carts.js';
+const infoUser = localStorage.getItem('userCarts');
 var dataProducts;
 dataProducts = await getDataProducts();
 const productID = localStorage.getItem('productId');
@@ -20,7 +22,7 @@ function renderProduct(products) {
           product.id != productBrandAPI.id &&
           productBrandAPI.brand == product.brand
         ) {
-          renderProductSimilar(product);
+          renderProductSimilar(productBrandAPI);
         }
       });
     }
@@ -134,6 +136,13 @@ function renderProductDetail(product) {
   // add function
   clickDetailProduct();
   actionAddRemoveProduct();
+  addProductToCart_PageDetail();
+  if (!infoUser) {
+    const btnActionBuy = document.querySelector('.btn-buy_product');
+    btnActionBuy.addEventListener('click', () => {
+      window.location.href = 'SignIn.html';
+    });
+  }
 }
 function renderProductDescription(product) {
   const ProductDetail = document.querySelector('.description-products');
@@ -161,7 +170,7 @@ function renderProductSimilar(product) {
         data-src="${product.img}" alt="${product.name}" class="img-thumb" "/>
         </a>
           <div class="product-action">
-          <a class="btn-card">
+          <a class="btn-card" data-id="${product.id}">
                 <ion-icon name="cart"></ion-icon>
               </a>
           <a class="btn-view" href="detail.html" data-id="${product.id}">
@@ -178,6 +187,8 @@ function renderProductSimilar(product) {
       </div>
     `;
   productsSimilar.insertAdjacentHTML('beforeend', productHTML);
+  clickDetailProduct();
+  if (infoUser) addProductCart(infoUser);
 }
 start();
 
