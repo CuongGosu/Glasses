@@ -319,11 +319,14 @@ function renderCountItem() {
 
   if (countCarts) {
     countItemE.textContent = countCarts;
+    countItemE_mobile.style.display = 'block';
     countItemE_mobile.textContent = countCarts;
   } else if (dataCarts !== null && dataCarts !== undefined) {
     countItemE.textContent = dataCarts.products.length;
     countItemE_mobile.textContent = dataCarts.products.length;
+    countItemE_mobile.style.display = 'block';
   } else {
+    countItemE_mobile.style.display = 'block';
     countItemE.textContent = '0';
     countItemE_mobile.textContent = '0';
   }
@@ -471,7 +474,6 @@ function priceItemProduct(price, count) {
 function isUserCart() {
   const headerCartE = document.querySelector('.header-cart_text');
   const btnCartE = document.querySelectorAll('.btn-card');
-  console.log(btnCartE);
   const logoCartE = document.querySelector('.logo-cart');
   var pathArray = window.location.pathname.split('/');
   var directory = pathArray[pathArray.length - 1];
