@@ -14,7 +14,7 @@ This project is a responsive e-commerce website designed for selling glasses. Th
 
 ### DEMO WEBSITE:
 
-![Giao diện của trang web](https://www.facebook.com/messenger_media/?attachment_id=1254356048797624&message_id=mid.%24cAAAADtTOtdKNuz4xUGHifjOwenwG&thread_id=100011454351067)
+![Giao diện của trang web](https://scontent.fdad3-4.fna.fbcdn.net/v/t1.15752-9/341099600_1254356058797623_3143942555224562748_n.png?_nc_cat=101&ccb=1-7&_nc_sid=ae9488&_nc_ohc=TGmKN9E0gDEAX8fK4l0&_nc_ht=scontent.fdad3-4.fna&oh=03_AdRkMnMRf89h5CihUcpyCN8A2Csotb3hFnv591pmYl2QWw&oe=646CE5DA)
 ![Giao diện của trang web](https://www.facebook.com/messenger_media/?attachment_id=1390875511691562&message_id=mid.%24cAAAADtTOtdKNu0CqrmHiftJ23O3X&thread_id=100011454351067)
 ![Giao diện của trang web](https://www.facebook.com/messenger_media/?attachment_id=550565697211714&message_id=mid.%24cAAAADtTOtdKNu0GPlGHifwm6ZqgZ&thread_id=100011454351067)
 ![Giao diện của trang web](https://www.facebook.com/messenger_media/?attachment_id=174640528888810&message_id=mid.%24cAAAADtTOtdKNu0KLVGHif0pTbs4z&thread_id=100011454351067)
