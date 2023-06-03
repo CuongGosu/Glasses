@@ -55,4 +55,4 @@ This project was developed using the following technologies:
 
 To install this project, simply clone the GitHub repository:
 
-git clone https://github.com/CuongGosu/BookStore.git
+git clone https://github.com/CuongGosu/Glasses.git
