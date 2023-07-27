@@ -15,7 +15,7 @@ const database = firebase.database();
 const formSignIn = document.querySelector('.form-SignIn');
 formSignIn.onsubmit = (e) => {
   e.preventDefault();
-  document.getElementById('loading-animation').style.display = 'block';
+
   document.getElementById('overlay').style.display = 'block';
   login();
 };
@@ -32,6 +32,7 @@ function login() {
       errorMessage.innerHTML = `${inputElement.name} không được để trống`;
       form_group.classList.add('invalid');
       inputElement.focus();
+      document.getElementById('overlay').style.display = 'none';
       return;
     } else {
       checkRule[inputElement.id] = false;
@@ -47,6 +48,8 @@ function login() {
     errorMessage.innerHTML = 'Email vừa nhập không đúng định dạng';
     parentElement.classList.add('invalid');
     email.focus();
+    document.getElementById('overlay').style.display = 'none';
+    console.log('?');
     return;
   } else {
     errorMessage.innerText = '';
@@ -59,11 +62,13 @@ function login() {
     errorMessage.innerHTML = 'Mật khẩu không được ngắn hơn 6 kí tự';
     parentElement.classList.add('invalid');
     password.focus();
+    document.getElementById('overlay').style.display = 'none';
     return;
   } else {
     errorMessage.innerText = '';
     parentElement.classList.remove('invalid');
   }
+  document.getElementById('loading-animation').style.display = 'block';
   // AUTHENTICATION
   firebase
     .auth()
